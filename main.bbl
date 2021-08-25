@@ -16,10 +16,34 @@ E.~Goodwin, K.~Sinha, and T.~J. O'Donnell.
 \newblock Probing {{Linguistic Systematicity}}.
 \newblock {\em arXiv:2005.04315 [cs]}, Aug. 2020.
 
+\bibitem{gururangan2018a}
+S.~Gururangan, S.~Swayamdipta, O.~Levy, R.~Schwartz, S.~R. Bowman, and N.~A.
+  Smith.
+\newblock Annotation {{Artifacts}} in {{Natural Language Inference Data}}.
+\newblock {\em arXiv:1803.02324 [cs]}, Apr. 2018.
+
 \bibitem{jie2019dependency}
 Z.~Jie and W.~Lu.
 \newblock Dependency-guided lstm-crf for named entity recognition.
 \newblock {\em arXiv preprint arXiv:1909.10148}, 2019.
+
+\bibitem{maudslay2020b}
+R.~H. Maudslay, H.~Gonen, R.~Cotterell, and S.~Teufel.
+\newblock It's {{All}} in the {{Name}}: {{Mitigating Gender Bias}} with
+  {{Name}}-{{Based Counterfactual Data Substitution}}.
+\newblock {\em arXiv:1909.00871 [cs]}, Feb. 2020.
+
+\bibitem{mccoy2019}
+R.~T. McCoy, E.~Pavlick, and T.~Linzen.
+\newblock Right for the {{Wrong Reasons}}: {{Diagnosing Syntactic Heuristics}}
+  in {{Natural Language Inference}}.
+\newblock {\em arXiv:1902.01007 [cs]}, June 2019.
+
+\bibitem{nie2020}
+Y.~Nie, A.~Williams, E.~Dinan, M.~Bansal, J.~Weston, and D.~Kiela.
+\newblock Adversarial {{NLI}}: {{A New Benchmark}} for {{Natural Language
+  Understanding}}.
+\newblock {\em arXiv:1910.14599 [cs]}, May 2020.
 
 \bibitem{rogers2020}
 A.~Rogers, O.~Kovaleva, and A.~Rumshisky.
@@ -60,6 +84,11 @@ K.~Sinha, S.~Sodhani, J.~Dong, J.~Pineau, and W.~L. Hamilton.
 K.~Sinha, S.~Sodhani, J.~Pineau, and W.~L. Hamilton.
 \newblock Evaluating {{Logical Generalization}} in {{Graph Neural Networks}}.
 \newblock {\em arXiv:2003.06560 [cs, stat]}, Mar. 2020.
+
+\bibitem{stanojevic2021}
+M.~Stanojevi{\'c} and M.~Steedman.
+\newblock Formal {{Basis}} of a {{Language Universal}}.
+\newblock {\em Computational Linguistics}, 47(1):9--42, Apr. 2021.
 
 \bibitem{strubell2018}
 E.~Strubell, P.~Verga, D.~Andor, D.~Weiss, and A.~McCallum.

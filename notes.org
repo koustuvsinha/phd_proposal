@@ -29,4 +29,12 @@ CLOSED: [2021-08-24 Tue 18:55]
 CLOSED: [2021-08-25 Wed 09:57]
 ** DONE (cite:strubell2018) Linguistically-Informed Self-Attention for Semantic Role Labeling
 CLOSED: [2021-08-25 Wed 10:05]
-** TODO (cite:stanojevic2021) Formal Basis of a Language Universal
+** DONE (cite:stanojevic2021) Formal Basis of a Language Universal
+CLOSED: [2021-08-25 Wed 12:11]
+** DONE (cite:maudslay2020b) It's All in the Name: Mitigating Gender Bias with Name-Based Counterfactual Data Substitution
+CLOSED: [2021-08-25 Wed 12:12]
+** DONE (cite:gururangan2018a) Annotation Artifacts in Natural Language Inference Data
+CLOSED: [2021-08-25 Wed 12:12]
+** DONE (cite:nie2020) Adversarial NLI: A New Benchmark for Natural Language Understanding
+CLOSED: [2021-08-25 Wed 12:15]
+** TODO (cite:mccoy2019) Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference

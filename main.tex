@@ -154,11 +154,21 @@ Therefore, we propose an alternate, unsupervised mechanism to imbibe syntax info
 
 % Note: potential question from comittee: While this approach still requires a CCG parser, due to the nature of separable permutations this parser need not be perfect.
 
-\subsection{Entity agnostic training for better systematic generalization}
+\subsection{Nonsensical data augmentation for better systematic generalization}
+
+Systematic generalization is an issue which plagues many NLU tasks, in particular Natural Language Inference (NLI). Generalization to out-of-domain examples is poor \cite{nie2020}, and it has been shown that these models leverage the statistical artifacts in NLI datasets, such as SNLI and MNLI \cite{gururangan2018a}. One reason why models tend to overfit on the training data is the exposure bias to specific nouns/verbs/entities during training. When subjected to systematic stress test, the NLU models tend to be brittle as they fail to learn syntax of the training signal by fixating on the rare words and artifacts. Thus, we propose a dynamic data augmentation training scheme for NLU models where we repeat the training examples with word replacements from the same syntactic family. Overall, a sentence might lose its intended meaning (hence, ``nonsensical'') - however if the same operation is conducted on the premise, the entailment logic remains unchanged. Concretely, given a lexical item in a sentence, we randomly replace that item with another belonging to the same syntactic family, equally in both premise and hypothesis sentences. For empirical reasons we will restrict this replacement to specific family of lexicons (proper nouns, verbs) which typically form as rare elements in the dataset. We also plan to include a probabilistic model for this replacement which replaces lexicons based on their corpus probability to ensure uniformity in training. By systematically replacing the lexicons in a different context one can potentially increase the training data to reduce exposure bias problem. Similar methods have been devised for mitigating gender bias previously in the literature with varying success \cite{maudslay2020b}.
 
 \subsection{Timeline}
 
-\noindent \textbf{Thesis preparation and submission} Expected defense date Fall 2022
+\noindent \textbf{Unsupervised syntax learning by mutually exclusive training using word order} (1) Investigate CCG parsing to generate separable permutations on the fly, (2) Representational analysis on separable and non separable permutations, (3) Train auxillary loss with either direct supervision or partial gradient based methods such as Meta Learning, (4) Write paper for ACL 2022 or TACL 2022
+
+\halfblankline
+
+\noindent \textbf{Nonsensical data augmentation for better systematic generalization} (1) Investigate lexicon replacements by using syntactic parsers in a given dataset, (2) Analyze how the distribution of rare elements change in the training corpus by using this kind of replacement, (3) Test on out-of-domain data and NLI stress test sets, such as HANS \cite{mccoy2019}, (4) Write paper for EMNLP 2022.
+
+\halfblankline
+
+\noindent \textbf{Thesis preparation and submission} Expected defense date: Fall 2022
 
 
 \bibliography{main}
