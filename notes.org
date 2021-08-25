@@ -1,0 +1,27 @@
+#+TITLE: Notes
+
+* Notes and todos for the paper here.
+** TODO mostly copy the stuff from my previous papers in the intro
+** TODO write the intro
+* References
+
+Note: reftex-create-bibtex-file doesn't work. So alternative is to maintain an org file with references and copy them to the bib file using helm
+
+** DONE (cite:sinha2021) UnNatural Language Inference
+CLOSED: [2021-08-24 Tue 10:30]
+** DONE (cite:sinha2019a) CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text
+CLOSED: [2021-08-24 Tue 10:30]
+** DONE (cite:goodwin2020) Probing Linguistic Systematicity
+CLOSED: [2021-08-24 Tue 10:30]
+** DONE (cite:sinha2021a) Masked Language Modeling and the Distributional Hypothesis: Order Word Matters Pre-training for Little
+CLOSED: [2021-08-24 Tue 10:30]
+** DONE (cite:rogers2020) A Primer in BERTology: What we know about how BERT works
+CLOSED: [2021-08-24 Tue 18:54]
+** DONE (cite:bahdanau2019) Systematic Generalization: What Is Required and Can It Be Learned?
+CLOSED: [2021-08-24 Tue 18:54]
+** DONE (cite:gontier2020) Measuring Systematic Generalization in Neural Proof Generation with Transformers
+CLOSED: [2021-08-24 Tue 18:54]
+** DONE (cite:sinha2020c) Evaluating Logical Generalization in Graph Neural Networks
+CLOSED: [2021-08-24 Tue 18:55]
+** DONE (cite:sinha2020d) Learning an Unreferenced Metric for Online Dialogue Evaluation
+CLOSED: [2021-08-24 Tue 18:55]

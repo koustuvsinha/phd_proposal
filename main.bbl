@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{gontier2020}
+N.~Gontier, K.~Sinha, S.~Reddy, and C.~Pal.
+\newblock Measuring {{Systematic Generalization}} in {{Neural Proof
+  Generation}} with {{Transformers}}.
+\newblock {\em arXiv:2009.14786 [cs, stat]}, Oct. 2020.
+
+\bibitem{goodwin2020}
+E.~Goodwin, K.~Sinha, and T.~J. O'Donnell.
+\newblock Probing {{Linguistic Systematicity}}.
+\newblock {\em arXiv:2005.04315 [cs]}, Aug. 2020.
+
+\bibitem{rogers2020}
+A.~Rogers, O.~Kovaleva, and A.~Rumshisky.
+\newblock A {{Primer}} in {{BERTology}}: {{What}} we know about how {{BERT}}
+  works.
+\newblock {\em arXiv:2002.12327 [cs]}, Nov. 2020.
+
+\bibitem{sinha2021a}
+K.~Sinha, R.~Jia, D.~Hupkes, J.~Pineau, A.~Williams, and D.~Kiela.
+\newblock Masked {{Language Modeling}} and the {{Distributional Hypothesis}}:
+  {{Order Word Matters Pre}}-training for {{Little}}.
+\newblock {\em arXiv:2104.06644 [cs]}, Apr. 2021.
+
+\bibitem{sinha2021}
+K.~Sinha, P.~Parthasarathi, J.~Pineau, and A.~Williams.
+\newblock {{UnNatural Language Inference}}.
+\newblock {\em arXiv:2101.00010 [cs]}, June 2021.
+
+\bibitem{sinha2020d}
+K.~Sinha, P.~Parthasarathi, J.~Wang, R.~Lowe, W.~L. Hamilton, and J.~Pineau.
+\newblock Learning an {{Unreferenced Metric}} for {{Online Dialogue
+  Evaluation}}.
+\newblock {\em arXiv:2005.00583 [cs]}, May 2020.
+
+\bibitem{sinha2019a}
+K.~Sinha, S.~Sodhani, J.~Dong, J.~Pineau, and W.~L. Hamilton.
+\newblock {{CLUTRR}}: {{A Diagnostic Benchmark}} for {{Inductive Reasoning}}
+  from {{Text}}.
+\newblock {\em arXiv:1908.06177 [cs, stat]}, Sept. 2019.
+
+\bibitem{sinha2020c}
+K.~Sinha, S.~Sodhani, J.~Pineau, and W.~L. Hamilton.
+\newblock Evaluating {{Logical Generalization}} in {{Graph Neural Networks}}.
+\newblock {\em arXiv:2003.06560 [cs, stat]}, Mar. 2020.
+
+\end{thebibliography}

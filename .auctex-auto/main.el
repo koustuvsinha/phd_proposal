@@ -57,6 +57,7 @@
     '("vect" 1)
     '("matr" 1)
     "argmax")
+   (LaTeX-add-bibliographies)
    (LaTeX-add-xcolor-definecolors
     "citecol"))
  :latex)
