@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{fundel2007relex}
+K.~Fundel, R.~K{\"u}ffner, and R.~Zimmer.
+\newblock Relex—relation extraction using dependency parse trees.
+\newblock {\em Bioinformatics}, 23(3):365--371, 2007.
 
 \bibitem{gontier2020}
 N.~Gontier, K.~Sinha, S.~Reddy, and C.~Pal.
@@ -11,11 +16,22 @@ E.~Goodwin, K.~Sinha, and T.~J. O'Donnell.
 \newblock Probing {{Linguistic Systematicity}}.
 \newblock {\em arXiv:2005.04315 [cs]}, Aug. 2020.
 
+\bibitem{jie2019dependency}
+Z.~Jie and W.~Lu.
+\newblock Dependency-guided lstm-crf for named entity recognition.
+\newblock {\em arXiv preprint arXiv:1909.10148}, 2019.
+
 \bibitem{rogers2020}
 A.~Rogers, O.~Kovaleva, and A.~Rumshisky.
 \newblock A {{Primer}} in {{BERTology}}: {{What}} we know about how {{BERT}}
   works.
 \newblock {\em arXiv:2002.12327 [cs]}, Nov. 2020.
+
+\bibitem{sachan2021}
+D.~S. Sachan, Y.~Zhang, P.~Qi, and W.~Hamilton.
+\newblock Do {{Syntax Trees Help Pre}}-trained {{Transformers Extract
+  Information}}?
+\newblock {\em arXiv:2008.09084 [cs]}, Jan. 2021.
 
 \bibitem{sinha2021a}
 K.~Sinha, R.~Jia, D.~Hupkes, J.~Pineau, A.~Williams, and D.~Kiela.
@@ -44,5 +60,11 @@ K.~Sinha, S.~Sodhani, J.~Dong, J.~Pineau, and W.~L. Hamilton.
 K.~Sinha, S.~Sodhani, J.~Pineau, and W.~L. Hamilton.
 \newblock Evaluating {{Logical Generalization}} in {{Graph Neural Networks}}.
 \newblock {\em arXiv:2003.06560 [cs, stat]}, Mar. 2020.
+
+\bibitem{strubell2018}
+E.~Strubell, P.~Verga, D.~Andor, D.~Weiss, and A.~McCallum.
+\newblock Linguistically-{{Informed Self}}-{{Attention}} for {{Semantic Role
+  Labeling}}.
+\newblock {\em arXiv:1804.08199 [cs]}, Nov. 2018.
 
 \end{thebibliography}

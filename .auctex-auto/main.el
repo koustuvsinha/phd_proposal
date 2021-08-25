@@ -56,7 +56,11 @@
     '("va" 0)
     '("vect" 1)
     '("matr" 1)
-    "argmax")
+    "argmax"
+    "Snospace")
+   (LaTeX-add-labels
+    "sec:cont1"
+    "sec:cont2")
    (LaTeX-add-bibliographies)
    (LaTeX-add-xcolor-definecolors
     "citecol"))

@@ -25,3 +25,8 @@ CLOSED: [2021-08-24 Tue 18:54]
 CLOSED: [2021-08-24 Tue 18:55]
 ** DONE (cite:sinha2020d) Learning an Unreferenced Metric for Online Dialogue Evaluation
 CLOSED: [2021-08-24 Tue 18:55]
+** DONE (cite:sachan2021) Do Syntax Trees Help Pre-trained Transformers Extract Information?
+CLOSED: [2021-08-25 Wed 09:57]
+** DONE (cite:strubell2018) Linguistically-Informed Self-Attention for Semantic Role Labeling
+CLOSED: [2021-08-25 Wed 10:05]
+** TODO (cite:stanojevic2021) Formal Basis of a Language Universal

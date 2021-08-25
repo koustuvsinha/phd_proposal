@@ -59,6 +59,10 @@
 \newcommand{\mV}[0]{\matr{V}}
 \newcommand{\mW}[0]{\matr{W}}
 
+\def\Snospace~{\S{}} % If i don't add this overleaf complains
+\renewcommand{\sectionautorefname}{\Snospace}
+\renewcommand{\subsectionautorefname}{\Snospace}
+
 %\hypersetup{colorlinks=true,citecolor=citecol}
 %\DeclareMathOperator*{\argmax}{arg\,max}
 
@@ -120,6 +124,7 @@ This document does not discuss concurrent works on understanding systematic reas
 \subsection{The rise of pre-training}
 
 \section{Contribution 1: Investigating systematicity of NLU models using first order logic}
+\label{sec:cont1}
 
 % CLUTRR
 
@@ -128,6 +133,7 @@ In this section, we first talk about our paper, CLUTRR \cite{sinha2019a}. Then, 
 % Probing Linguistic Systematicity
 
 \section{Contribution 2: Probing systematicity of pre-trained models using word order}
+\label{sec:cont2}
 
 % UNLI
 % Unnatural Pre-training
@@ -138,7 +144,15 @@ Here, we talk about two related contributions, UnNatural Language Inference \cit
 
 \section{Future Work \& Timeline}
 
+Until now, most of the work in my doctoral studies have been focused on developing methods to detect the issue of systematicity plaguing neural NLU models. To complete my thesis, I thereby plan to work towards a couple of methods to improve robustness and systematicity of NLU models.
+
 \subsection{Unsupervised syntax learning by mutually exclusive training using word order}
+
+In our prior work on word order (Section \ref{sec:cont2}), we observed that NLU models are largely distributional - they understand the collection of words in a sentence but have limited understanding on the order of words. This poses a problem - representations of random permutations of the sentence having no grounded meaning will still be identified by the NLU models to contain syntactic and semantic information. Due to this distributional effect, we posit that syntax understanding of NLU models are still primitive, mostly restricted to higher order information. Thus, it is imperative to develop mechanisms to imbibe the required syntactical information within the sentence representation, such that it is systematic. One can use syntactic features such as dependency parses to imbibe information about syntax in the sentence representation using auxilliary supervison loss. In literature, such syntactical information has shown to be effective in downstream tasks, such as Relation Extraction (RE) \cite{fundel2007relex}, named entity recognition (NER) \cite{jie2019dependency} and semantic role labeling (SRL) \cite{strubell2018}. More recently, syntax trees are used during pre-training of Transformer based models to imbibe better syntactical information by early and late fusion \cite{sachan2021}. However, such direct supervision models to imbibe syntactical information is difficult as it requires access to preferably human-annotated syntax parses of sentences, which raises questions on the viability of such approaches for real world applications. Even so, limited studies have been performed to investigate systematicity issues of those models trained with supplementary syntactical signal.
+
+Therefore, we propose an alternate, unsupervised mechanism to imbibe syntax information within the sentence representations by leveraging word order. Concretely, we use an auxilliary objective to the model to recognize correct and incorrect permutations of a given sentence alongside the task objective. Now, in the strictest sense there is only one correct ordering of a sentence which conveys the intended meaning. However, natural language (English) allows for a degree of flexibility in word order. Thus, we plan to leverage the idea of \textit{separable permutations} \cite{stanojevic2021}, where a subset of permutations can be treated as positive signal which can be reconstructed from the CCG parse of the given sentence. This auxilliary training loss could potentially inform the model to be systematic in understanding syntax, and thereby reduce the distributional, bag-of-words behavior of the encoder representations.
+
+% Note: potential question from comittee: While this approach still requires a CCG parser, due to the nature of separable permutations this parser need not be perfect.
 
 \subsection{Entity agnostic training for better systematic generalization}
 
