@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  25 AUG 2021 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 AUG 2021 12:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -707,26 +707,46 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count290
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen198
+\lightrulewidth=\dimen199
+\cmidrulewidth=\dimen256
+\belowrulesep=\dimen257
+\belowbottomsep=\dimen258
+\aboverulesep=\dimen259
+\abovetopsep=\dimen260
+\cmidrulesep=\dimen261
+\cmidrulekern=\dimen262
+\defaultaddspace=\dimen263
+\@cmidla=\count291
+\@cmidlb=\count292
+\@aboverulesep=\dimen264
+\@belowrulesep=\dimen265
+\@thisruleclass=\count293
+\@lastruleclass=\count294
+\@thisrulewidth=\dimen266
+)
 
-./main.tex:63: LaTeX Error: Command \sectionautorefname undefined.
+./main.tex:64: LaTeX Error: Command \sectionautorefname undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 \renewcommand{\sectionautorefname}
+l.64 \renewcommand{\sectionautorefname}
                                        {\Snospace}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./main.tex:64: LaTeX Error: Command \subsectionautorefname undefined.
+./main.tex:65: LaTeX Error: Command \subsectionautorefname undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.64 \renewcommand{\subsectionautorefname}
+l.65 \renewcommand{\subsectionautorefname}
                                           {\Snospace}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -734,19 +754,19 @@ If that doesn't work, type  X <return>  to quit.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 76.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -784,34 +804,34 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-./main.tex:75: Bad mathchar (32768).
+./main.tex:76: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.75 \begin{document}
+l.76 \begin{document}
                      
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
 
-./main.tex:75: Bad mathchar (32768).
+./main.tex:76: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.75 \begin{document}
+l.76 \begin{document}
                      
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count291
-\scratchdimen=\dimen198
+\scratchcounter=\count295
+\scratchdimen=\dimen267
 \scratchbox=\box67
-\nofMPsegments=\count292
-\nofMParguments=\count293
+\nofMPsegments=\count296
+\nofMParguments=\count297
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count294
-\MPscratchDim=\dimen199
-\MPnumerator=\count295
-\makeMPintoPDFobject=\count296
+\MPscratchCnt=\count298
+\MPscratchDim=\dimen268
+\MPnumerator=\count299
+\makeMPintoPDFobject=\count300
 \everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -864,67 +884,67 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 77
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 78
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 77
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 78
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 77
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 78
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 77
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 78
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 
-./main.tex:77: Bad mathchar (32768).
+./main.tex:78: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.77 \maketitle
+l.78 \maketitle
                
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
 
-./main.tex:77: Missing number, treated as zero.
+./main.tex:78: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.77 \maketitle
+l.78 \maketitle
                
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./main.tex:77: Missing number, treated as zero.
+./main.tex:78: Missing number, treated as zero.
 <to be read again> 
                    }
-l.77 \maketitle
+l.78 \maketitle
                
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-./main.tex:81: Undefined control sequence.
-l.81 ...ural models, especially Transformers \CITE
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+./main.tex:82: Undefined control sequence.
+l.82 ...ural models, especially Transformers \CITE
                                                   , a class of multi-head se...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -932,8 +952,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:81: Undefined control sequence.
-l.81 ...s benchmarks and datasets, with BERT \CITE
+./main.tex:82: Undefined control sequence.
+l.82 ...s benchmarks and datasets, with BERT \CITE
                                                    being one of the most pop...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -941,8 +961,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:81: Undefined control sequence.
-l.81 ...th surprising, near-human efficiency \CITE
+./main.tex:82: Undefined control sequence.
+l.82 ...th surprising, near-human efficiency \CITE
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -950,8 +970,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:83: Undefined control sequence.
-l.83 ...eech tagging, entity recognition etc \CITE
+./main.tex:84: Undefined control sequence.
+l.84 ...eech tagging, entity recognition etc \CITE
                                                   . BERT has also been credi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -959,8 +979,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:83: Undefined control sequence.
-l.83 ...some level of semantic understanding \CITE
+./main.tex:84: Undefined control sequence.
+l.84 ...some level of semantic understanding \CITE
                                                   , and contains relevant in...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -968,8 +988,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:83: Undefined control sequence.
-l.83 ... about relations and world knowledge \CITE
+./main.tex:84: Undefined control sequence.
+l.84 ... about relations and world knowledge \CITE
                                                   . All of these results ind...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -977,8 +997,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:85: Undefined control sequence.
-l.85 ...f the sentences in which they appear \CITE
+./main.tex:86: Undefined control sequence.
+l.86 ...f the sentences in which they appear \CITE
                                                   [Fodor]. As an illustratio...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -986,8 +1006,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:85: Undefined control sequence.
-l.85 ...systems to such adversarial examples \CITE
+./main.tex:86: Undefined control sequence.
+l.86 ...systems to such adversarial examples \CITE
                                                   . More so, there is strong...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -995,8 +1015,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:85: Undefined control sequence.
-l.85 ...ning and generalization capabilities \CITE
+./main.tex:86: Undefined control sequence.
+l.86 ...ning and generalization capabilities \CITE
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1007,81 +1027,81 @@ and I'll forget about whatever was undefined.
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 90.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 91.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
 
-./main.tex:91: Bad mathchar (32768).
+./main.tex:92: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.91 ...obing Linguistic Systematicity} \footnote{
+l.92 ...obing Linguistic Systematicity} \footnote{
                                                   Work done as second author...
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
 
-./main.tex:91: Missing number, treated as zero.
+./main.tex:92: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.91 ...obing Linguistic Systematicity} \footnote{
+l.92 ...obing Linguistic Systematicity} \footnote{
                                                   Work done as second author...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./main.tex:91: Missing number, treated as zero.
+./main.tex:92: Missing number, treated as zero.
 <to be read again> 
                    }
-l.91 ...obing Linguistic Systematicity} \footnote{
+l.92 ...obing Linguistic Systematicity} \footnote{
                                                   Work done as second author...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
-./main.tex:91: Bad mathchar (32768).
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+./main.tex:92: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.91 ...ty} \footnote{Work done as second author.}
-                                                  , published at ACL 2020
+l.92 ...ty} \footnote{Work done as second author.}
+                                                  , published at Association...
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
 
-./main.tex:91: Missing number, treated as zero.
+./main.tex:92: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.91 ...ty} \footnote{Work done as second author.}
-                                                  , published at ACL 2020
+l.92 ...ty} \footnote{Work done as second author.}
+                                                  , published at Association...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./main.tex:91: Missing number, treated as zero.
+./main.tex:92: Missing number, treated as zero.
 <to be read again> 
                    }
-l.91 ...ty} \footnote{Work done as second author.}
-                                                  , published at ACL 2020
+l.92 ...ty} \footnote{Work done as second author.}
+                                                  , published at Association...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[2] [3]
-./main.tex:165: Undefined control sequence.
-l.165 \halfblankline
+[2] [3] [4]
+./main.tex:196: Undefined control sequence.
+l.196 \halfblankline
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1089,8 +1109,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:169: Undefined control sequence.
-l.169 \halfblankline
+./main.tex:200: Undefined control sequence.
+l.200 \halfblankline
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1098,24 +1118,53 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-(./main.bbl [4]) [5] (./main.aux) ) 
+(./main.bbl [5]
+Underfull \hbox (badness 1406) in paragraph at lines 15--18
+[]\OT1/ptm/m/n/12 E. Good-win, K. Sinha, and T. J. O'Donnell.  Prob-ing Lin-gui
+s-tic Sys-tem-atic-ity.
+ []
+
+[6])
+
+./main.tex:224: LaTeX Error: \begin{itemize} on input line 146 ended by \end{do
+cument}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[7] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 146 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 16484 strings out of 492616
- 283494 string characters out of 6129482
- 346926 words of memory out of 5000000
- 20240 multiletter control sequences out of 15000+600000
+ 16545 strings out of 492616
+ 284352 string characters out of 6129482
+ 346740 words of memory out of 5000000
+ 20297 multiletter control sequences out of 15000+600000
  583320 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,8n,63p,1777b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/en
-c/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/ut
-mb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 69632 bytes).
+ 44i,8n,63p,1777b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (7 pages, 74116 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

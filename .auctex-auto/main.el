@@ -24,7 +24,8 @@
     "mathptmx"
     "algorithm2e"
     "natbib"
-    "amsfonts")
+    "amsfonts"
+    "booktabs")
    (TeX-add-symbols
     '("mW" 0)
     '("mV" 0)
@@ -57,6 +58,7 @@
     '("vect" 1)
     '("matr" 1)
     "argmax"
+    "tabitem"
     "Snospace")
    (LaTeX-add-labels
     "sec:cont1"

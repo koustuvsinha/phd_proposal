@@ -111,6 +111,8 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/relsize/relsize.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/relsize/relsize.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT main.aux
 INPUT main.aux
 OUTPUT main.aux
@@ -275,10 +277,10 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT main.bbl
-INPUT main.bbl
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT main.bbl
+INPUT main.bbl
 INPUT main.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb

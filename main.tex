@@ -23,7 +23,8 @@
 % \usepackage{amsmath}
 \usepackage{amsfonts}
 %\usepackage{hyperref}
-
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \newcommand{\matr}[1]{\mathbf{#1}}
 \newcommand{\vect}[1]{\mathbf{#1}}
@@ -87,18 +88,18 @@ On the other hand, there have been growing concerns regarding the ability of the
 In view of the positive and negative evidences towards Transformers acquiring ``human-like'' natural language understanding capacity, it is very important that we take a step back and carefully examine the reasoning processes of the NLU models in the view of systematicity and robustness. Since these NLU models are now being deployed in production and decision making systems, it is even more prudent to test the models towards systematic understanding in order to avoid catastrophic scenarios. In this proposal, I thus discuss my work till now in my doctoral studies to understand the limits of systematic and robust natural language understanding of NLU models. Concretely, first I discuss our proposed systematicity tests on artificial and natural languages by using first-order logic (FOL), and what we learned from the model using such tests. This involves the following two papers:
 
 \begin{itemize}
-  \item \textit{CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text}, published at EMNLP 2019 (Oral presentation)
-  \item \textit{Probing Linguistic Systematicity} \footnote{Work done as second author.}, published at ACL 2020
+  \item \textit{CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text}, published at Empirical Methods of Natural Language Processing (EMNLP) 2019 (Oral presentation) \cite{sinha2019a}
+  \item \textit{Probing Linguistic Systematicity} \footnote{Work done as second author.}, published at Association for Computational Linguistics (ACL) 2020 \cite{goodwin2020}
 \end{itemize}
 
 Secondly, I discuss our work on understanding the limits of systematicity of NLU models by subjecting these models to scrambled word order sentences, involving the following two papers:
 
 \begin{itemize}
-  \item \textit{UnNatural Language Inference}, published at ACL 2021 (Oral presentation, Outstanding paper award) \cite{sinha2021}
-  \item \textit{Masked Language Modeling and the Distributional Hypothesis: Order Word Matters Pre-training for Little}, submitted to EMNLP 2021 \cite{sinha2021a}
+  \item \textit{UnNatural Language Inference}, published at Association for Computational Linguistics (ACL) 2021 (Oral presentation, Outstanding paper award) \cite{sinha2021}
+  \item \textit{Masked Language Modeling and the Distributional Hypothesis: Order Word Matters Pre-training for Little}, published at Empirical Methods of Natural Language Processing (EMNLP) 2021 \cite{sinha2021a}
 \end{itemize}
 
-This document does not discuss concurrent works on understanding systematic reasoning for proof generation \cite{gontier2020} (published at NeurIPS 2020), proposed dataset on systematic reasoning on graph neural networks \cite{sinha2020c}, or an unreferenced automatic dialog evaluation framework \cite{sinha2020d} (published at ACL 2020) conducted during my doctoral studies.
+This document does not discuss concurrent works on understanding systematic reasoning for proof generation \cite{gontier2020} (published at NeurIPS 2020), analyzing faithfulness and robustness in translations \cite{parthasarathi2021a} (published at EMNLP 2021), proposed dataset on systematic reasoning on graph neural networks \cite{sinha2020c}, or an unreferenced automatic dialog evaluation framework \cite{sinha2020d} (published at ACL 2020) conducted during my doctoral studies.
 
 % TODO mostly copy/rephrase stuff from my previous papers. Start with a general introduction
 
@@ -130,6 +131,34 @@ This document does not discuss concurrent works on understanding systematic reas
 
 In this section, we first talk about our paper, CLUTRR \cite{sinha2019a}. Then, we talk about Probing Linguistic Systematicity \cite{goodwin2020} paper.
 
+\subsection{CLUTRR}
+
+\subsubsection{Motivation}
+
+An important challenge in NLU is to develop benchmarks which can precisely test a model's capability for robust and systematic generalization. Ideally, we want language understanding systems that can not only answer questions and draw inferences from text, but that can also do so in a systematic, logical and robust way. While such reasoning capabilities are certainly required for many existing NLU tasks, most datasets combine several challenges of language understanding into one, such as co-reference/entity resolution, incorporating world knowledge, and semantic parsing - making it difficult to isolate and diagnose a model's capabilities for systematic generalization and robustness.
+
+Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (Compositional Language Understanding with Text-based Relational Reasoning) - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a alearning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
+
+\subsubsection{Dataset Design}
+
+In order to design the CLUTRR benchmark, we build upon classic ILP task of inferring kinship relations. For example, given the facts that \textit{``Alice is Bob's mother''} and \textit{``Jim is Alice's father''}, one can infer with reasonable certainty that \textit{``Jim is Bob's grandfather''}. While this example may appear trivial, it is challenging task to design models that can learn from data to \textit{induce} the logical rules necessary to make such inferences, and it is even more challenging to design models that can systematically generalize by composing these induced rules. Thus, the core idea behind CLUTRR benchmark suite is the following: given a natural language story describing a set of kinship relations, the goal is to infer the relationship between two entities, whose relationship is \textit{not} explicitly stated in the story. To generate these stories, we first deign a knowledge base (KB) with rules specifying how kinship relations resolve, and we use the following steps to create semi-synthetic stories based on this knowledge base:
+
+\begin{itemize}
+        \item \textbf{Step 1.} Generate a random kinship graph that satisfies the rules in our KB.
+        \item \textbf{Step 2.} Sample a target fact (i.e relation) to predict from the kinship graph
+        \item \textbf{Step 3.} Apply backward chaining to sample a set of facts that can prove the target relation (and optionally sample a set of ``distracting'' or ``irrelevant'' noise facts)
+        \item \textbf{Step 4.} Convert the sampled facts into a natural language story through pre-specified text templates and crowd-sourced paraphrasing.
+
+\subsubsection{Experiments and Discussion}
+
+\subsection{Probing Linguistic Systematicity}
+
+\subsubsection{Motivation}
+
+\subsubsection{Experiments}
+
+\subsubsection{Discussion}
+
 % Probing Linguistic Systematicity
 
 \section{Contribution 2: Probing systematicity of pre-trained models using word order}
@@ -140,7 +169,9 @@ In this section, we first talk about our paper, CLUTRR \cite{sinha2019a}. Then, 
 
 Here, we talk about two related contributions, UnNatural Language Inference \cite{sinha2021} and pretraining with unnatural languages \cite{sinha2021a}.
 
+\subsection{UnNatural Language Inference}
 
+\subsection{Pre-training with Unnatural Languages}
 
 \section{Future Work \& Timeline}
 
@@ -169,6 +200,23 @@ Systematic generalization is an issue which plagues many NLU tasks, in particula
 \halfblankline
 
 \noindent \textbf{Thesis preparation and submission} Expected defense date: Fall 2022
+
+% Table if needed
+% \begin{table}
+% \centering
+% \begin{tabular}{p{5cm}p{7cm}p{3cm}}
+% Project & Task & Timeline\\
+% \toprule
+% Unsupervised syntax learning by mutually exclusive training using word order & \tabitem Investigate CCG parsing to generate separable permutations on the fly & \\
+%  & \tabitem Representational analysis on separable and non separable permutations & \\
+%  & \tabitem Train auxillary loss with either direct supervision or partial gradient based methods such as Meta Learning & \\
+%  & \tabitem Write paper for ACL 2022 or TACL 2022 & \\
+% Nonsensical data augmentation for better systematic generalization & \tabitem Investigate lexicon replacements by using syntactic parsers in a given dataset & \\
+%  & \tabitem Analyze how the distribution of rare elements change in the training corpus by using this kind of replacement & \\
+%  & \tabitem Test on out-of-domain data and NLI stress tests, such as HANS & \\
+%  & \tabitem Write paper for EMNLP 2022 & \\
+% \end{tabular}
+% \end{table}
 
 
 \bibliography{main}

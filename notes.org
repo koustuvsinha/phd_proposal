@@ -3,6 +3,25 @@
 * Notes and todos for the paper here.
 ** TODO mostly copy the stuff from my previous papers in the intro
 ** TODO write the intro
+* Joelle Meeting Notes
+** TODO put timeline in table
+** TODO organize slide content
+*** what can i ask from my committee - what version of a hypothesis would be more interesting? lean on committee for the wisdom..
+*** prepare list of questions - open questions in slide
+**** invitation of questions - open questions
+** TODO send mail to Ann to confirm the committee
+* Tables
+| Project                                                                      | Task                                                                                                          | Timeline |
+|------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+----------|
+| Unsupervised syntax learning by mutually exclusive training using word order | Investigate CCG parsing to generate separable permutations on the fly                                         |          |
+|                                                                              | Representational analysis on separable and non separable permutations                                         |          |
+|                                                                              | Train auxillary loss with either direct supervision or partial gradient based methods such as Meta Learning   |          |
+|                                                                              | Write paper for ACL 2022 or TACL 2022                                                                         |          |
+| Nonsensical data augmentation for better systematic generalization           | Investigate lexicon replacements by using syntactic parsers in a given dataset                                |          |
+|                                                                              | Analyze how the distribution of rare elements change in the training corpus by using this kind of replacement |          |
+|                                                                              | Test on out-of-domain data and NLI stress tests, such as HANS                                                 |          |
+|                                                                              | Write paper for EMNLP 2022                                                                                    |          |
+
 * References
 
 Note: reftex-create-bibtex-file doesn't work. So alternative is to maintain an org file with references and copy them to the bib file using helm
@@ -37,4 +56,7 @@ CLOSED: [2021-08-25 Wed 12:12]
 CLOSED: [2021-08-25 Wed 12:12]
 ** DONE (cite:nie2020) Adversarial NLI: A New Benchmark for Natural Language Understanding
 CLOSED: [2021-08-25 Wed 12:15]
-** TODO (cite:mccoy2019) Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference
+** DONE (cite:mccoy2019) Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference
+CLOSED: [2021-08-25 Wed 12:37]
+** DONE (cite:parthasarathi2021a) Sometimes We Want Translationese
+CLOSED: [2021-08-26 Thu 18:02]
