@@ -1,0 +1,16 @@
+\begin{table*}[h]
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l||llllll|}
+      \hline
+        \textbf{Position} & 1 & 2 & 3 &  4 & 5 & 6 \\ \hline
+  \rowcolor{gray!6} \textbf{Category} & \texttt{quantifier} & \texttt{nominal premodifier} & \texttt{noun} &  \texttt{nominal postmodifier} & \texttt{negation} & \texttt{verb}  \\
+  \textbf{Status} & Obligatory & Optional & Obligatory &  Optional & Optional & Obligatory\\
+  \rowcolor{gray!6} \textbf{Class} & Closed & Closed & Open & Closed & Closed & Open \\
+  \textbf{Example} & {\Large \exam{All}} &  {\Large \exam{brown}} &  {\Large  \exam{dogs}} &  {\Large  \exam{that bark}} &  {\Large \exam{don't}} &  {\Large \exam{run}} \\
+  \hline
+\end{tabular}
+}
+\caption{A template for sentences in the artificial language. Each sentence fills the obligatory positions 1, 3, and 6 with a word: a quantifier, noun, and verb. Optional positions (2, 4 and 5) are filled by either a word (adjective, postmodifier or negation) or by the empty string. Closed-class categories (Quantifiers, adjectives, post modifiers and negation) do not include novel words, while  open-class categories (nouns and verbs) includes novel words that are only exposed in the test set.
+} \label{tbl:artlang}
+\end{table*}

@@ -8,6 +8,7 @@
    (TeX-run-style-hooks
     "latex2e"
     "tables/table_amt_robust"
+    "tables/table_probing"
     "article"
     "art12"
     "inputenc"
@@ -29,7 +30,8 @@
     "algorithm2e"
     "natbib"
     "amsfonts"
-    "yhmath")
+    "yhmath"
+    "colortbl")
    (TeX-add-symbols
     '("mW" 0)
     '("mV" 0)
@@ -72,6 +74,7 @@
     "fig:clutrr_composition"
     "fig:clutrr_sys_gen_234"
     "fig:clutrr_data_noise"
+    "fig:proof_sys_gen"
     "sec:cont2")
    (LaTeX-add-bibliographies)
    (LaTeX-add-xcolor-definecolors
