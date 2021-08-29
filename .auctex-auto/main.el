@@ -7,9 +7,13 @@
                      '(("inputenc" "utf8") ("geometry" "a4paper" "margin=0.78in") ("xcolor" "svgnames") ("subfig" "subrefformat=parens" "labelformat=parens") ("algorithm2e" "ruled" "vlined" "linesnumbered") ("natbib" "numbers")))
    (TeX-run-style-hooks
     "latex2e"
+    "tables/table_amt_robust"
     "article"
     "art12"
     "inputenc"
+    "booktabs"
+    "multirow"
+    "microtype"
     "geometry"
     "amssymb"
     "breqn"
@@ -25,7 +29,7 @@
     "algorithm2e"
     "natbib"
     "amsfonts"
-    "booktabs")
+    "yhmath")
    (TeX-add-symbols
     '("mW" 0)
     '("mV" 0)
@@ -57,11 +61,17 @@
     '("va" 0)
     '("vect" 1)
     '("matr" 1)
+    '("xhdr" 1)
     "argmax"
     "tabitem"
     "Snospace")
    (LaTeX-add-labels
     "sec:cont1"
+    "fig:clutrr_data"
+    "fig:clutrr_data_design"
+    "fig:clutrr_composition"
+    "fig:clutrr_sys_gen_234"
+    "fig:clutrr_data_noise"
     "sec:cont2")
    (LaTeX-add-bibliographies)
    (LaTeX-add-xcolor-definecolors
