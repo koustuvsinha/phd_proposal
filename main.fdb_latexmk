@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1630287224 "main.aux" "main.bbl" "main" 1630287229
+["bibtex main"] 1630434052 "main.aux" "main.bbl" "main" 1630434064
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "main.aux" 1630286783 9159 108e74c29df9adb42773cefbd1d5bddb "pdflatex"
-  "main.bib" 1630276536 106662 71c0e69e96ec0037640967ceb7b406d8 ""
+  "main.aux" 1630432561 10273 9c02efa64765dd046cba2bf2e2e6e938 "pdflatex"
+  "main.bib" 1630432855 107006 f42c710fbf03810f49b62c5dd89e7a90 ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1630287229 "main.tex" "main.pdf" "main" 1630287229
-  "/dev/null" 1630287228 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "main.bbl"
+["pdflatex"] 1630434064 "main.tex" "main.pdf" "main" 1630434064
+  "/dev/null" 1630434053 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -156,12 +156,12 @@
   "images/clutrr_sys_gen_234.png" 1630168388 648117 e4a3610ba7dae596a78522196237d6ce ""
   "images/clutrr_text.png" 1630168388 94039 172ccf3772c72effdda096685c7427ad ""
   "images/proof_sys_gen.pdf" 1630249841 142902 54fdfddcb46ca07c41efd183872069ff ""
-  "main.aux" 1630286783 9159 108e74c29df9adb42773cefbd1d5bddb "pdflatex"
-  "main.bbl" 1630287224 14825 82341d73c102ea1040067c21af3cab3f "bibtex main"
-  "main.tex" 1630287222 51460 8638d16379e0a2ee5dbe9765cd059c26 ""
+  "main.aux" 1630432561 10273 9c02efa64765dd046cba2bf2e2e6e938 "pdflatex"
+  "main.bbl" 1630434052 16945 4e59bd827cf9342df5bbec80859f0263 "bibtex main"
+  "main.tex" 1630434048 64595 47eb4605d46ff67cea6b8b7a9053f70b ""
   "tables/table_amt_robust.tex" 1630250496 2546 ded2004ff8fa80f356963eb3cc3d39f1 ""
   "tables/table_probing.tex" 1630250326 1258 08e147d4c6cb911480c48e084a7c6815 ""
   (generated)
-  "main.log"
   "main.pdf"
   "main.aux"
+  "main.log"

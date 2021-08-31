@@ -60,6 +60,12 @@ I.~Dagan, O.~Glickman, and B.~Magnini.
 \newblock The pascal recognising textual entailment challenge.
 \newblock In {\em Machine Learning Challenges Workshop}. Springer, 2005.
 
+\bibitem{dasgupta-etal-2018-evaluating}
+I.~Dasgupta, D.~Guo, A.~Stuhlm{\"u}ller, S.~J. Gershman, and N.~D. Goodman.
+\newblock Evaluating compositionality in sentence embeddings.
+\newblock In {\em Proceedings of Annual Meeting of the Cognitive Science
+  Society}, 2018.
+
 \bibitem{devlin2018bert}
 J.~Devlin, M.-W. Chang, K.~Lee, and K.~Toutanova.
 \newblock Bert: Pre-training of deep bidirectional transformers for language
@@ -86,6 +92,15 @@ N.~Gontier, K.~Sinha, S.~Reddy, and C.~Pal.
 E.~Goodwin, K.~Sinha, and T.~J. O'Donnell.
 \newblock Probing {{Linguistic Systematicity}}.
 \newblock {\em arXiv:2005.04315 [cs]}, Aug. 2020.
+
+\bibitem{gururangan-etal-2018-annotation}
+S.~Gururangan, S.~Swayamdipta, O.~Levy, R.~Schwartz, S.~Bowman, and N.~A.
+  Smith.
+\newblock Annotation artifacts in natural language inference data.
+\newblock In {\em Proceedings of the 2018 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 2 (Short Papers)}, pages 107--112, New Orleans,
+  Louisiana, June 2018. Association for Computational Linguistics.
 
 \bibitem{gururangan2018a}
 S.~Gururangan, S.~Swayamdipta, O.~Levy, R.~Schwartz, S.~R. Bowman, and N.~A.
@@ -180,10 +195,31 @@ R.~T. McCoy, E.~Pavlick, and T.~Linzen.
   in {{Natural Language Inference}}.
 \newblock {\em arXiv:1902.01007 [cs]}, June 2019.
 
+\bibitem{mollica-2020-composition}
+F.~Mollica, M.~Siegelman, E.~Diachek, S.~T. Piantadosi, Z.~Mineroff,
+  R.~Futrell, H.~Kean, P.~Qian, and E.~Fedorenko.
+\newblock Composition is the core driver of the language-selective network.
+\newblock {\em Neurobiology of Language}, 1(1):104--134, 2020.
+
 \bibitem{muggleton1991inductive}
 S.~Muggleton.
 \newblock Inductive logic programming.
 \newblock {\em New generation computing}, 8(4):295--318, 1991.
+
+\bibitem{naik-etal-2019-exploring}
+A.~Naik, A.~Ravichander, C.~Rose, and E.~Hovy.
+\newblock Exploring numeracy in word embeddings.
+\newblock In {\em Proceedings of the 57th Annual Meeting of the Association for
+  Computational Linguistics}, pages 3374--3380, Florence, Italy, July 2019.
+  Association for Computational Linguistics.
+
+\bibitem{nangia-bowman-2019-human}
+N.~Nangia and S.~R. Bowman.
+\newblock Human vs. muppet: A conservative estimate of human performance on the
+  {GLUE} benchmark.
+\newblock In {\em Proceedings of the 57th Annual Meeting of the Association for
+  Computational Linguistics}, pages 4566--4575, Florence, Italy, July 2019.
+  Association for Computational Linguistics.
 
 \bibitem{nie-etal-2020-adversarial}
 Y.~Nie, A.~Williams, E.~Dinan, M.~Bansal, J.~Weston, and D.~Kiela.
@@ -203,6 +239,13 @@ Y.~Nie, A.~Williams, E.~Dinan, M.~Bansal, J.~Weston, and D.~Kiela.
 P.~Parthasarathi, K.~Sinha, J.~Pineau, and A.~Williams.
 \newblock Sometimes {{We Want Translationese}}.
 \newblock {\em arXiv:2104.07623 [cs]}, Apr. 2021.
+
+\bibitem{poliak-etal-2018-hypothesis}
+A.~Poliak, J.~Naradowsky, A.~Haldar, R.~Rudinger, and B.~Van~Durme.
+\newblock Hypothesis only baselines in natural language inference.
+\newblock In {\em Proceedings of the Seventh Joint Conference on Lexical and
+  Computational Semantics}, pages 180--191, New Orleans, Louisiana, June 2018.
+  Association for Computational Linguistics.
 
 \bibitem{radford-etal-2019-language}
 A.~Radford, J.~Wu, R.~Child, D.~Luan, D.~Amodei, and I.~Sutskever.

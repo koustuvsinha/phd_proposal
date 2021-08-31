@@ -67,6 +67,16 @@
     '("xhdr" 1)
     "argmax"
     "tabitem"
+    "OR"
+    "RI"
+    "RII"
+    "RIII"
+    "RIV"
+    "RC"
+    "RU"
+    "RT"
+    "NP"
+    "RV"
     "Snospace")
    (LaTeX-add-labels
     "sec:cont1"

@@ -7,46 +7,48 @@ Repeated entry---line 1358 of file main.bib
  : @article{rogers2020
  :                    ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "liu2019b"
+Warning--I didn't find a database entry for "zhu2015aligning"
 Warning--empty journal in Evans2017-pu
-You've used 58 entries,
+You've used 64 entries,
             2118 wiz_defined-function locations,
-            789 strings with 15773 characters,
-and the built_in function-call counts, 23420 in all, are:
-= -- 2204
-> -- 1498
-< -- 20
-+ -- 592
-- -- 526
-* -- 1727
-:= -- 3920
-add.period$ -- 188
-call.type$ -- 58
-change.case$ -- 425
+            818 strings with 17294 characters,
+and the built_in function-call counts, 26554 in all, are:
+= -- 2522
+> -- 1671
+< -- 24
++ -- 660
+- -- 588
+* -- 1963
+:= -- 4400
+add.period$ -- 210
+call.type$ -- 64
+change.case$ -- 474
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 855
-empty$ -- 1537
-format.name$ -- 526
-if$ -- 4840
+cite$ -- 65
+duplicate$ -- 976
+empty$ -- 1754
+format.name$ -- 588
+if$ -- 5522
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 60
-newline$ -- 293
-num.names$ -- 122
-pop$ -- 486
+int.to.str$ -- 64
+missing$ -- 66
+newline$ -- 323
+num.names$ -- 134
+pop$ -- 545
 preamble$ -- 1
-purify$ -- 369
+purify$ -- 412
 quote$ -- 0
-skip$ -- 644
+skip$ -- 737
 stack$ -- 0
-substring$ -- 1047
-swap$ -- 246
-text.length$ -- 20
+substring$ -- 1246
+swap$ -- 293
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 228
+type$ -- 252
 warning$ -- 1
-while$ -- 179
-width$ -- 60
-write$ -- 631
+while$ -- 205
+width$ -- 66
+write$ -- 704
 (There was 1 error message)

@@ -72,6 +72,30 @@
 \renewcommand{\sectionautorefname}{\Snospace}
 \renewcommand{\subsectionautorefname}{\Snospace}
 
+% Typography: Define our models here
+% Original model
+\newcommand{\OR}{$\mathcal{M}_{\texttt{N}}$}
+% Random n=1
+\newcommand{\RI}{$\mathcal{M}_{\texttt{1}}$}
+% Random n=2
+\newcommand{\RII}{$\mathcal{M}_{\texttt{2}}$}
+% Random n=3
+\newcommand{\RIII}{$\mathcal{M}_{\texttt{3}}$}
+% Random n=4
+\newcommand{\RIV}{$\mathcal{M}_{\texttt{4}}$}
+% Random Corpus
+\newcommand{\RC}{$\mathcal{M}_{\texttt{UG}}$}
+% Random Uniform
+\newcommand{\RU}{$\mathcal{M}_{\texttt{UF}}$}
+% Random initialization
+\newcommand{\RT}{$\mathcal{M}_{\texttt{RI}}$}
+% No positional embedding
+\newcommand{\NP}{$\mathcal{M}_{\texttt{NP}}$}
+% 512 word randomization
+\newcommand{\RV}{$\mathcal{M}_{\texttt{512}}$}
+
+
+
 %\hypersetup{colorlinks=true,citecolor=citecol}
 %\DeclareMathOperator*{\argmax}{arg\,max}
 
@@ -364,6 +388,71 @@ We do find that models seem to have learned some syntactic information (we obser
 
 
 \subsection{Masked Language Modeling and the Distributional Hypothesis: \textit{Order word matters pre-training for little}}
+
+\subsubsection{Motivation}
+
+In our previous work, we uncovered the unsystematic language understanding mechanisms employed by large, pre-trained NLU models, as they accept permuted sentences in surprising quantity. This questions the claims recently proposed in the literature that these models ``rediscovers the classical NLP pipeline'', suggesting that BERT-based models have the necessary inductive bias to learn syntax representations from self-supervised pre-training. Thus, we investigate further on the fact that how much of language models (specifically, Masked Language Models (MLM)) success is attributed to its knowledge of semantic and syntactic abstractions of natural language \cite{sinha2021a}. To do so, we measure the effect of removing word order during pre-training, with the assumption that any sophisticated (English) NLP pipeline presumably dpeends on the important syntactic information conveyed by the order of words. Suprisingly, we find the most of MLM's high performance can in fact be explained by the ``distributional prior'' - its ability to model word co-occurrence statistics - rather than its ability to replicate the classical NLP pipeline.
+
+\subsubsection{Experiments \& Results}
+
+In our experiments, we pre-train MLMs~(RoBERTa, \citealt{liu2019b}) on various corpora with permuted word order while preserving some degree of distributional information, and examine their downstream performance.
+In our main experiments, we pre-train models on various permuted corpora , by randomly shuffling $n$-grams within the sentence (where $n \in \{1,2,3,4\}$).
+We also experiment with training MLMs without positional embeddings, making them entirely order agnostic,
+and with training on a corpus sampled from the source corpus's %uniform or
+unigram distribution, removing both distributional and word order information
+. We then evaluate these ``permuted'' models in a wide range of settings and compare with regularly-pre-trained models.
+
+Concretely, we use the original 16GB BookWiki corpus (the Toronto Books Corpus, \citealt{zhu2015aligning}, plus English Wikipedia) from \citet{liu2019b}. We denote the model trained on the original, un-modified BookWiki corpus as \OR{} (for ``natural''). We use two types of word order randomization methods: permuting words at the sentence level, and resampling words at the corpus level. Specifically, given a sentence $S$ containing $N$ words, we permute the sentence using a seeded random function $\mathcal{F}_1$ such that no word can remain in its original position. In total, there exist $(N-1)!$ possible permutations of a given sentence. We randomly sample a single permutation per sentence, to keep the total dataset size similar to the original. We extend this function to account for n-grams such as bigram, trigram and four-gram - i.e. we construct permuted sentences by randomly keeping n-grams unchanged. We train RoBERTa models on four permutation variants of BookWiki corpus, \RI, \RII, \RIII, \RIV\ for each $n$-gram value $ \in {\{1,2,3,4\}}$. More details on the process, along with the pseudo code and sample quality, are provided in our paper \cite{sinha2021a}. To further measure the effect of the distributional information, we construct baselines devoid of any distributional signal. Specifically, we train RoBERTa on a variants of BookWiki Corpus, \RC\, where all unigrams are sampled from the corpus according to their frequencies, removing the co-occurrence information (i.e destroying all sentence and paragraph information). We also inspect the usefulness of word order by training a RoBERTa model without positional embedding (\NP\ ) and inspect the strength of inductive bias only by using a randomly initialized RoBERTa model (\RT\ ).
+
+\blankline
+
+\xit{How does word order shuffled pre-trained models behave in downstream tasks?}
+
+In order to measure the effect of word order shuffled pre-training, we compare the models in the GLUE and PAWS downstream tasks. The GLUE \cite{wang2018glue} benchmark is a collection of 9 datasets for evaluating natural language understanding systems, of which we use Corpus of Linguistic Acceptability \cite[CoLA,][]{cola_warstadt2019neural}, Stanford Sentiment Treebank \cite[SST,][]{sst2_socher2013recursive}, Microsoft Research Paragraph Corpus \cite[MRPC,][]{mrpc_dolan2005automatically}, Quora Question Pairs (QQP)\footnote{\href{http://data.quora.com/First-Quora-Dataset-Release-Question-Pairs}{http://data.quora.com/First-Quora-Dataset-Release-Question-Pairs}}, Multi-Genre NLI \cite[MNLI,][]{williams-etal-2018-broad}, Question NLI \cite[QNLI,][]{qnli_rajpurkar2016squad, qnli_2_demszky2018transforming}, Recognizing Textual Entailment \cite[RTE,][]{rte1_dagan2005pascal, rte2_haim2006second, rte3_giampiccolo2007third, rte5_bentivogli2009fifth}. The PAWS task \cite{zhang2019paws} consists of predicting whether a given pair of sentences are paraphrases. This dataset contains both paraphrase and non-paraphrase pairs with high lexical overlap, which are generated by controlled word swapping and back translation. Since even a small word swap and perturbation can drastically modify the meaning of the sentence, we hypothesize the randomized pre-trained models will struggle to attain a high performance on PAWS. We fine-tune all models according to RoBERTa best practices.
+
+We observe that word order shuffled models perform remarkably close to the natural word order pre-trained model in case of all tasks. \RI, the model pre-trained on completely shuffled sentences, is on average only $3.3$ points lower than \OR\ on the accuracy-based tasks,
+and within $0.3$ points of \OR\ on QQP.
+Even on PAWS, which was designed to require knowledge of word order, \RI\ is within $5$ points of \OR.
+Randomizing $n$-grams instead of words during pre-training results in a (mostly) smooth increase on these tasks: \RIV, the model pre-trained on shuffled $4$-grams, trails \OR\ by only $1.3$ points on average, and even comes within $0.2$ points of \OR\ on PAWS. We observe a somewhat different pattern on CoLA, where \RII\ does almost as well as \OR\ and outperforms \RIII\ and \RIV, though we also observe very high variance across random seeds for this task.
+Crucially, we observe that \RI\ outperforms \NP\ by a large margin. This shows that positional embeddings are critical for learning, even when the word orders themselves are not natural.
+Overall, these results confirm our hypothesis that RoBERTa's strong performance on downstream tasks can be explained for a large part by the distributional prior.
+
+
+\xit{Where does the models learn word order, in pre-training or in fine-tuning?}
+
+There are two possible explanations for the above results: either the tasks do not need word order information to be solved, or any necessary word order information can be acquired during fine-tuning.
+To examine this question, we permute the word order during fine-tuning as well. Concretely, for each task, we construct a unigram order-randomized version of each example in the fine-tuning training set using $\mathcal{F}_1$. We then fine-tune our pre-trained models on this shuffled data and evaluate task performance.
+
+We observe for some taks (QQP, QNLI, MNLI, SST-2 and MRPC) the accuracy is still significantly high when fine-tuned on shuffled data, suggesting that purely lexical information is quite useful on its own. On the other hand, for the rest of the datasets (CoLA, PAWS, RTE) we observe noticable drops in accuracy when fine-tuned on shuffled data and tested on normal word order data, both for \OR\ and for shuffled models \RI\ through \RIV.
+This suggests both that word order information is useful for these tasks, and that shuffled models must be learning to use word order information during fine-tuning. Having word order during fine-tuning is especially important for achieving high accuracy on CoLA, RTE (cf. \citealt{pham2020}), as well as PAWS,
+suggesting that these tasks are the most word order reliant.
+
+
+\xit{How does parametric probes behave when evaluated on word order shuffled pre-trained models?}
+
+Since majority of the works investigating syntax representation use probes, we also employ similar mechanisms to test whether these probes are capable to differentiate the pre-trained models trained on shuffled word order from natural word order. In case of parametric probes (i.e probes having a learnable component), we use the Pareto optimality probing framework \citet{pimentel2020b} to investigate syntax using Dependency Parsing as an auxilliary task. By investigating the Dependency parsing task on two datasets (Penn Tree Bank and Universal Dependencies EWT), we observe that the results follow a similar trend as our downstream fine-tuning results: \RI $\approx$ \RC < \RII < \RIII < \RIV < \OR\ (\autoref{tab:pareto_dependency}).
+Surprisingly, \RC\ probing scores seem to be somewhat better than \RI\ (though with large overlap in their standard deviations), even though \RC\ cannot learn information related to either word order or co-occurrence patterns.
+
+We also investigate the suite of 10 probing tasks~\cite{conneau-etal-2018-cram} available in the SentEval toolkit~\cite{conneau-kiela-2018-senteval}. This suite contains a range of semantic, syntactic and surface level tasks. \citet{jawahar2019a} utilize this set of probing tasks to arrive at the conclusion that %that BERT-based models naturally learn syntax -
+``\textit{BERT embeds a rich hierarchy of linguistic signals: surface information at the bottom, syntactic information in the middle, semantic information at the top}''. We re-examine this hypothesis by using the same probing method and comparing against models trained with random word order. We observe that the \OR\ pre-trained model scores better than the unnatural word order models for only one out of five semantic tasks and in none of the lexical tasks. However, \OR\ does score higher for two out of three syntactic tasks. Even for these two syntactic tasks, the gap among \RC\ and \OR\ is much higher than \RI\ and \OR. These results show that while natural word order is useful for at least some probing tasks, the distributional prior of randomized models alone is enough to achieve a reasonably high accuracy on syntax sensitive probing.
+
+
+\xit{Is the effect similar in case of non-parametric probing?}
+
+From our results so far, it is unclear whether parametric probing meaningfully distinguishes models trained with corrupted sentence order from those trained with normal orders. Thus, we also investigate non-parametric probes~\cite{linzen-etal-2016-assessing,marvin-linzen-2018-targeted,gulordava2018} using the formulation of \citet{goldberga} and \citet{wolf2019}. Since these probes do not contain any learnable parameters, they are called ``non-parametric''. For each probe, the objective is for a pre-trained model to provide higher probability to a grammatically correct word than to an incorrect one.
+
+We observe for the \citet{linzen-etal-2016-assessing} and \citet{marvin-linzen-2018-targeted} datasets that the gap between the \OR\ and randomization models is relatively large.
+The \citet{gulordava2018} dataset shows a smaller gap between \OR\ and the randomization models. While some randomization models (e.g., \RII, \RIII, and \RIV) performed quite similarly to \OR\ according to the parametric probes, they all are markedly worse than \OR\ according to the non-parametric ones. This suggests that non-parametric probes identify certain syntax-related modeling failures
+that parametric ones do not.
+
+\subsubsection{Discussion \& Conclusion}
+
+The assumption that word order information is crucial for any classical NLP pipeline (especially for English) is deeply ingrained in our understanding of syntax itself \citep{chomsky1957syntactic}: without order, many linguistic constructs are undefined. % (e.g.\ dependency or constituency parses would no longer be syntactic trees, what would sentences be but mere lists of words).
+Our fine-tuning results in \autoref{subsec:glue_results} and parametric probing results in \autoref{subsec:param_probing}, however, suggests that MLMs do not need to rely much on word order to achieve high accuracy, bringing into question previous claims that they learn a ``classical NLP pipeline''. These results should hopefully encourage the development of better, more challenging tasks that require sophisticated reasoning, and harder probes to narrow down what exact linguistic information is present in the representations learned by our models.
+
+
+
+
 
 \section{Future Work \& Timeline}
 
