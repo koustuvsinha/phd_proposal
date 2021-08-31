@@ -63,6 +63,7 @@
     '("va" 0)
     '("vect" 1)
     '("matr" 1)
+    '("xit" 1)
     '("xhdr" 1)
     "argmax"
     "tabitem"

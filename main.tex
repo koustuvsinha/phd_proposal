@@ -31,6 +31,8 @@
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \newcommand{\xhdr}[1]{{\noindent\bfseries #1}.}
+\newcommand{\xit}[1]{{\noindent\textbf{\textit{#1}}}}
+
 
 \newcommand{\matr}[1]{\mathbf{#1}}
 \newcommand{\vect}[1]{\mathbf{#1}}
@@ -148,18 +150,7 @@ An important challenge in NLU is to develop benchmarks which can precisely test 
 
 
 
-Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (Compositional Language Understanding with Text-based Relational Reasoning) - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a alearning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
-
-\subsection{Dataset Design}
-
-In order to design the CLUTRR benchmark, we build upon classic ILP task of inferring kinship relations. For example, given the facts that \textit{``Alice is Bob's mother''} and \textit{``Jim is Alice's father''}, one can infer with reasonable certainty that \textit{``Jim is Bob's grandfather''}. While this example may appear trivial, it is challenging task to design models that can learn from data to \textit{induce} the logical rules necessary to make such inferences, and it is even more challenging to design models that can systematically generalize by composing these induced rules. Thus, the core idea behind CLUTRR benchmark suite is the following: given a natural language story describing a set of kinship relations, the goal is to infer the relationship between two entities, whose relationship is \textit{not} explicitly stated in the story. To generate these stories, we first design a knowledge base (KB) with rules specifying how kinship relations resolve, and we use the following steps to create semi-synthetic stories based on this knowledge base:
-
-\begin{itemize}
-        \item \textbf{Step 1.} Generate a random kinship graph that satisfies the rules in our KB.
-        \item \textbf{Step 2.} Sample a target fact (i.e relation) to predict from the kinship graph
-        \item \textbf{Step 3.} Apply backward chaining to sample a set of $k$ facts that can prove the target relation (and optionally sample a set of ``distracting'' or ``irrelevant'' noise facts)
-        \item \textbf{Step 4.} Convert the sampled facts into a natural language story through pre-specified text templates and crowd-sourced paraphrasing.
-\end{itemize}
+Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (\textbf{C}ompositional \textbf{L}anguage \textbf{U}nderstanding with \textbf{T}ext-based \textbf{R}elational \textbf{R}easoning) - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a alearning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 \begin{center}
@@ -169,6 +160,16 @@ In order to design the CLUTRR benchmark, we build upon classic ILP task of infer
 \label{fig:clutrr_data_design}
 \end{wrapfigure}
 
+\subsection{Dataset Design}
+
+In order to design the CLUTRR benchmark, we build upon classic ILP task of inferring kinship relations \cite{hinton1986learning,muggleton1991inductive}. For example, given the facts that \textit{``Alice is Bob's mother''} and \textit{``Jim is Alice's father''}, one can infer with reasonable certainty that \textit{``Jim is Bob's grandfather''}. While this example may appear trivial, it is challenging task to design models that can learn from data to \textit{induce} the logical rules necessary to make such inferences, and it is even more challenging to design models that can systematically generalize by composing these induced rules. Thus, the core idea behind CLUTRR benchmark suite is the following: given a natural language story describing a set of kinship relations, the goal is to infer the relationship between two entities, whose relationship is \textit{not} explicitly stated in the story. To generate these stories, we first design a knowledge base (KB) with rules specifying how kinship relations resolve, and we use the following steps to create semi-synthetic stories based on this knowledge base:
+
+\begin{itemize}
+        \item \textbf{Step 1.} Generate a random kinship graph that satisfies the rules in our KB.
+        \item \textbf{Step 2.} Sample a target fact (i.e relation) to predict from the kinship graph
+        \item \textbf{Step 3.} Apply backward chaining to sample a set of $k$ facts that can prove the target relation (and optionally sample a set of ``distracting'' or ``irrelevant'' noise facts)
+        \item \textbf{Step 4.} Convert the sampled facts into a natural language story through pre-specified text templates and crowd-sourced paraphrasing.
+\end{itemize}
 
 
 Essentially, we use first order logic (FOL) to generate $k$ number of provable facts and then apply natural language layer on top of it to create a semi-synthetic benchmark. The number $k$ denotes the difficulty of the example. We use Amazon Mechanical Turk (AMT) crowd workers to annotate logical facts into narratives. Since workers are given a set of facts logical facts to work from, they are able to combine and split multiple facts across separate sentences and construct diverse narratives (Figure \ref{fig:clutrr_composition}).
@@ -293,7 +294,7 @@ We observed all models to perform substantially worse on probing tasks, with sta
 
 \xhdr{\textit{Measuring Systematic Generalization in Neural Proof Generation with Transformers}} \cite{gontier2020} In this work, we extend our systematicity analysis to language generation using Transformer Language Models (TLMs). To analyze systematicity, we re-use our CLUTRR benchmark to conduct proof generation using forward and backward chaining concepts in first-order logic (FOL). For example, a set of facts in CLUTRR could be of the form: \textit{``Nat is the granddaughter of Betty'', ``Greg is the brother of Nat'', ``Flo is the sister of Greg''}, where the relationship among \textit{Flo} and \textit{Betty} can be inferred using logical deduction (\textit{``Flo is the granddaughter of Betty''}). In this example, we further task the TLM to generate a plausible proof along with the answer : \textit{``Since Flo is the sister of Greg, and Nat is the granddaughter of Betty, and Greg is the brother of Nat, then Flo is the granddaugher to Betty''}.
 
-In our work, we evaluate two popular proof resolution strategies used in Inductive Logic Programming \CITE[Evans], \textit{forward} and \textit{backward} chaining resolution paths, expressed in natural language. We evaluate the validity of the proof and the answer accuracy on various settings: whether the TLM is tasked to generated forward or backward proofs, whether the TLM is provided with a gold proof, or when the TLM is neither provided nor tasked to generate a proof. We train a Transformer \CITE[Vaswani] model on scratch on the training set, and we observe that TLMs are only able to generalize to unseen proof steps in case of \textit{interpolation}, that is when stories of lesser difficulties than training are provided during inference. In case of \textit{extrapolation}, we observe similar generalization issues as in CLUTRR, where models fail to generalize beyond the difficulty trained. In terms of proof understanding, we observed backward chaining proofs are better understood by the model than forward chaining for the TLMs, mostly due to the fact that backward chaining proofs always begings with the target answer first, allowing the model to exploit the positional cues. Surprisingly, we found the no proof situation to have better answer accuracy than in the case of proof generation - alluding to the fact that proof generation might be actually deterioriating the model performance as it requires more involved reasoning.
+In our work, we evaluate two popular proof resolution strategies used in Inductive Logic Programming \cite{Evans2017-pu} , \textit{forward} and \textit{backward} chaining resolution paths, expressed in natural language. We evaluate the validity of the proof and the answer accuracy on various settings: whether the TLM is tasked to generated forward or backward proofs, whether the TLM is provided with a gold proof, or when the TLM is neither provided nor tasked to generate a proof. We train a Transformer \cite{vaswani2017attention} model on scratch on the training set, and we observe that TLMs are only able to generalize to unseen proof steps in case of \textit{interpolation}, that is when stories of lesser difficulties than training are provided during inference. In case of \textit{extrapolation}, we observe similar generalization issues as in CLUTRR, where models fail to generalize beyond the difficulty trained. In terms of proof understanding, we observed backward chaining proofs are better understood by the model than forward chaining for the TLMs, mostly due to the fact that backward chaining proofs always begings with the target answer first, allowing the model to exploit the positional cues. Surprisingly, we found the no proof situation to have better answer accuracy than in the case of proof generation - alluding to the fact that proof generation might be actually deterioriating the model performance as it requires more involved reasoning.
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 \begin{center}
@@ -309,14 +310,60 @@ Finally, in proof generation, we found forward-chaining generation is easier for
 \section{Contribution 2: Probing systematicity of pre-trained models using word order}
 \label{sec:cont2}
 
-% UNLI
-% Unnatural Pre-training
+As we uncover the systematicity issues in state-of-the-art NLU models, one question emerges - does the unsystematic behaviour of NLU models stem from their inability to understand syntax? Since we use artificial and semi-synthetic datasets in all our prior works, having a rudimentary variation of syntax, our  findings naturally raise questions on the actual syntax understanding capabilities of NLU models. Of late, we have witnessed a steady increase in performance of large scale pre-trained Transformer-based \cite{vaswani-etal-2017-attention} models---such as RoBERTa \cite{liu-et-al-2019-roberta}, BART \cite{lewis-etal-2020-bart}, and GPT-2 and -3 \cite{radford-etal-2019-language,brown-etal-2020-gpt3}--on many NLU tasks \cite{wang-etal-2018-glue, wang-etal-2019-superglue}. The success of these models has prompted serious investigation, leading claims that a language modeling (LM) objective can capture syntactic information \cite{hewitt-manning-2019-structural,jawahar-etal-2019-bert, warstadt-bowman-2020-can, wu-etal-2020-perturbed}, with their self-attention layers being capable of surprisingly effective learning \cite{rogers2020}.
 
-Here, we talk about two related contributions, UnNatural Language Inference \cite{sinha2021} and pretraining with unnatural languages \cite{sinha2021a}.
+In the following section, we discuss two related works \cite{sinha2021,sinha2021a} on testing systematicity of syntax understanding of NLU models using the proxy of \textit{word order}.
 
 \subsection{UnNatural Language Inference}
 
-\subsection{Pre-training with Unnatural Languages}
+\subsubsection{Motivation}
+
+In this contribution, \cite{sinha2021} we revisit the notion of ``knowing syntax'' under the lens of systematicity. A natural and common perspective from many formal theories of linguistics (e.g., \cite{chomsky-1995-minimalist}) is that knowing a natural language requires that you know the syntax of that language. Knowing the syntax of a sentence means being sensitive to the \textit{order of the words} in that sentence (among other things).  Humans are sensitive to word order, so clearly, ``language is not merely a bag of words'' \cite[p.156]{harris-1954-distributional}.
+Moreover, it is easier for us to identify or recall words presented in canonical orders than in disordered, ungrammatical sentences; this phenomenon is called the \textit{``sentence superiority effect''} (\cite{cattell-1886-time, scheerer1981early, toyota-2001-changes, baddeley-etal-2009-working, snell-grainger-2017-sentence, snell2019word, wen-etal-2019-parallel}, i.a.).
+In our estimation then, if one wants to claim that  a model ``knows syntax'', then they should minimally show that the model is sensitive to word order (at least for e.g. English or Mandarin Chinese).
+
+Generally, knowing the syntax of a sentence is taken to be a prerequisite for understanding what that sentence means \cite{heim-kratzer-1998-semantics}.
+Models should have to know the syntax first then, if performing any particular NLU task that genuinely requires a humanlike understanding of meaning (cf. \cite{bender-koller-2020-climbing}).
+Thus, if our models are as good at NLU as our current evaluation methods suggest, we should expect them to be sensitive to word order (see \autoref{tab:example}).  We find, based on a suite of permutation metrics, that they are not.
+
+\subsubsection{Experiments and Results}
+
+We focus here on textual entailment, one of the hallmark tasks used to measure how well models understand language \cite{condoravdi-etal-2003-entailment, dagan-etal-2005-pascal}. This task, often also called Natural Language Inference (NLI; \cite{bowman-etal-2015-large}, i.a.), typically consists of two sentences: a premise and a hypothesis. The objective is to predict whether the premise entails the hypothesis, contradicts it, or is neutral with respect to it.
+
+\xhdr{Main findings} We find rampant word order insensitivity in purportedly high performing NLI models. For nearly all premise-hypothesis pairs, \textbf{there are many permuted examples that fool the models} into providing the correct prediction. In case of MNLI, for example, the current state-of-the-art of 90.5\% can be increased to \textbf{98.7}\% merely by permuting the word order of test set examples. We even find drastically increased cross-dataset generalization when we reorder words. This is not just a matter of chance---we show that the model output probabilities are significantly different from uniform.
+We verify our findings with three popular English NLI datasets---SNLI \citep{bowman-etal-2015-large}, MultiNLI \citep{williams-etal-2018-broad} and ANLI \citep{nie-etal-2020-adversarial})---
+and one Chinese one, OCNLI \cite{hu-etal-2020-ocnli}. It is thus less likely that our findings result from some quirk of English or a particular tokenization strategy.
+We also observe the effect for various transformer architectures pre-trained on language modeling (BERT, RoBERTa, DistilBERT), and non-transformers, including a ConvNet, an InferSent model, and a BiLSTM.
+
+\xit{How to construct permuted examples?}
+
+For any sentence pair in the NLI dataset, we use a permutation function $\mathcal{F}$ which essentially permutes the word order of a sentence with the restriction that no words maintain their original position. Thus, if a sentence $S$ contains $w$ words, then the total number of available permutations of $S$ are $(w-1)!$. This allows us to inspect \textit{multiple} permutations per hypothesis-premise pair. Concretely, we always test using 100 unique permutations for each hypothesis-premise pair in the NLI dataset. If a given NLU model (RoBERTa/BART/DistilBERT/InferSent/ConvNet/BiLSTM) assigns the gold label to \textit{any one} permutation of an hypothesis-premise pair, we mark that example as correct to compute Maximum Accuracy, $\Omega_{\text{max}}$. Now, this metric is strict as it does not allow for any permutation to be processed by the NLU model. We further relax this metric to $\Omega_{\text{rand}}$, where a hypothesis-premise is marked correct if more than 1/3rd of its permutations are assigned the gold label by the model. Going down this route, we can define metrics until $\Omega_{1.0}$, where \textit{all} permutations of an example are assigned the gold label. A graphical representation of the metrics are provided in Figure. Additionally, we also compute the probability of acceptance given a base condition: how many permutations are assigned gold label when the example satisfies this base condition. We use the original model accuracy as the base condition - allowing us to compute $P^{c}$ (probability of correctness)/$P^{f}$ (probability of flips) - given the example is originally predicted correctly/incorrectly by the model, what is the probability of its permutations to be assigned the gold label.
+
+\xit{How many permuted examples does the model accept?}
+
+We find $\Omega_{\text{max}}$ is very high for models trained and evaluated on MNLI (in-domain generalization), reaching \textbf{98.7\%} on MNLI dev. and test sets (in RoBERTa, compared to $\mathcal{A}$ of 90.6\% (\autoref{table:main}). Recall, human accuracy is approximately 92\% on MNLI dev.,  \citealt{nangia-bowman-2019-human}). This shows that there exists at least one permutation (usually many more) for almost all examples in $D_{\text{test}}$ such that model $M$ predicts the gold label. We also observe high $\Omega_{\text{rand}}$ at 79.4\%, showing that there are many examples for which the models outperform even a random baseline in accepting permuted sentences (see \autoref{app_sec:threshold} for more $\Omega$ values.)
+
+Evaluating out-of-domain generalization with ANLI dataset splits resulted in an $\Omega_{\text{max}}$ value that is notably higher than $\mathcal{A}$ (89.7\% $\Omega_{\text{max}}$ for RoBERTa compared to 45.6\% $\mathcal{A}$). As a consequence, we encounter many \textit{flips}, i.e., examples where the model is unable to predict the gold label, but at least one permutation of that example is able to. However, recall this analysis expects us to know the gold label upfront, so this test can be thought of as running a word-order probe test on the model until the model predicts the gold label (or give up by exhausting our set of $q$ permutations). For out-of-domain generalization, $\Omega_{\text{rand}}$ decreases considerably (36.4\% $\Omega_{\text{rand}}$ on A1), which means fewer permutations are accepted by the model. Next, recall that a classic bag-of-words model would have $\mathcal{P}^c=100$ and $\mathcal{P}^f=0$. No model performs strictly like a classic bag of words although they do perform somewhat BOW-like ($\mathcal{P}^c >> \mathcal{P}^f$ for all test splits, \autoref{fig:comb_plot}).
+We find this BOW-likeness to be higher for certain non-Transformer models, (InferSent) as they exhibit higher $\mathcal{P}^c$ (84.2\% for InferSent compared to 70.7\% for RoBERTa on MNLI). We extended the experiments to the Original Chinese NLI dataset \citep[OCNLI]{hu-etal-2020-ocnli}, and re-used the pre-trained RoBERTa-Large and InferSent (non-Transformer) models on OCNLI. Our findings are similar to the English results, thereby suggesting that the phenomenon is not just an artifact of English text or tokenization.
+
+
+\xit{How confident are models in accepting permuted examples?}
+
+The phenomenon we observe would be of less concern if the correct label prediction was just an outcome of chance, which could occur when the entropy of the log probabilities of the model output is high (suggesting uniform probabilities on entailment, neutral and contradiction labels). We first investigate the model probabilities for the Transformer-based models on the permutations that lead to the correct answer in \autoref{fig:all_entropy}. We find overwhelming evidence that model confidences on in-distribution datasets (MNLI, SNLI) are highly skewed, resulting in low entropy, and it varies among different model types. BART proves to be the most skewed Transformer-based model. This skewness is not a property of model capacity, as we observe DistilBERT log probabilities to have similar skewness as RoBERTa (large) model, while exhibiting lower model accuracy, $\Omega_{\text{max}}$, and $\Omega_{\text{rand}}$.
+
+\xit{How does humans perform on permuted examples?}
+
+We expect humans to struggle with unnatural data, given our intuitions and the sentence superiority findings (but see \citealt{mollica-2020-composition}). To test this, we presented two experts in NLI (one a linguist) with permuted sentence pairs to label.\footnote{Concurrent work by \newcite{gupta-etal-2021-bert} found that untrained crowdworkers accept NLI examples that have been subjected to different kinds of perturbations at roughly most frequent class levels---i.e., only 35\% of the time.} Concretely, we draw equal number of examples from MNLI Matched dev set (100 examples where RoBERTa predicts the gold label, $D^c$ and 100 examples where it fails to do so, $D^f$), and then permute these examples using $\mathcal{F}$. The experts were given no additional information (recall that it is common knowledge that NLI is a roughly balanced 3-way classification task). Unbeknownst to the experts, all permuted sentences in the sample were actually accepted by the RoBERTa (large) model (trained on MNLI dataset). We observe that the experts performed much worse than RoBERTa (58.1\% and 37.8\%), although their accuracy was a bit higher than random. We also find that for both experts, accuracy on permutations from $D^c$ was higher than on $D^f$, which verifies findings that showed high word overlap can give hints about the ground truth label \citep{dasgupta-etal-2018-evaluating, poliak-etal-2018-hypothesis, gururangan-etal-2018-annotation, naik-etal-2019-exploring}.
+
+
+\subsubsection{Discussion}
+
+We show that state-of-the-art models do not rely on sentence structure the way we think they should: NLI models (Transformer-based models, RNNs, and ConvNets) are largely insensitive to permutations of word order that corrupt the original syntax. This raises questions about the extent to which such systems understand ``syntax'', and highlights the unnatural language understanding processes they employ.
+We also show that reordering words can cause models to flip classification labels. % future work could additionally explore the relationship between permutation and deletion.
+We do find that models seem to have learned some syntactic information (we observed a correlation between preservation of abstract POS neighborhood information and rate of acceptance by models, please refer to the paper for more details) but these results do not discount the high rates of permutation acceptance, and require further verification. Coupled with the finding that humans cannot perform UNLI at all well, the high rate of permutation acceptance that we observe leads us to conclude that current models do not yet ``know syntax'' in the fully systematic and humanlike way we would like them to.
+
+
+\subsection{Masked Language Modeling and the Distributional Hypothesis: \textit{Order word matters pre-training for little}}
 
 \section{Future Work \& Timeline}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 AUG 2021 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 AUG 2021 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1108,25 +1108,25 @@ Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
 \minrowclearance=\skip94
 )
 
-./main.tex:70: LaTeX Error: Command \sectionautorefname undefined.
+./main.tex:72: LaTeX Error: Command \sectionautorefname undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 \renewcommand{\sectionautorefname}
+l.72 \renewcommand{\sectionautorefname}
                                        {\Snospace}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./main.tex:71: LaTeX Error: Command \subsectionautorefname undefined.
+./main.tex:73: LaTeX Error: Command \subsectionautorefname undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 \renewcommand{\subsectionautorefname}
+l.73 \renewcommand{\subsectionautorefname}
                                           {\Snospace}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1134,23 +1134,23 @@ If that doesn't work, type  X <return>  to quit.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 82.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 84.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Info: Redefining \microtypecontext on input line 82.
+LaTeX Info: Redefining \microtypecontext on input line 84.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1198,18 +1198,18 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-./main.tex:82: Bad mathchar (32768).
+./main.tex:84: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.82 \begin{document}
+l.84 \begin{document}
                      
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
 
-./main.tex:82: Bad mathchar (32768).
+./main.tex:84: Bad mathchar (32768).
 <to be read again> 
                    \relax 
-l.82 \begin{document}
+l.84 \begin{document}
                      
 A mathchar number must be between 0 and 32767.
 I changed this one to zero.
@@ -1278,7 +1278,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 84
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 86
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
@@ -1288,19 +1288,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 84
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 86
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 84
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 86
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 84
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 86
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxztmcm.fd
@@ -1317,12 +1317,12 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
-LaTeX Font Info:    Try loading font information for OMX+yhex on input line 84.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
+LaTeX Font Info:    Try loading font information for OMX+yhex on input line 86.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/yhmath/OMXyhex.fd
@@ -1330,10 +1330,10 @@ File: OMXyhex.fd
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
 
-./main.tex:88: Undefined control sequence.
-l.88 ...ural models, especially Transformers \CITE
+./main.tex:90: Undefined control sequence.
+l.90 ...ural models, especially Transformers \CITE
                                                   , a class of multi-head se...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1341,8 +1341,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:88: Undefined control sequence.
-l.88 ...s benchmarks and datasets, with BERT \CITE
+./main.tex:90: Undefined control sequence.
+l.90 ...s benchmarks and datasets, with BERT \CITE
                                                    being one of the most pop...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1350,8 +1350,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:88: Undefined control sequence.
-l.88 ...th surprising, near-human efficiency \CITE
+./main.tex:90: Undefined control sequence.
+l.90 ...th surprising, near-human efficiency \CITE
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1359,8 +1359,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:90: Undefined control sequence.
-l.90 ...eech tagging, entity recognition etc \CITE
+./main.tex:92: Undefined control sequence.
+l.92 ...eech tagging, entity recognition etc \CITE
                                                   . BERT has also been credi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1368,8 +1368,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:90: Undefined control sequence.
-l.90 ...some level of semantic understanding \CITE
+./main.tex:92: Undefined control sequence.
+l.92 ...some level of semantic understanding \CITE
                                                   , and contains relevant in...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1377,8 +1377,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:90: Undefined control sequence.
-l.90 ... about relations and world knowledge \CITE
+./main.tex:92: Undefined control sequence.
+l.92 ... about relations and world knowledge \CITE
                                                   . All of these results ind...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1386,8 +1386,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:92: Undefined control sequence.
-l.92 ...f the sentences in which they appear \CITE
+./main.tex:94: Undefined control sequence.
+l.94 ...f the sentences in which they appear \CITE
                                                   [Fodor]. As an illustratio...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1395,8 +1395,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:92: Undefined control sequence.
-l.92 ...systems to such adversarial examples \CITE
+./main.tex:94: Undefined control sequence.
+l.94 ...systems to such adversarial examples \CITE
                                                   . More so, there is strong...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1404,8 +1404,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:92: Undefined control sequence.
-l.92 ...ning and generalization capabilities \CITE
+./main.tex:94: Undefined control sequence.
+l.94 ...ning and generalization capabilities \CITE
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1416,100 +1416,87 @@ and I'll forget about whatever was undefined.
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 97.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 99.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 <images/clutrr_text.png, id=9, 1250.6725pt x 503.8825pt>
 File: images/clutrr_text.png Graphic file (type png)
 <use images/clutrr_text.png>
-Package pdftex.def Info: images/clutrr_text.png  used on input line 143.
+Package pdftex.def Info: images/clutrr_text.png  used on input line 145.
 (pdftex.def)             Requested size: 232.68602pt x 93.74731pt.
  [2]
+Underfull \hbox (badness 2894) in paragraph at lines 153--154
+[][]\OT1/ptm/m/n/12 (+20) Thus, in-spired by the clas-sic AI chal-
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 153--154
+\OT1/ptm/m/n/12 (+20) lenge of in-duc-tive logic pro-gram-ming, we
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 153--154
+\OT1/ptm/m/n/12 (+20) to ex-plic-itly test an NLU model's abil-ity
+ []
+
 <images/clutrr_dataset_proof.png, id=15, 688.5725pt x 448.67625pt>
 File: images/clutrr_dataset_proof.png Graphic file (type png)
 <use images/clutrr_dataset_proof.png>
-Package pdftex.def Info: images/clutrr_dataset_proof.png  used on input line 16
-6.
+Package pdftex.def Info: images/clutrr_dataset_proof.png  used on input line 15
+7.
 (pdftex.def)             Requested size: 232.68602pt x 151.6168pt.
- [3 <./images/clutrr_text.png> <./images/clutrr_dataset_proof.png>]
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 16
+3.
+
+[3 <./images/clutrr_text.png> <./images/clutrr_dataset_proof.png>]
 <images/clutrr_composition.png, id=21, 702.625pt x 447.6725pt>
 File: images/clutrr_composition.png Graphic file (type png)
 <use images/clutrr_composition.png>
-Package pdftex.def Info: images/clutrr_composition.png  used on input line 180.
+Package pdftex.def Info: images/clutrr_composition.png  used on input line 181.
 
 (pdftex.def)             Requested size: 232.68602pt x 148.25153pt.
 
-Underfull \hbox (badness 1365) in paragraph at lines 196--197
+Underfull \hbox (badness 1365) in paragraph at lines 197--198
 []\OT1/ptm/m/n/12 (+20) Thus, in-stead of sim-ply col-lect-ing para-
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 209.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 210.
 <images/clutrr_sys_gen_234.png, id=22, 727.0362pt x 500.5902pt>
 File: images/clutrr_sys_gen_234.png Graphic file (type png)
 <use images/clutrr_sys_gen_234.png>
-Package pdftex.def Info: images/clutrr_sys_gen_234.png  used on input line 216.
+Package pdftex.def Info: images/clutrr_sys_gen_234.png  used on input line 217.
 
 (pdftex.def)             Requested size: 232.68602pt x 160.20741pt.
 [4 <./images/clutrr_composition.png>]
-
-Package natbib Warning: Citation `hochreiter1997long' on page 5 undefined on in
-put line 223.
-
-
-Package natbib Warning: Citation `cho2014learning' on page 5 undefined on input
- line 223.
-
-
-Package natbib Warning: Citation `santoro2017simple' on page 5 undefined on inp
-ut line 223.
-
-
-Package natbib Warning: Citation `hudson2018compositional' on page 5 undefined 
-on input line 223.
-
-
-Package natbib Warning: Citation `devlin2018bert' on page 5 undefined on input 
-line 223.
-
-
-Package natbib Warning: Citation `Velickovic2017-mh' on page 5 undefined on inp
-ut line 223.
-
-
-Package natbib Warning: Citation `lake2017generalization' on page 5 undefined o
-n input line 226.
-
-
-Package natbib Warning: Citation `2018arXiv181107017S' on page 5 undefined on i
-nput line 226.
-
 <images/clutrr_noise.png, id=30, 707.64375pt x 382.42876pt>
 File: images/clutrr_noise.png Graphic file (type png)
 <use images/clutrr_noise.png>
-Package pdftex.def Info: images/clutrr_noise.png  used on input line 244.
+Package pdftex.def Info: images/clutrr_noise.png  used on input line 245.
 (pdftex.def)             Requested size: 232.68602pt x 125.7467pt.
-[5 <./images/clutrr_sys_gen_234.png> <./images/clutrr_noise.png>]
-(./tables/table_amt_robust.tex
+ [5 <./images/clutrr_sys_gen_234.png> <./images/clutrr_noise.png>] (./tables/ta
+ble_amt_robust.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
-) [6] (./tables/table_probing.tex
+) [6]
+(./tables/table_probing.tex
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1582,37 +1569,119 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ) [7]
-./main.tex:296: Undefined control sequence.
-l.296 ...used in Inductive Logic Programming \CITE
-                                                  [Evans], \textit{forward} ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:296: Undefined control sequence.
-l.296 ...ate a proof. We train a Transformer \CITE
-                                                  [Vaswani] model on scratch...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 <images/proof_sys_gen.pdf, id=44, 602.25pt x 356.33125pt>
 File: images/proof_sys_gen.pdf Graphic file (type pdf)
 <use images/proof_sys_gen.pdf>
-Package pdftex.def Info: images/proof_sys_gen.pdf  used on input line 300.
+Package pdftex.def Info: images/proof_sys_gen.pdf  used on input line 301.
 (pdftex.def)             Requested size: 232.68602pt x 137.67458pt.
 
-Underfull \hbox (badness 2564) in paragraph at lines 307--308
+Underfull \hbox (badness 2564) in paragraph at lines 308--309
 [][]\OT1/ptm/m/n/12 (+20) Finally, in proof gen-er-a-tion, we found
  []
 
-[8 <./images/proof_sys_gen.pdf>] [9]
-./main.tex:341: Undefined control sequence.
-l.341 \halfblankline
+[8 <./images/proof_sys_gen.pdf>]
+./main.tex:327: Undefined control sequence.
+l.327 ... be sensitive to word order (see \autoref
+                                                  {tab:example}).  We find, ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[9]
+./main.tex:344: Undefined control sequence.
+l.344 ...ared to $\mathcal{A}$ of 90.6\% (\autoref
+                                                  {table:main}). Recall, hum...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package natbib Warning: Citation `nangia-bowman-2019-human' on page 10 undefine
+d on input line 344.
+
+./main.tex:344: Undefined control sequence.
+l.344 ...ccepting permuted sentences (see \autoref
+                                                  {app_sec:threshold} for mo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.tex:346: Undefined control sequence.
+l.346 ...thcal{P}^f$ for all test splits, \autoref
+                                                  {fig:comb_plot}).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.tex:352: Undefined control sequence.
+l.352 ...tion labels, recall Model B from \autoref
+                                                  {sec:permutation}). We fir...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.tex:352: Undefined control sequence.
+l.352 ...at lead to the correct answer in \autoref
+                                                  {fig:all_entropy}. We find...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package natbib Warning: Citation `mollica-2020-composition' on page 10 undefine
+d on input line 356.
+
+./main.tex:356: Undefined control sequence.
+<argument> ...espaces Concurrent work by \newcite 
+                                                  {gupta-etal-2021-bert} fou...
+l.356 ...ss levels---i.e., only 35\% of the time.}
+                                                   Concretely, we draw equal...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package natbib Warning: Citation `dasgupta-etal-2018-evaluating' on page 10 und
+efined on input line 356.
+
+
+Package natbib Warning: Citation `poliak-etal-2018-hypothesis' on page 10 undef
+ined on input line 356.
+
+
+Package natbib Warning: Citation `gururangan-etal-2018-annotation' on page 10 u
+ndefined on input line 356.
+
+
+Package natbib Warning: Citation `naik-etal-2019-exploring' on page 10 undefine
+d on input line 356.
+
+[10]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 366.
+
+Overfull \hbox (4.61234pt too wide) in paragraph at lines 366--366
+[]\OT1/ptm/b/n/14.4 Masked Lan-guage Mod-el-ing and the Dis-tri-bu-tional Hy-po
+th-e-sis: \OT1/ptm/b/it/14.4 Or-der word
+ []
+
+[11]
+./main.tex:388: Undefined control sequence.
+l.388 \halfblankline
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1620,8 +1689,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:345: Undefined control sequence.
-l.345 \halfblankline
+./main.tex:392: Undefined control sequence.
+l.392 \halfblankline
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1629,32 +1698,34 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-(./main.bbl [10])
+(./main.bbl [12] [13] [14] [15])
 
 Package natbib Warning: There were undefined citations.
 
-[11] (./main.aux) ) 
+[16] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 18740 strings out of 492616
- 321770 string characters out of 6129482
- 414685 words of memory out of 5000000
- 22194 multiletter control sequences out of 15000+600000
- 611907 words of font info for 321 fonts, out of 8000000 for 9000
+ 18910 strings out of 492616
+ 325780 string characters out of 6129482
+ 414338 words of memory out of 5000000
+ 22321 multiletter control sequences out of 15000+600000
+ 618344 words of font info for 353 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,13n,63p,1777b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,13n,63p,1777b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.
 enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf
--dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 1047497 bytes).
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on main.pdf (16 pages, 1078614 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 48671 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 49183 words of extra memory for PDF output out of 51595 (max. 10000000)
 
