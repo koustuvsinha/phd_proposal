@@ -3,52 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: main.bib
-Repeated entry---line 1358 of file main.bib
- : @article{rogers2020
- :                    ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "liu2019b"
-Warning--I didn't find a database entry for "zhu2015aligning"
 Warning--empty journal in Evans2017-pu
-You've used 64 entries,
+Warning--empty journal in wolf2019
+You've used 88 entries,
             2118 wiz_defined-function locations,
-            818 strings with 17294 characters,
-and the built_in function-call counts, 26554 in all, are:
-= -- 2522
-> -- 1671
-< -- 24
-+ -- 660
-- -- 588
-* -- 1963
-:= -- 4400
-add.period$ -- 210
-call.type$ -- 64
-change.case$ -- 474
+            926 strings with 22260 characters,
+and the built_in function-call counts, 35499 in all, are:
+= -- 3362
+> -- 2215
+< -- 32
++ -- 878
+- -- 778
+* -- 2581
+:= -- 5899
+add.period$ -- 286
+call.type$ -- 88
+change.case$ -- 640
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 976
-empty$ -- 1754
-format.name$ -- 588
-if$ -- 5522
+cite$ -- 90
+duplicate$ -- 1322
+empty$ -- 2375
+format.name$ -- 778
+if$ -- 7382
 int.to.chr$ -- 0
-int.to.str$ -- 64
-missing$ -- 66
-newline$ -- 323
-num.names$ -- 134
-pop$ -- 545
+int.to.str$ -- 88
+missing$ -- 91
+newline$ -- 443
+num.names$ -- 182
+pop$ -- 747
 preamble$ -- 1
-purify$ -- 412
+purify$ -- 555
 quote$ -- 0
-skip$ -- 737
+skip$ -- 980
 stack$ -- 0
-substring$ -- 1246
-swap$ -- 293
-text.length$ -- 24
+substring$ -- 1616
+swap$ -- 383
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 252
-warning$ -- 1
-while$ -- 205
-width$ -- 66
-write$ -- 704
-(There was 1 error message)
+type$ -- 346
+warning$ -- 2
+while$ -- 277
+width$ -- 90
+write$ -- 960
+(There were 2 warnings)

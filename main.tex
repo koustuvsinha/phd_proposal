@@ -174,7 +174,7 @@ An important challenge in NLU is to develop benchmarks which can precisely test 
 
 
 
-Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (\textbf{C}ompositional \textbf{L}anguage \textbf{U}nderstanding with \textbf{T}ext-based \textbf{R}elational \textbf{R}easoning) - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a alearning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
+Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (\textbf{C}ompositional \textbf{L}anguage \textbf{U}nderstanding with \textbf{T}ext-based \textbf{R}elational \textbf{R}easoning) - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a learning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 \begin{center}
@@ -184,41 +184,29 @@ Thus, inspired by the classic AI challenge of inductive logic programming, we pr
 \label{fig:clutrr_data_design}
 \end{wrapfigure}
 
-\subsection{Dataset Design}
+\subsection{Dataset}
 
-In order to design the CLUTRR benchmark, we build upon classic ILP task of inferring kinship relations \cite{hinton1986learning,muggleton1991inductive}. For example, given the facts that \textit{``Alice is Bob's mother''} and \textit{``Jim is Alice's father''}, one can infer with reasonable certainty that \textit{``Jim is Bob's grandfather''}. While this example may appear trivial, it is challenging task to design models that can learn from data to \textit{induce} the logical rules necessary to make such inferences, and it is even more challenging to design models that can systematically generalize by composing these induced rules. Thus, the core idea behind CLUTRR benchmark suite is the following: given a natural language story describing a set of kinship relations, the goal is to infer the relationship between two entities, whose relationship is \textit{not} explicitly stated in the story. To generate these stories, we first design a knowledge base (KB) with rules specifying how kinship relations resolve, and we use the following steps to create semi-synthetic stories based on this knowledge base:
+In order to design the CLUTRR benchmark, we build upon classic ILP task of inferring kinship relations \cite{hinton1986learning,muggleton1991inductive}. For example, given the facts that \textit{``Alice is Bob's mother''} and \textit{``Jim is Alice's father''}, one can infer with reasonable certainty that \textit{``Jim is Bob's grandfather''}. While this example may appear trivial, it is challenging task to design models that can learn from data to \textit{induce} the logical rules necessary to make such inferences, and it is even more challenging to design models that can systematically generalize by composing these induced rules. Thus, the core idea behind CLUTRR benchmark suite is the following: given a natural language story describing a set of kinship relations, the goal is to infer the relationship between two entities, whose relationship is \textit{not} explicitly stated in the story.
 
-\begin{itemize}
-        \item \textbf{Step 1.} Generate a random kinship graph that satisfies the rules in our KB.
-        \item \textbf{Step 2.} Sample a target fact (i.e relation) to predict from the kinship graph
-        \item \textbf{Step 3.} Apply backward chaining to sample a set of $k$ facts that can prove the target relation (and optionally sample a set of ``distracting'' or ``irrelevant'' noise facts)
-        \item \textbf{Step 4.} Convert the sampled facts into a natural language story through pre-specified text templates and crowd-sourced paraphrasing.
-\end{itemize}
+Essentially, we use first order logic (FOL) to generate $k$ number of provable facts and then apply natural language layer on top of it to create a semi-synthetic benchmark. The number $k$ denotes the difficulty of the example. We use Amazon Mechanical Turk (AMT) crowd workers to annotate logical facts into narratives.
 
+% \begin{wrapfigure}{r}{0.5\textwidth}
+% \begin{center}
+%   \includegraphics[width=0.48\textwidth]{images/clutrr_composition.png}
+% \end{center}
+% \caption{Generation of stories by composition in CLUTRR}
+% \label{fig:clutrr_composition}
+% \end{wrapfigure}
 
-Essentially, we use first order logic (FOL) to generate $k$ number of provable facts and then apply natural language layer on top of it to create a semi-synthetic benchmark. The number $k$ denotes the difficulty of the example. We use Amazon Mechanical Turk (AMT) crowd workers to annotate logical facts into narratives. Since workers are given a set of facts logical facts to work from, they are able to combine and split multiple facts across separate sentences and construct diverse narratives (Figure \ref{fig:clutrr_composition}).
-One challenge for data collection via AMT is that the number of possible stories generated by CLUTRR grows combinatorially as the number of supporting facts increases. This makes it infeasible to obtain a large number of paraphrased examples. To circumvent this issue and increase the flexibility of our benchmark, we reuse and compose AMT paraphrases to generate longer stories.
-In particular, we collected paraphrases for stories containing $k=1,2,3$ supporting facts and then replaced the entities from these collected stories with placeholders in order to re-use them to generate longer semi-synthetic stories.
+% An example of a story generated by stitching together two shorter paraphrases is provided below:
 
-\begin{wrapfigure}{r}{0.5\textwidth}
-\begin{center}
-  \includegraphics[width=0.48\textwidth]{images/clutrr_composition.png}
-\end{center}
-\caption{Generation of stories by composition in CLUTRR}
-\label{fig:clutrr_composition}
-\end{wrapfigure}
+% \begin{quote}{\small
+%     [Frank] went to the park with his father, [Brett]. [Frank] called his brother [Boyd] on the phone. He wanted to go out for some beers.
+%     [Boyd] went to the baseball game with his son [Jim].\\
+%     Q: What is [Brett] and [Jim]'s relationship?}
+% \end{quote}
 
-
-
-An example of a story generated by stitching together two shorter paraphrases is provided below:
-
-\begin{quote}{\small
-    [Frank] went to the park with his father, [Brett]. [Frank] called his brother [Boyd] on the phone. He wanted to go out for some beers.
-    [Boyd] went to the baseball game with his son [Jim].\\
-    Q: What is [Brett] and [Jim]'s relationship?}
-\end{quote}
-
-Thus, instead of simply collecting paraphrases for a fixed number of stories, we instead obtain a diverse collection of natural language templates that can be programmatically recombined to generate stories with various properties. Please refer to our paper \cite{sinha2019a} for more details about the data generation process.
+% Thus, instead of simply collecting paraphrases for a fixed number of stories, we instead obtain a diverse collection of natural language templates that can be programmatically recombined to generate stories with various properties. Please refer to our paper \cite{sinha2019a} for more details about the data generation process.
 
 
 \subsection{Experiments}
@@ -231,10 +219,7 @@ We also ensure the AMT templates are also split into train and test, to reduce t
 \xhdr{Human Performance} To get a sense of the data quality and difficulty involved in CLUTRR, we asked human annotators to solve the task for random examples of length $k=2,3,...,6$.
 We found that time-constrained AMT annotators performed well (i.e., ${>70\%}$) accuracy for ${k\leq 3}$ but struggled with examples involving longer stories, achieving 40-50\% accuracy for ${k > 3}$. However, trained annotators with unlimited time were able to solve 100\% of the examples (Appendix 1.7), highlighting the fact that this task requires attention and involved reasoning, even for humans.
 
-\xhdr{\textit{Are NLU models able to generalize systematically?}}
-
-In this setup, we consider the setting where the models are trained on stories generated from clauses of length ${\leq k}$ and evaluated on stories generated from larger clauses of length ${>k}$. Thus, we explicitly test the ability for models to generalize on examples that require more steps of reasoning that any example they encountered during training.
-In other words, during training, the model sees all logical rules but does not see all {\em combinations} of these logical rules.
+\xit{Are NLU models able to generalize systematically?}
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 \begin{center}
@@ -243,6 +228,9 @@ In other words, during training, the model sees all logical rules but does not s
 \caption{Systematic generalization results on CLUTRR, when trained on stories of length $k=2,3,4$}
 \label{fig:clutrr_sys_gen_234}
 \end{wrapfigure}
+
+In this setup, we consider the setting where the models are trained on stories generated from clauses of length ${\leq k}$ and evaluated on stories generated from larger clauses of length ${>k}$. Thus, we explicitly test the ability for models to generalize on examples that require more steps of reasoning that any example they encountered during training.
+In other words, during training, the model sees all logical rules but does not see all {\em combinations} of these logical rules.
 
 
 Figure \ref{fig:clutrr_sys_gen_234} illustrates the performance of different NLU models on this generalization task. For NLU models, we consider bidirectional LSTMs \citep{hochreiter1997long, cho2014learning} (with and without attention), as well as recently proposed models that aim to incorporate inductive biases towards relational reasoning: Relation Networks (RN) \citep{santoro2017simple} and Compositional Memory Attention Network (MAC) \citep{hudson2018compositional}. We also use the large pretrained language model, BERT \cite{devlin2018bert}, as well as a modified version of BERT having a trainable LSTM encoder on top of the pretrained BERT embeddings. Since the underlying relations in the stories generated by CLUTRR inherently form a graph, we also experiment with a Graph Attention Network (GAT) \citep{Velickovic2017-mh}. Rather than taking the textual stories as input, the GAT baseline receives a structured graph representation of the facts that underlie the story.
@@ -259,10 +247,11 @@ GAT, having access to structured input, is able to generalize significantly bett
 % To further confirm this trend, we ran experiments with modified train and test splits for the text-based models, where the same set of natural language paraphrases were used to construct the narratives in both the train and test splits (see our paper \cite{sinha2019a} for details). In this simplified setting, the text-based models must still learn to reason about held-out logical patterns, but the difficulty of parsing the natural language is essentially removed, as the same natural language paraphrases are used during testing and training. We found that the text-based models were competitive with the GAT model in this simplified setting, confirming that the poor performance of the text-based models on the main task is driven by the difficulty of parsing the unseen natural language narratives.
 
 
-\xhdr{\textit{How does NLU systems cope with noise - how robustly do they reason?}}
+\xit{How does NLU systems cope with noise - how robustly do they reason?}
 
 Finally, we use CLUTRR to systematically evaluate how NLU models cope with noise.
 Any set of supporting facts generated by CLUTRR can be interpreted as a path in the corresponding kinship graph $G$ (Figure \ref{fig:clutrr_data_noise}).
+Based on this interpretation, we view adding noise facts to the \textit{clean path} from the perspective of sampling three different types of noise paths, from the kinship graph $G$. First, we test for \textit{irrelevant facts}, which consists of facts which has one entity common with the path, but they themselves are irrelevant to solve the task. Second, we test for \textit{supporting facts}, which contain a set of facts which can be used to construct an alternate path between the source and sink (i.e, target entities). Finally, we test for \textit{disconnected facts}, which contain facts which are irrelevant as well as do not contain any entities which are in the path.
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 \begin{center}
@@ -272,28 +261,12 @@ Any set of supporting facts generated by CLUTRR can be interpreted as a path in 
 \label{fig:clutrr_data_noise}
 \end{wrapfigure}
 
-Based on this interpretation, we view adding noise facts to the \textit{clean path} from the perspective of sampling three different types of noise paths, from the kinship graph $G$:
-
-\begin{itemize}
-    \item \textit{Irrelevant facts}: We add a path, which has exactly one shared end-point with the clean path. In this way, this is a \textit{distractor} path,
-    which contains facts that are connected to one of the entities in the target relation, but do not provide any information that could be used to help answer the query. %We name this task \texttt{CLUTRR-Irrelevant}
-     \item \textit{Supporting facts}:
-    We add a path whose two end-points are on the clean path.
-    The facts on this path are noise because they are not needed to answer the query, but they are supporting facts because they can, in principle, be used to construct alternative (longer) reasoning paths that connect the two target entities.
-    %We denote this setup as \texttt{CLUTRR-Supporting}
-    \item \textit{Disconnected facts}: We add paths which neither originate nor end in any entity on the clean path. These disconnected facts involve entities and relations that are completely unrelated to the target query.
-    %We call this variant \texttt{CLUTRR-Disconnected}.
-\end{itemize}
 
 \input{tables/table_amt_robust}
 
 Overall, we find that the GAT baseline outperforms the unstructured text-based models across most testing scenarios (Table \ref{tab:robust}), which showcases the benefit of a structured feature space for robust reasoning.
-When training on clean data and testing on noisy data, we observe two interesting trends that highlight the benefits and shortcomings of the various model classes:
-
-\begin{enumerate}
-    \item All the text-based models excluding BERT actually perform better when testing on examples that have {\em supporting} or {\em irrelevant} facts added. This suggests that these models actually benefit from having more content related to the entities in the story. Even though this content is not strictly useful or needed for the reasoning task, it may provide some linguistic cues (e.g., about entity genders) that the models exploit. In contrast, the BERT-based models do not benefit from the inclusion of this extra content, which is perhaps due to the fact that they are already built upon a strong language model (e.g., that already adequately captures entity genders.)
-    \item  The GAT model performs poorly when {\em supporting} facts are added but has no performance drop when {\em disconnected} facts are added. This suggests that the GAT model is sensitive to changes that introduce cycles in the underlying graph structure but is robust to the addition of noise that is disconnected from the target entities.
-\end{enumerate}
+When training on clean data and testing on noisy data, we observe two interesting trends that highlight the benefits and shortcomings of the various model classes. Firstly, all the text-based models excluding BERT actually perform better when testing on examples that have {\em supporting} or {\em irrelevant} facts added. This suggests that these models actually benefit from having more content related to the entities in the story. Even though this content is not strictly useful or needed for the reasoning task, it may provide some linguistic cues (e.g., about entity genders) that the models exploit. In contrast, the BERT-based models do not benefit from the inclusion of this extra content, which is perhaps due to the fact that they are already built upon a strong language model (e.g., that already adequately captures entity genders.)
+Secondly, the GAT model performs poorly when {\em supporting} facts are added but has no performance drop when {\em disconnected} facts are added. This suggests that the GAT model is sensitive to changes that introduce cycles in the underlying graph structure but is robust to the addition of noise that is disconnected from the target entities.
 Moreover, when we trained on noisy examples, we found that only the GAT model was able to consistently improve its performance (Table \ref{tab:robust}).
 Again, this highlights the performance gap between the unstructured text-based models and the GAT.
 
@@ -352,32 +325,59 @@ Thus, if our models are as good at NLU as our current evaluation methods suggest
 
 \subsubsection{Experiments and Results}
 
+\begin{wraptable}{r}{0.5\textwidth}
+    \centering
+    \small
+    \resizebox{0.5\textwidth}{!}{
+    \begin{tabular}{p{11em}p{9em}p{3em}} % I hate the vertical line, can we get rid of it...
+    \toprule
+     \bf Premise & \bf Hypothesis & \bf Predicted Label \\ \midrule
+    Boats in daily use lie within feet of the fashionable bars and restaurants.  & There are boats close to bars and restaurants. & E \\
+    \addlinespace[0.5em]
+    restaurants and use feet of fashionable lie the in Boats within bars daily . & bars restaurants are There and to close boats . & E \\ \midrule
+    He and his associates weren't operating at the level of metaphor. & He and his associates were operating at the level of the metaphor. & C\\  \addlinespace[0.5em]
+    his at and metaphor the of were He operating associates n't level . & his the and metaphor level the were He at associates operating of . & C\\
+    \bottomrule
+    \end{tabular}}
+    \caption{Examples from the MNLI Matched development set. Both the original example and the permuted one elicit the same classification label (entailment and contradiction respectively) from RoBERTa (large).}
+    \label{tab:example}
+\end{wraptable}
+
+
+
 We focus here on textual entailment, one of the hallmark tasks used to measure how well models understand language \cite{condoravdi-etal-2003-entailment, dagan-etal-2005-pascal}. This task, often also called Natural Language Inference (NLI; \cite{bowman-etal-2015-large}, i.a.), typically consists of two sentences: a premise and a hypothesis. The objective is to predict whether the premise entails the hypothesis, contradicts it, or is neutral with respect to it.
 
-\xhdr{Main findings} We find rampant word order insensitivity in purportedly high performing NLI models. For nearly all premise-hypothesis pairs, \textbf{there are many permuted examples that fool the models} into providing the correct prediction. In case of MNLI, for example, the current state-of-the-art of 90.5\% can be increased to \textbf{98.7}\% merely by permuting the word order of test set examples. We even find drastically increased cross-dataset generalization when we reorder words. This is not just a matter of chance---we show that the model output probabilities are significantly different from uniform.
+We find rampant word order insensitivity in purportedly high performing NLI models. For nearly all premise-hypothesis pairs, \textbf{there are many permuted examples that fool the models} into providing the correct prediction. In case of MNLI, for example, the current state-of-the-art of 90.5\% can be increased to \textbf{98.7}\% merely by permuting the word order of test set examples. We even find drastically increased cross-dataset generalization when we reorder words. This is not just a matter of chance---we show that the model output probabilities are significantly different from uniform.
 We verify our findings with three popular English NLI datasets---SNLI \citep{bowman-etal-2015-large}, MultiNLI \citep{williams-etal-2018-broad} and ANLI \citep{nie-etal-2020-adversarial})---
 and one Chinese one, OCNLI \cite{hu-etal-2020-ocnli}. It is thus less likely that our findings result from some quirk of English or a particular tokenization strategy.
 We also observe the effect for various transformer architectures pre-trained on language modeling (BERT, RoBERTa, DistilBERT), and non-transformers, including a ConvNet, an InferSent model, and a BiLSTM.
 
-\xit{How to construct permuted examples?}
+% \xit{How to construct permuted examples?}
 
-For any sentence pair in the NLI dataset, we use a permutation function $\mathcal{F}$ which essentially permutes the word order of a sentence with the restriction that no words maintain their original position. Thus, if a sentence $S$ contains $w$ words, then the total number of available permutations of $S$ are $(w-1)!$. This allows us to inspect \textit{multiple} permutations per hypothesis-premise pair. Concretely, we always test using 100 unique permutations for each hypothesis-premise pair in the NLI dataset. If a given NLU model (RoBERTa/BART/DistilBERT/InferSent/ConvNet/BiLSTM) assigns the gold label to \textit{any one} permutation of an hypothesis-premise pair, we mark that example as correct to compute Maximum Accuracy, $\Omega_{\text{max}}$. Now, this metric is strict as it does not allow for any permutation to be processed by the NLU model. We further relax this metric to $\Omega_{\text{rand}}$, where a hypothesis-premise is marked correct if more than 1/3rd of its permutations are assigned the gold label by the model. Going down this route, we can define metrics until $\Omega_{1.0}$, where \textit{all} permutations of an example are assigned the gold label. A graphical representation of the metrics are provided in Figure. Additionally, we also compute the probability of acceptance given a base condition: how many permutations are assigned gold label when the example satisfies this base condition. We use the original model accuracy as the base condition - allowing us to compute $P^{c}$ (probability of correctness)/$P^{f}$ (probability of flips) - given the example is originally predicted correctly/incorrectly by the model, what is the probability of its permutations to be assigned the gold label.
+% For any sentence pair in the NLI dataset, we use a permutation function $\mathcal{F}$ which essentially permutes the word order of a sentence with the restriction that no words maintain their original position. Thus, if a sentence $S$ contains $w$ words, then the total number of available permutations of $S$ are $(w-1)!$. This allows us to inspect \textit{multiple} permutations per hypothesis-premise pair. Concretely, we always test using 100 unique permutations for each hypothesis-premise pair in the NLI dataset. If a given NLU model (RoBERTa/BART/DistilBERT/InferSent/ConvNet/BiLSTM) assigns the gold label to \textit{any one} permutation of an hypothesis-premise pair, we mark that example as correct to compute Maximum Accuracy, $\Omega_{\text{max}}$. Now, this metric is strict as it does not allow for any permutation to be processed by the NLU model. We further relax this metric to $\Omega_{\text{rand}}$, where a hypothesis-premise is marked correct if more than 1/3rd of its permutations are assigned the gold label by the model. Going down this route, we can define metrics until $\Omega_{1.0}$, where \textit{all} permutations of an example are assigned the gold label. A graphical representation of the metrics are provided in Figure. Additionally, we also compute the probability of acceptance given a base condition: how many permutations are assigned gold label when the example satisfies this base condition. We use the original model accuracy as the base condition - allowing us to compute $P^{c}$ (probability of correctness)/$P^{f}$ (probability of flips) - given the example is originally predicted correctly/incorrectly by the model, what is the probability of its permutations to be assigned the gold label.
 
 \xit{How many permuted examples does the model accept?}
 
-We find $\Omega_{\text{max}}$ is very high for models trained and evaluated on MNLI (in-domain generalization), reaching \textbf{98.7\%} on MNLI dev. and test sets (in RoBERTa, compared to $\mathcal{A}$ of 90.6\% (\autoref{table:main}). Recall, human accuracy is approximately 92\% on MNLI dev.,  \citealt{nangia-bowman-2019-human}). This shows that there exists at least one permutation (usually many more) for almost all examples in $D_{\text{test}}$ such that model $M$ predicts the gold label. We also observe high $\Omega_{\text{rand}}$ at 79.4\%, showing that there are many examples for which the models outperform even a random baseline in accepting permuted sentences (see \autoref{app_sec:threshold} for more $\Omega$ values.)
-
-Evaluating out-of-domain generalization with ANLI dataset splits resulted in an $\Omega_{\text{max}}$ value that is notably higher than $\mathcal{A}$ (89.7\% $\Omega_{\text{max}}$ for RoBERTa compared to 45.6\% $\mathcal{A}$). As a consequence, we encounter many \textit{flips}, i.e., examples where the model is unable to predict the gold label, but at least one permutation of that example is able to. However, recall this analysis expects us to know the gold label upfront, so this test can be thought of as running a word-order probe test on the model until the model predicts the gold label (or give up by exhausting our set of $q$ permutations). For out-of-domain generalization, $\Omega_{\text{rand}}$ decreases considerably (36.4\% $\Omega_{\text{rand}}$ on A1), which means fewer permutations are accepted by the model. Next, recall that a classic bag-of-words model would have $\mathcal{P}^c=100$ and $\mathcal{P}^f=0$. No model performs strictly like a classic bag of words although they do perform somewhat BOW-like ($\mathcal{P}^c >> \mathcal{P}^f$ for all test splits, \autoref{fig:comb_plot}).
-We find this BOW-likeness to be higher for certain non-Transformer models, (InferSent) as they exhibit higher $\mathcal{P}^c$ (84.2\% for InferSent compared to 70.7\% for RoBERTa on MNLI). We extended the experiments to the Original Chinese NLI dataset \citep[OCNLI]{hu-etal-2020-ocnli}, and re-used the pre-trained RoBERTa-Large and InferSent (non-Transformer) models on OCNLI. Our findings are similar to the English results, thereby suggesting that the phenomenon is not just an artifact of English text or tokenization.
+We find for models trained and evaluated on MNLI (in-domain generalization), there exists at least one permutation for each example using which we can reach a \textit{maximum accuracy} of \textbf{98.7\%} on MNLI dev. and test sets (in RoBERTa, compared to \textit{original accuracy} of 90.6\% in the natural data. If we choose examples such that at least 33\% of its permutations are assigned the gold label (random baseline), we can still cover 79.4\% of the test set (\textit{random accuracy}, see our paper \cite{sinha2021a} for more details on the construction of the metrics.)
+We observe the effect even in out-of-domain generalization with ANLI dataset, where the data splits resulted in a maximum accuracy value that is notably higher than the original accuracy (89.7\% vs 45.6\% for RoBERTa). As a consequence, we encounter many \textit{flips}, i.e., examples where the model is unable to predict the gold label, but at least one permutation of that example is able to. However, recall this analysis expects us to know the gold label upfront, so this test can be thought of as running a word-order probe test on the model until the model predicts the gold label (or give up by exhausting our set of 100 permutations). For out-of-domain generalization, random accuracy decreases considerably (36.4\% on A1). Overall, we find the \textit{probability of acceptance} of permutations to be significantly high, suggesting a bag-of-words (BoW) likeness of the models. We find this BOW-likeness to be higher for certain non-Transformer models, (InferSent) (84.2\% for InferSent compared to 70.7\% for RoBERTa on MNLI). We extended the experiments to the Original Chinese NLI dataset \citep[OCNLI]{hu-etal-2020-ocnli}, and re-used the pre-trained RoBERTa-Large and InferSent (non-Transformer) models on OCNLI. Our findings are similar to the English results, thereby suggesting that the phenomenon is not just an artifact of English text or tokenization.
 
 
 \xit{How confident are models in accepting permuted examples?}
 
-The phenomenon we observe would be of less concern if the correct label prediction was just an outcome of chance, which could occur when the entropy of the log probabilities of the model output is high (suggesting uniform probabilities on entailment, neutral and contradiction labels). We first investigate the model probabilities for the Transformer-based models on the permutations that lead to the correct answer in \autoref{fig:all_entropy}. We find overwhelming evidence that model confidences on in-distribution datasets (MNLI, SNLI) are highly skewed, resulting in low entropy, and it varies among different model types. BART proves to be the most skewed Transformer-based model. This skewness is not a property of model capacity, as we observe DistilBERT log probabilities to have similar skewness as RoBERTa (large) model, while exhibiting lower model accuracy, $\Omega_{\text{max}}$, and $\Omega_{\text{rand}}$.
+\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{center}
+  \includegraphics[width=0.48\textwidth]{images/unli_entropy_plot.png}
+\end{center}
+\caption{Model confidences on unnatural input}
+\label{fig:all_entropy}
+\end{wrapfigure}
+
+
+The phenomenon we observe would be of less concern if the correct label prediction was just an outcome of chance, which could occur when the entropy of the log probabilities of the model output is high (suggesting uniform probabilities on entailment, neutral and contradiction labels). We first investigate the model probabilities for the Transformer-based models on the permutations that lead to the correct answer in \autoref{fig:all_entropy}. We find overwhelming evidence that model confidences on in-distribution datasets (MNLI, SNLI) are highly skewed, resulting in low entropy, and it varies among different model types. BART proves to be the most skewed Transformer-based model. This skewness is not a property of model capacity, as we observe DistilBERT log probabilities to have similar skewness as RoBERTa (large) model, while exhibiting lower model accuracy, maximum accuracy, and random accuracy.
 
 \xit{How does humans perform on permuted examples?}
 
-We expect humans to struggle with unnatural data, given our intuitions and the sentence superiority findings (but see \citealt{mollica-2020-composition}). To test this, we presented two experts in NLI (one a linguist) with permuted sentence pairs to label.\footnote{Concurrent work by \newcite{gupta-etal-2021-bert} found that untrained crowdworkers accept NLI examples that have been subjected to different kinds of perturbations at roughly most frequent class levels---i.e., only 35\% of the time.} Concretely, we draw equal number of examples from MNLI Matched dev set (100 examples where RoBERTa predicts the gold label, $D^c$ and 100 examples where it fails to do so, $D^f$), and then permute these examples using $\mathcal{F}$. The experts were given no additional information (recall that it is common knowledge that NLI is a roughly balanced 3-way classification task). Unbeknownst to the experts, all permuted sentences in the sample were actually accepted by the RoBERTa (large) model (trained on MNLI dataset). We observe that the experts performed much worse than RoBERTa (58.1\% and 37.8\%), although their accuracy was a bit higher than random. We also find that for both experts, accuracy on permutations from $D^c$ was higher than on $D^f$, which verifies findings that showed high word overlap can give hints about the ground truth label \citep{dasgupta-etal-2018-evaluating, poliak-etal-2018-hypothesis, gururangan-etal-2018-annotation, naik-etal-2019-exploring}.
+We expect humans to struggle with unnatural data, given our intuitions and the sentence superiority findings \cite{mollica-2020-composition}. To test this, we presented two experts in NLI (one a linguist) with permuted sentence pairs to label.\footnote{Concurrent work \cite{gupta-etal-2021-bert} found that untrained crowdworkers accept NLI examples that have been subjected to different kinds of perturbations at roughly most frequent class levels---i.e., only 35\% of the time.} Concretely, we draw equal number of examples from MNLI Matched dev set (100 examples where RoBERTa predicts the gold label, $D^c$ and 100 examples where it fails to do so, $D^f$), and then permute these examples using $\mathcal{F}$. The experts were given no additional information (recall that it is common knowledge that NLI is a roughly balanced 3-way classification task). Unbeknownst to the experts, all permuted sentences in the sample were actually accepted by the RoBERTa (large) model (trained on MNLI dataset). We observe that the experts performed much worse than RoBERTa (58.1\% and 37.8\%), although their accuracy was a bit higher than random. We also find that for both experts, accuracy on permutations from $D^c$ was higher than on $D^f$, which verifies findings that showed high word overlap can give hints about the ground truth label \citep{dasgupta-etal-2018-evaluating, poliak-etal-2018-hypothesis, gururangan-etal-2018-annotation, naik-etal-2019-exploring}.
 
 
 \subsubsection{Discussion}
@@ -402,7 +402,7 @@ and with training on a corpus sampled from the source corpus's %uniform or
 unigram distribution, removing both distributional and word order information
 . We then evaluate these ``permuted'' models in a wide range of settings and compare with regularly-pre-trained models.
 
-Concretely, we use the original 16GB BookWiki corpus (the Toronto Books Corpus, \citealt{zhu2015aligning}, plus English Wikipedia) from \citet{liu2019b}. We denote the model trained on the original, un-modified BookWiki corpus as \OR{} (for ``natural''). We use two types of word order randomization methods: permuting words at the sentence level, and resampling words at the corpus level. Specifically, given a sentence $S$ containing $N$ words, we permute the sentence using a seeded random function $\mathcal{F}_1$ such that no word can remain in its original position. In total, there exist $(N-1)!$ possible permutations of a given sentence. We randomly sample a single permutation per sentence, to keep the total dataset size similar to the original. We extend this function to account for n-grams such as bigram, trigram and four-gram - i.e. we construct permuted sentences by randomly keeping n-grams unchanged. We train RoBERTa models on four permutation variants of BookWiki corpus, \RI, \RII, \RIII, \RIV\ for each $n$-gram value $ \in {\{1,2,3,4\}}$. More details on the process, along with the pseudo code and sample quality, are provided in our paper \cite{sinha2021a}. To further measure the effect of the distributional information, we construct baselines devoid of any distributional signal. Specifically, we train RoBERTa on a variants of BookWiki Corpus, \RC\, where all unigrams are sampled from the corpus according to their frequencies, removing the co-occurrence information (i.e destroying all sentence and paragraph information). We also inspect the usefulness of word order by training a RoBERTa model without positional embedding (\NP\ ) and inspect the strength of inductive bias only by using a randomly initialized RoBERTa model (\RT\ ).
+Concretely, we use the original 16GB BookWiki corpus (the Toronto Books Corpus, \cite{zhu2015aligning}, plus English Wikipedia) from \cite{liu2019b}. We denote the model trained on the original, un-modified BookWiki corpus as \OR{} (for ``natural''). We use two types of word order randomization methods: permuting words at the sentence level, and resampling words at the corpus level. We also account for n-grams such as bigram, trigram and four-gram - i.e. we construct permuted sentences by randomly keeping n-grams unchanged. We train RoBERTa models on four permutation variants of BookWiki corpus, \RI, \RII, \RIII, \RIV\ for each $n$-gram value $ \in {\{1,2,3,4\}}$. More details on the process, along with the pseudo code and sample quality, are provided in our paper \cite{sinha2021a}. To further measure the effect of the distributional information, we construct baselines devoid of any distributional signal. Specifically, we train RoBERTa on a variants of BookWiki Corpus, \RC\, where all unigrams are sampled from the corpus according to their frequencies, removing the co-occurrence information (i.e destroying all sentence and paragraph information). We also inspect the usefulness of word order by training a RoBERTa model without positional embedding (\NP\ ) and inspect the strength of inductive bias only by using a randomly initialized RoBERTa model (\RT\ ).
 
 \blankline
 
@@ -410,7 +410,16 @@ Concretely, we use the original 16GB BookWiki corpus (the Toronto Books Corpus, 
 
 In order to measure the effect of word order shuffled pre-training, we compare the models in the GLUE and PAWS downstream tasks. The GLUE \cite{wang2018glue} benchmark is a collection of 9 datasets for evaluating natural language understanding systems, of which we use Corpus of Linguistic Acceptability \cite[CoLA,][]{cola_warstadt2019neural}, Stanford Sentiment Treebank \cite[SST,][]{sst2_socher2013recursive}, Microsoft Research Paragraph Corpus \cite[MRPC,][]{mrpc_dolan2005automatically}, Quora Question Pairs (QQP)\footnote{\href{http://data.quora.com/First-Quora-Dataset-Release-Question-Pairs}{http://data.quora.com/First-Quora-Dataset-Release-Question-Pairs}}, Multi-Genre NLI \cite[MNLI,][]{williams-etal-2018-broad}, Question NLI \cite[QNLI,][]{qnli_rajpurkar2016squad, qnli_2_demszky2018transforming}, Recognizing Textual Entailment \cite[RTE,][]{rte1_dagan2005pascal, rte2_haim2006second, rte3_giampiccolo2007third, rte5_bentivogli2009fifth}. The PAWS task \cite{zhang2019paws} consists of predicting whether a given pair of sentences are paraphrases. This dataset contains both paraphrase and non-paraphrase pairs with high lexical overlap, which are generated by controlled word swapping and back translation. Since even a small word swap and perturbation can drastically modify the meaning of the sentence, we hypothesize the randomized pre-trained models will struggle to attain a high performance on PAWS. We fine-tune all models according to RoBERTa best practices.
 
-We observe that word order shuffled models perform remarkably close to the natural word order pre-trained model in case of all tasks. \RI, the model pre-trained on completely shuffled sentences, is on average only $3.3$ points lower than \OR\ on the accuracy-based tasks,
+\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{center}
+  \includegraphics[width=0.48\textwidth]{images/masked_result.pdf}
+\end{center}
+\caption{Fine-tuning results on various word shuffled pre-trained models.}
+\label{fig:masked_results}
+\end{wrapfigure}
+
+
+\textit{We observe that fine-tuning on word order shuffled pre-trained models perform remarkably close to the natural word order pre-trained model in case of all tasks.} \RI, the model pre-trained on completely shuffled sentences, is on average only $3.3$ points lower than \OR\ on the accuracy-based tasks,
 and within $0.3$ points of \OR\ on QQP.
 Even on PAWS, which was designed to require knowledge of word order, \RI\ is within $5$ points of \OR.
 Randomizing $n$-grams instead of words during pre-training results in a (mostly) smooth increase on these tasks: \RIV, the model pre-trained on shuffled $4$-grams, trails \OR\ by only $1.3$ points on average, and even comes within $0.2$ points of \OR\ on PAWS. We observe a somewhat different pattern on CoLA, where \RII\ does almost as well as \OR\ and outperforms \RIII\ and \RIV, though we also observe very high variance across random seeds for this task.
@@ -424,25 +433,21 @@ There are two possible explanations for the above results: either the tasks do n
 To examine this question, we permute the word order during fine-tuning as well. Concretely, for each task, we construct a unigram order-randomized version of each example in the fine-tuning training set using $\mathcal{F}_1$. We then fine-tune our pre-trained models on this shuffled data and evaluate task performance.
 
 We observe for some taks (QQP, QNLI, MNLI, SST-2 and MRPC) the accuracy is still significantly high when fine-tuned on shuffled data, suggesting that purely lexical information is quite useful on its own. On the other hand, for the rest of the datasets (CoLA, PAWS, RTE) we observe noticable drops in accuracy when fine-tuned on shuffled data and tested on normal word order data, both for \OR\ and for shuffled models \RI\ through \RIV.
-This suggests both that word order information is useful for these tasks, and that shuffled models must be learning to use word order information during fine-tuning. Having word order during fine-tuning is especially important for achieving high accuracy on CoLA, RTE (cf. \citealt{pham2020}), as well as PAWS,
+This suggests both that word order information is useful for these tasks, and that shuffled models must be learning to use word order information during fine-tuning. Having word order during fine-tuning is especially important for achieving high accuracy on CoLA, RTE (cf. \cite{pham2020}), as well as PAWS,
 suggesting that these tasks are the most word order reliant.
 
 
-\xit{How does parametric probes behave when evaluated on word order shuffled pre-trained models?}
+\xit{How does syntactical probes behave when evaluated on word order shuffled pre-trained models?}
 
-Since majority of the works investigating syntax representation use probes, we also employ similar mechanisms to test whether these probes are capable to differentiate the pre-trained models trained on shuffled word order from natural word order. In case of parametric probes (i.e probes having a learnable component), we use the Pareto optimality probing framework \citet{pimentel2020b} to investigate syntax using Dependency Parsing as an auxilliary task. By investigating the Dependency parsing task on two datasets (Penn Tree Bank and Universal Dependencies EWT), we observe that the results follow a similar trend as our downstream fine-tuning results: \RI $\approx$ \RC < \RII < \RIII < \RIV < \OR\ (\autoref{tab:pareto_dependency}).
-Surprisingly, \RC\ probing scores seem to be somewhat better than \RI\ (though with large overlap in their standard deviations), even though \RC\ cannot learn information related to either word order or co-occurrence patterns.
+Since majority of the works investigating syntax representation use probes, we also employ similar mechanisms to test whether these probes are capable to differentiate the pre-trained models trained on shuffled word order from natural word order. In case of parametric probes (i.e probes having a learnable component), we use the Pareto optimality probing framework \cite{pimentel2020b} to investigate syntax using Dependency Parsing as an auxilliary task. By investigating the Dependency parsing task on two datasets (Penn Tree Bank and Universal Dependencies EWT), we observe that the results \textit{follow a similar trend as our downstream fine-tuning results} (Table \ref{tab:pareto_dependency}). Surprisingly, \RC\ probing scores seem to be somewhat better than \RI\ (though with large overlap in their standard deviations), even though \RC\ cannot learn information related to either word order or co-occurrence patterns.
 
-We also investigate the suite of 10 probing tasks~\cite{conneau-etal-2018-cram} available in the SentEval toolkit~\cite{conneau-kiela-2018-senteval}. This suite contains a range of semantic, syntactic and surface level tasks. \citet{jawahar2019a} utilize this set of probing tasks to arrive at the conclusion that %that BERT-based models naturally learn syntax -
-``\textit{BERT embeds a rich hierarchy of linguistic signals: surface information at the bottom, syntactic information in the middle, semantic information at the top}''. We re-examine this hypothesis by using the same probing method and comparing against models trained with random word order. We observe that the \OR\ pre-trained model scores better than the unnatural word order models for only one out of five semantic tasks and in none of the lexical tasks. However, \OR\ does score higher for two out of three syntactic tasks. Even for these two syntactic tasks, the gap among \RC\ and \OR\ is much higher than \RI\ and \OR. These results show that while natural word order is useful for at least some probing tasks, the distributional prior of randomized models alone is enough to achieve a reasonably high accuracy on syntax sensitive probing.
+\input{tables/table_pareto.tex}
+
+We also find similar inconsistencies when analyzed with a suite of 10 probing tasks~\cite{conneau-etal-2018-cram} available in the SentEval toolkit~\cite{conneau-kiela-2018-senteval}. This suite contains a range of semantic, syntactic and surface level tasks. We observe that the \OR\ pre-trained model scores better than the unnatural word order models for \textit{only one out of five semantic tasks and in none of the lexical tasks}, unlike the claim of syntax understanding of BERT in the literature \cite{jawahar2019a}. However, \OR\ does score higher for two out of three syntactic tasks. Even for these two syntactic tasks, the gap among \RC\ and \OR\ is much higher than \RI\ and \OR. These results show that while natural word order is useful for at least some probing tasks, the distributional prior of randomized models alone is enough to achieve a reasonably high accuracy on syntax sensitive probing.
 
 
-\xit{Is the effect similar in case of non-parametric probing?}
-
-From our results so far, it is unclear whether parametric probing meaningfully distinguishes models trained with corrupted sentence order from those trained with normal orders. Thus, we also investigate non-parametric probes~\cite{linzen-etal-2016-assessing,marvin-linzen-2018-targeted,gulordava2018} using the formulation of \citet{goldberga} and \citet{wolf2019}. Since these probes do not contain any learnable parameters, they are called ``non-parametric''. For each probe, the objective is for a pre-trained model to provide higher probability to a grammatically correct word than to an incorrect one.
-
-We observe for the \citet{linzen-etal-2016-assessing} and \citet{marvin-linzen-2018-targeted} datasets that the gap between the \OR\ and randomization models is relatively large.
-The \citet{gulordava2018} dataset shows a smaller gap between \OR\ and the randomization models. While some randomization models (e.g., \RII, \RIII, and \RIV) performed quite similarly to \OR\ according to the parametric probes, they all are markedly worse than \OR\ according to the non-parametric ones. This suggests that non-parametric probes identify certain syntax-related modeling failures
+From our results so far, it is unclear whether parametric probing meaningfully distinguishes models trained with corrupted sentence order from those trained with normal orders. Thus, we also investigate non-parametric probes~\cite{linzen-etal-2016-assessing,marvin-linzen-2018-targeted,gulordava2018,goldberga,wolf2019}. Since these probes do not contain any learnable parameters, they are called ``non-parametric''. We observe for some datasets \cite{linzen-etal-2016-assessing,marvin-linzen-2018-targeted} the gap between the \OR\ and randomization models is relatively large.
+While some randomization models (e.g., \RII, \RIII, and \RIV) performed quite similarly to \OR\ according to the parametric probes, they all are markedly worse than \OR\ according to the non-parametric ones. This suggests that non-parametric probes identify certain syntax-related modeling failures
 that parametric ones do not.
 
 \subsubsection{Discussion \& Conclusion}

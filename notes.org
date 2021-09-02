@@ -1,15 +1,32 @@
 #+TITLE: Notes
 
 * Notes and todos for the paper here.
-** TODO mostly copy the stuff from my previous papers in the intro
-** TODO write the intro
+** DONE mostly copy the stuff from my previous papers in the intro
+CLOSED: [2021-08-31 Tue 14:27]
+** DONE write the intro
+CLOSED: [2021-08-31 Tue 14:27]
 * Joelle Meeting Notes
 ** TODO put timeline in table
 ** TODO organize slide content
 *** what can i ask from my committee - what version of a hypothesis would be more interesting? lean on committee for the wisdom..
 *** prepare list of questions - open questions in slide
 **** invitation of questions - open questions
-** TODO send mail to Ann to confirm the committee
+** DONE send mail to Ann to confirm the committee
+CLOSED: [2021-08-31 Tue 14:27]
+* Joelle Meeting 31/08/21 notes
+** Paper accepted!
+*** Model release in pipeline, approvals in place
+*** Blog post? Adina is interested to help
+**** talk to Douwe on the form
+** Proposal updates
+*** Have to make it shorter - how?
+*** contact soon committee members by mail.
+** Do I need a PhD 4 progress tracking?
+** Repro challenge updates - reviewing of Spring
+*** spring review clubbing to fall
+*** finding someone more junior to handle logistics
+*** link to the medium post of group of Amsterdam
+***
 * Tables
 | Project                                                                      | Task                                                                                                          | Timeline |
 |------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+----------|

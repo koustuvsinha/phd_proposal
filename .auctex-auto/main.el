@@ -9,6 +9,7 @@
     "latex2e"
     "tables/table_amt_robust"
     "tables/table_probing"
+    "tables/table_pareto"
     "article"
     "art12"
     "inputenc"
@@ -82,11 +83,13 @@
     "sec:cont1"
     "fig:clutrr_data"
     "fig:clutrr_data_design"
-    "fig:clutrr_composition"
     "fig:clutrr_sys_gen_234"
     "fig:clutrr_data_noise"
     "fig:proof_sys_gen"
-    "sec:cont2")
+    "sec:cont2"
+    "tab:example"
+    "fig:all_entropy"
+    "fig:masked_results")
    (LaTeX-add-bibliographies)
    (LaTeX-add-xcolor-definecolors
     "citecol"))
