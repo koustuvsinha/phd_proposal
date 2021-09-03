@@ -77,3 +77,8 @@ CLOSED: [2021-08-25 Wed 12:15]
 CLOSED: [2021-08-25 Wed 12:37]
 ** DONE (cite:parthasarathi2021a) Sometimes We Want Translationese
 CLOSED: [2021-08-26 Thu 18:02]
+** DONE (cite:qiu2020) Pre-trained Models for Natural Language Processing: A Survey
+CLOSED: [2021-09-03 Fri 11:44]
+** (cite:sinha) PhD Comprehensive Report
+** DONE (cite:jia2016) Adversarial Examples for Evaluating Reading Comprehension Systems
+CLOSED: [2021-09-03 Fri 11:44]

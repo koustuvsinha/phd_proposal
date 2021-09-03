@@ -3,47 +3,54 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: main.bib
+Warning--I didn't find a database entry for "collobert"
+Warning--I didn't find a database entry for "mikolov"
+Warning--I didn't find a database entry for "glove"
+Warning--I didn't find a database entry for "peters"
+Warning--I didn't find a database entry for "ULMfit"
+Warning--I didn't find a database entry for "devlin"
 Warning--empty journal in Evans2017-pu
+Warning--empty journal in radford2018improving
 Warning--empty journal in wolf2019
-You've used 88 entries,
+You've used 91 entries,
             2118 wiz_defined-function locations,
-            926 strings with 22260 characters,
-and the built_in function-call counts, 35499 in all, are:
-= -- 3362
-> -- 2215
+            946 strings with 22850 characters,
+and the built_in function-call counts, 36519 in all, are:
+= -- 3457
+> -- 2284
 < -- 32
-+ -- 878
-- -- 778
-* -- 2581
-:= -- 5899
-add.period$ -- 286
-call.type$ -- 88
-change.case$ -- 640
++ -- 905
+- -- 802
+* -- 2661
+:= -- 6082
+add.period$ -- 295
+call.type$ -- 91
+change.case$ -- 661
 chr.to.int$ -- 0
-cite$ -- 90
-duplicate$ -- 1322
-empty$ -- 2375
-format.name$ -- 778
-if$ -- 7382
+cite$ -- 94
+duplicate$ -- 1353
+empty$ -- 2438
+format.name$ -- 802
+if$ -- 7580
 int.to.chr$ -- 0
-int.to.str$ -- 88
-missing$ -- 91
-newline$ -- 443
-num.names$ -- 182
-pop$ -- 747
+int.to.str$ -- 91
+missing$ -- 94
+newline$ -- 458
+num.names$ -- 188
+pop$ -- 766
 preamble$ -- 1
-purify$ -- 555
+purify$ -- 573
 quote$ -- 0
-skip$ -- 980
+skip$ -- 1002
 stack$ -- 0
-substring$ -- 1616
-swap$ -- 383
+substring$ -- 1662
+swap$ -- 385
 text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 346
-warning$ -- 2
-while$ -- 277
-width$ -- 90
-write$ -- 960
-(There were 2 warnings)
+type$ -- 358
+warning$ -- 3
+while$ -- 285
+width$ -- 93
+write$ -- 991
+(There were 9 warnings)

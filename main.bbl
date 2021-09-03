@@ -13,10 +13,21 @@ E.~M. Bender and A.~Koller.
   Computational Linguistics}, pages 5185--5198, Online, July 2020. Association
   for Computational Linguistics.
 
+\bibitem{bengio2013representation}
+Y.~Bengio, A.~Courville, and P.~Vincent.
+\newblock Representation learning: A review and new perspectives.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  35(8):1798--1828, 2013.
+
 \bibitem{rte5_bentivogli2009fifth}
 L.~Bentivogli, P.~Clark, I.~Dagan, and D.~Giampiccolo.
 \newblock The fifth {PASCAL} recognizing textual entailment challenge.
 \newblock In {\em TAC}, 2009.
+
+\bibitem{bordes2013translating}
+A.~Bordes, N.~Usunier, A.~Garcia-Duran, J.~Weston, and O.~Yakhnenko.
+\newblock Translating embeddings for modeling multi-relational data.
+\newblock {\em Advances in neural information processing systems}, 26, 2013.
 
 \bibitem{bowman-etal-2015-large}
 S.~R. Bowman, G.~Angeli, C.~Potts, and C.~D. Manning.
@@ -348,6 +359,11 @@ A.~Poliak, J.~Naradowsky, A.~Haldar, R.~Rudinger, and B.~Van~Durme.
 \newblock In {\em Proceedings of the Seventh Joint Conference on Lexical and
   Computational Semantics}, pages 180--191, New Orleans, Louisiana, June 2018.
   Association for Computational Linguistics.
+
+\bibitem{radford2018improving}
+A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever.
+\newblock Improving language understanding by generative pre-training.
+\newblock 2018.
 
 \bibitem{radford-etal-2019-language}
 A.~Radford, J.~Wu, R.~Child, D.~Luan, D.~Amodei, and I.~Sutskever.

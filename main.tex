@@ -123,7 +123,7 @@ In view of the positive and negative evidences towards Transformers acquiring ``
   \item \textit{CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text}, published at Empirical Methods of Natural Language Processing (EMNLP) 2019 (Oral presentation) \cite{sinha2019a}
 \end{itemize}
 
-This document does not discuss in detail about my other related works in this topic, such as in Natural Language Inference, \textit{Probing Linguistic Systematicity} \footnote{Work done as second author.}, published at Association for Computational Linguistics (ACL) 2020 \cite{goodwin2020}; or in proof generation, \textit{Measuring Systematic Generalization in Neural Proof Generation} \cite{gontier2020}, published at Neural Information Processing Systems (NeurIPS) 2020.
+This document briefly discusses about my other related works in this topic, such as in Natural Language Inference, \textit{Probing Linguistic Systematicity} \footnote{Work done as second author.}, published at Association for Computational Linguistics (ACL) 2020 \cite{goodwin2020}; or in proof generation, \textit{Measuring Systematic Generalization in Neural Proof Generation} \cite{gontier2020}, published at Neural Information Processing Systems (NeurIPS) 2020, but not in detail.
 
 Secondly, I discuss our work on understanding the limits of systematicity of NLU models by subjecting these models to scrambled word order sentences, involving the following two papers:
 
@@ -144,18 +144,43 @@ This document does not discuss concurrent works on analyzing faithfulness and ro
 
 % Connect systematicity to generalization
 
-\section{Background}
+\section{Background: Natural language understanding through Neural approaches}
+
+Natural language is highly ambiguous (syntactic ambiguity, word sense ambiguity, semantic ambiguity) as well as contextual (multiple interpretations based on usage). To understand natural language, neural network based approaches operate on the notion of \textit{distributional semantics} \cite{bordes2013translating}, which captures the meaning of words through vector representation to compose a meaning representation of the sentence or relations. This makes neural network approaches more robust to noise and ambiguity of natural language \cite{bengio2013representation}.
+
+\xhdr{Models} Natural Language Understanding (NLU) models have thus built on top of neural models having distributional vector representation of the lexical items. Further improvements were made to handle the polysemous and context-dependent nature of words by using contextual embeddings through leveraging the sequences of sentences, typically using Recurrent (LSTM, GRU) or Convolutional models (CNN). Models based on Long Short Term Memory (LSTM) became the de-facto standard in NLU, as they can effectively capture the contextual information with locality bias present in natural language. However, its performance is often affected by the long-term dependency problem in several NLU tasks.
+
+Recently, the field of NLP has witnessed a paradigm shift in research with the advent of Transformers \cite{vaswani-etal-2017-attention}. Being a fully-connected multi-head self-attention model, Transformers can directly model the dependency between any two words in a sequence, thus proving to be more powerful and suitable to model long range dependencies of natural language. However, Transformers come with massively increased model parameters, thus requiring significantly large corpus to train and resulting in overfitting on small and medium sized datasets \cite{radford2018improving}.
+
+\xhdr{On the rise of pre-training} With increasing number of model parameters, the requirement to train on large datasets became inevitable - as otherwise it is not possible to fully train the model parameters. However, it is challenging to collect/design NLU tasks of such scale due to extremely expensive annotation costs. In contrast, it is relatively easy to obtain large-scale unlabeled corpora, typically through scraping the internet or collecting all literary works. Thus came the idea of \textit{pre-training}, where this huge, unlabeled data is first leveraged to learn a good representation, and then the resulting model used for NLU tasks. The large, unlabeled data can be leveraged to learn useful word embeddings either using pairwise ranking \cite{collobert}, or through the use of shallow architectures \cite{mikolov}, or by computing global word-word co-occurence statistics \cite{glove}. However, these pre-trained word embeddings are still context-independent, and requires learning context-dependent parameters from scratch on an NLU task. Thus, efforts have been made to pre-train the entire model parameters instead of generating word embeddings by training in a Language Modeling objective (predicting the probability of a word to appear after a sequence of words), using bidirectional LSTM based architectures \cite{peters}. These models are then used to fine-tune on downstream NLU tasks such as text classification \cite{ULMfit}.
+
+More recently, Transformer-based architectures became widely popular with the introduction of BERT \cite{devlin}. BERT is fundamentally a stack of Transformer layers, having multiple self-attention heads. To learn its massive amount of parameters, BERT is pre-trained on unlabeled corpora using two self-supervised objectives: masked language modeling (MLM, predicting the probability of randomly masked input tokens) and next sentence prediction (predicting if two sentences are adjacent to each other). BERT significantly improved the state-of-the art in many NLU tasks - ranging from text classication, question answering, natural language inference, machine translation, summarization etc \cite{qiu2020}.
+
+\xhdr{Analysis and interpretability of NLU models}
+The sheer performance of pre-trained Transformer-based models following BERT created a watershed moment in NLU, as these models outperform previous LSTM-based models by a large extent. Due to this success, interest peaked in the community to investigate the inner workings of this largely black box model \cite{rogers2020}. The investigation is primarily done using the tool of \textit{probing}, which is learning a function on top of pre-trained representations to perform targeted assesment of linguistic information \cite{hupkes2018visualisation}. How well this probe learns a given signal can be seen as a proxy for linguistic knowledge encoded in the representations. Using these probes, it has been shown BERT representations contain adequate syntactic, semantic, and world knowledge \cite{rogers2020}.
+
+\xhdr{Systematicity issues in NLU models} Despite the large performance gain and representations containing the necessary linguistic information to process natural language, state-of-the-art NLU models are often subject to scrutiny due to their unsystematic behaviors on specifically crafted test suites. NLU models are repeatedly shown to be brittle when subject to adversarial attacks \cite{jia2016}. NLU models also tend to exploit the statistical irregularities and annotation artefacts \cite{gururangan2018a} of a given datasets, resulting in failure cases on carefully crafted examples \cite{mccoy2019}. My work during my doctoral thesis has been to uncover why these models reason unsystematically using targeted semantic and syntactic tests.
+
+
 
 % Language Models
 
-\subsection{Language Models}
+%\subsection{Natural Language Understanding Models}
+
+% Brief oneliners only
+% Refer readers to more involved things
+
 
 %Transformers
 % LSTM-based LM
 
 % The rise of pre-training
 
-\subsection{The rise of pre-training}
+%\subsection{On the rise of pre-training}
+
+% is this background? looks more like related work
+%\subsection{Syntax and Semantics represented in distributed representations}
+
 
 \section{Contribution 1: Investigating systematicity of NLU models using first order logic}
 \label{sec:cont1}
@@ -395,7 +420,7 @@ In our previous work, we uncovered the unsystematic language understanding mecha
 
 \subsubsection{Experiments \& Results}
 
-In our experiments, we pre-train MLMs~(RoBERTa, \citealt{liu2019b}) on various corpora with permuted word order while preserving some degree of distributional information, and examine their downstream performance.
+In our experiments, we pre-train MLMs~(RoBERTa, \cite{liu2019b}) on various corpora with permuted word order while preserving some degree of distributional information, and examine their downstream performance.
 In our main experiments, we pre-train models on various permuted corpora , by randomly shuffling $n$-grams within the sentence (where $n \in \{1,2,3,4\}$).
 We also experiment with training MLMs without positional embeddings, making them entirely order agnostic,
 and with training on a corpus sampled from the source corpus's %uniform or
