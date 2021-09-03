@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 SEP 2021 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 SEP 2021 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1333,81 +1333,9 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 112.
 
-./main.tex:114: Undefined control sequence.
-l.114 ...ral models, especially Transformers \CITE
-                                                  , a class of multi-head se...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:114: Undefined control sequence.
-l.114 ... benchmarks and datasets, with BERT \CITE
-                                                   being one of the most pop...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:114: Undefined control sequence.
-l.114 ...h surprising, near-human efficiency \CITE
-                                                  .
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ./main.tex:116: Undefined control sequence.
 l.116 ...ech tagging, entity recognition etc \CITE
                                                   . BERT has also been credi...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:116: Undefined control sequence.
-l.116 ...ome level of semantic understanding \CITE
-                                                  , and contains relevant in...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:116: Undefined control sequence.
-l.116 ...about relations and world knowledge \CITE
-                                                  . All of these results ind...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:118: Undefined control sequence.
-l.118 ... the sentences in which they appear \CITE
-                                                  [Fodor]. As an illustratio...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:118: Undefined control sequence.
-l.118 ...ystems to such adversarial examples \CITE
-                                                  . More so, there is strong...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:118: Undefined control sequence.
-l.118 ...ing and generalization capabilities \CITE
-                                                  .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1439,59 +1367,27 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 126.
  [2]
 
-Package natbib Warning: Citation `collobert' on page 3 undefined on input line 
-155.
-
-
-Package natbib Warning: Citation `mikolov' on page 3 undefined on input line 15
-5.
-
-
-Package natbib Warning: Citation `glove' on page 3 undefined on input line 155.
-
-
-
-Package natbib Warning: Citation `peters' on page 3 undefined on input line 155
-.
-
-
-Package natbib Warning: Citation `ULMfit' on page 3 undefined on input line 155
-.
-
-
-Package natbib Warning: Citation `devlin' on page 3 undefined on input line 157
-.
-
-
-Package natbib Warning: Citation `qiu2020' on page 3 undefined on input line 15
-7.
-
-
-Package natbib Warning: Citation `hupkes2018visualisation' on page 3 undefined 
-on input line 160.
-
-
-Package natbib Warning: Citation `jia2016' on page 3 undefined on input line 16
-2.
+Package natbib Warning: Citation `howard2018universal' on page 3 undefined on i
+nput line 155.
 
 [3]
 <images/clutrr_text.png, id=16, 1250.6725pt x 503.8825pt>
 File: images/clutrr_text.png Graphic file (type png)
 <use images/clutrr_text.png>
-Package pdftex.def Info: images/clutrr_text.png  used on input line 194.
+Package pdftex.def Info: images/clutrr_text.png  used on input line 197.
 (pdftex.def)             Requested size: 232.68602pt x 93.74731pt.
 
-Underfull \hbox (badness 2894) in paragraph at lines 202--203
+Underfull \hbox (badness 2894) in paragraph at lines 205--206
 [][]\OT1/ptm/m/n/12 (+20) Thus, in-spired by the clas-sic AI chal-
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 202--203
+Underfull \hbox (badness 2368) in paragraph at lines 205--206
 \OT1/ptm/m/n/12 (+20) lenge of in-duc-tive logic pro-gram-ming, we
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 202--203
+Underfull \hbox (badness 3536) in paragraph at lines 205--206
 \OT1/ptm/m/n/12 (+20) to ex-plic-itly test an NLU model's abil-ity
  []
 
@@ -1499,32 +1395,32 @@ Underfull \hbox (badness 3536) in paragraph at lines 202--203
 File: images/clutrr_dataset_proof.png Graphic file (type png)
 <use images/clutrr_dataset_proof.png>
 Package pdftex.def Info: images/clutrr_dataset_proof.png  used on input line 20
-6.
+9.
 (pdftex.def)             Requested size: 232.68602pt x 151.6168pt.
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 21
-2.
+5.
 
 
-Overfull \hbox (3.14224pt too wide) in paragraph at lines 214--215
+Overfull \hbox (3.14224pt too wide) in paragraph at lines 217--218
 \OT1/ptm/m/it/12 (-20) ``Al-ice is Bob's mother'' \OT1/ptm/m/n/12 (-20) and \OT
 1/ptm/m/it/12 (-20) ``Jim is Al-ice's fa-ther''\OT1/ptm/m/n/12 (-20) ,
  []
 
 [4 <./images/clutrr_text.png> <./images/clutrr_dataset_proof.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 247.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 250.
 <images/clutrr_sys_gen_234.png, id=24, 727.0362pt x 500.5902pt>
 File: images/clutrr_sys_gen_234.png Graphic file (type png)
 <use images/clutrr_sys_gen_234.png>
-Package pdftex.def Info: images/clutrr_sys_gen_234.png  used on input line 251.
+Package pdftex.def Info: images/clutrr_sys_gen_234.png  used on input line 254.
 
 (pdftex.def)             Requested size: 232.68602pt x 160.20741pt.
  [5 <./images/clutrr_sys_gen_234.png>]
 <images/clutrr_noise.png, id=32, 707.64375pt x 382.42876pt>
 File: images/clutrr_noise.png Graphic file (type png)
 <use images/clutrr_noise.png>
-Package pdftex.def Info: images/clutrr_noise.png  used on input line 283.
+Package pdftex.def Info: images/clutrr_noise.png  used on input line 286.
 (pdftex.def)             Requested size: 232.68602pt x 125.7467pt.
  (./tables/table_amt_robust.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
@@ -1605,16 +1501,16 @@ and I'll forget about whatever was undefined.
 <images/proof_sys_gen.pdf, id=42, 602.25pt x 356.33125pt>
 File: images/proof_sys_gen.pdf Graphic file (type pdf)
 <use images/proof_sys_gen.pdf>
-Package pdftex.def Info: images/proof_sys_gen.pdf  used on input line 323.
+Package pdftex.def Info: images/proof_sys_gen.pdf  used on input line 326.
 (pdftex.def)             Requested size: 232.68602pt x 137.67458pt.
 
-Underfull \hbox (badness 2564) in paragraph at lines 330--331
+Underfull \hbox (badness 2564) in paragraph at lines 333--334
 [][]\OT1/ptm/m/n/12 (+20) Finally, in proof gen-er-a-tion, we found
  []
 
 [8 <./images/proof_sys_gen.pdf>]
-./main.tex:349: Undefined control sequence.
-l.349 ... be sensitive to word order (see \autoref
+./main.tex:352: Undefined control sequence.
+l.352 ... be sensitive to word order (see \autoref
                                                   {tab:example}).  We find, ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1623,32 +1519,32 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (11.95683pt too wide) in paragraph at lines 366--366
+Overfull \hbox (11.95683pt too wide) in paragraph at lines 369--369
 []|\OT1/ptm/b/n/10.95 Predicted
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 366--366
+Underfull \hbox (badness 5431) in paragraph at lines 369--369
 []|\OT1/ptm/m/n/10.95 (+20) bars restau-rants are
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 366--366
+Underfull \hbox (badness 4001) in paragraph at lines 369--369
 \OT1/ptm/m/n/10.95 (+20) There and to close
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--366
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 []|\OT1/ptm/m/n/10.95 (+20) He and his as-so-ciates
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 366--366
+Underfull \hbox (badness 2717) in paragraph at lines 369--369
 \OT1/ptm/m/n/10.95 (+20) weren't op-er-at-ing at the
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 366--366
+Underfull \hbox (badness 1565) in paragraph at lines 369--369
 []|\OT1/ptm/m/n/10.95 (+20) his at and metaphor the
  []
 
@@ -1656,11 +1552,11 @@ Underfull \hbox (badness 1565) in paragraph at lines 366--366
 <images/unli_entropy_plot.png, id=59, 1209.7998pt x 847.0044pt>
 File: images/unli_entropy_plot.png Graphic file (type png)
 <use images/unli_entropy_plot.png>
-Package pdftex.def Info: images/unli_entropy_plot.png  used on input line 394.
+Package pdftex.def Info: images/unli_entropy_plot.png  used on input line 397.
 (pdftex.def)             Requested size: 232.68602pt x 162.90991pt.
 
-./main.tex:401: Undefined control sequence.
-l.401 ...at lead to the correct answer in \autoref
+./main.tex:404: Undefined control sequence.
+l.404 ...at lead to the correct answer in \autoref
                                                   {fig:all_entropy}. We find...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1670,16 +1566,16 @@ and I'll forget about whatever was undefined.
 
 [10 <./images/unli_entropy_plot.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 415.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 418.
 
-Overfull \hbox (4.61234pt too wide) in paragraph at lines 415--415
+Overfull \hbox (4.61234pt too wide) in paragraph at lines 418--418
 []\OT1/ptm/b/n/14.4 Masked Lan-guage Mod-el-ing and the Dis-tri-bu-tional Hy-po
 th-e-sis: \OT1/ptm/b/it/14.4 Or-der word
  []
 
 [11]
-./main.tex:432: Undefined control sequence.
-l.432 \blankline
+./main.tex:435: Undefined control sequence.
+l.435 \blankline
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1687,10 +1583,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:436: Undefined control sequence.
+./main.tex:439: Undefined control sequence.
 <argument> ...z@ \footnotesep \ignorespaces \href 
                                                   {http://data.quora.com/Fir...
-l.436 ...st-Quora-Dataset-Release-Question-Pairs}}
+l.439 ...st-Quora-Dataset-Release-Question-Pairs}}
                                                   , Multi-Genre NLI \cite[MN...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1699,7 +1595,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--436
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
 [][]\OT1/ptm/m/n/10 (+20) http://data.quora.com/First-Quora-Dataset-Release-Que
 stion-Pairshttp://data.quora.com/First-Quora-Dataset-
  []
@@ -1707,11 +1603,11 @@ stion-Pairshttp://data.quora.com/First-Quora-Dataset-
 <images/masked_result.pdf, id=68, 498.22198pt x 352.86858pt>
 File: images/masked_result.pdf Graphic file (type pdf)
 <use images/masked_result.pdf>
-Package pdftex.def Info: images/masked_result.pdf  used on input line 440.
+Package pdftex.def Info: images/masked_result.pdf  used on input line 443.
 (pdftex.def)             Requested size: 232.68602pt x 164.7983pt.
-[12 <./images/masked_result.pdf>] (./tables/table_pareto.tex)
-./main.tex:481: Undefined control sequence.
-l.481 Our fine-tuning results in \autoref
+[12 <./images/masked_result.pdf>] (./tables/table_pareto.tex) [13]
+./main.tex:484: Undefined control sequence.
+l.484 Our fine-tuning results in \autoref
                                          {subsec:glue_results} and parametri...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1719,8 +1615,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:481: Undefined control sequence.
-l.481 ...nd parametric probing results in \autoref
+./main.tex:484: Undefined control sequence.
+l.484 ...nd parametric probing results in \autoref
                                                   {subsec:param_probing}, ho...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1728,9 +1624,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[13] [14]
-./main.tex:507: Undefined control sequence.
-l.507 \halfblankline
+[14]
+./main.tex:510: Undefined control sequence.
+l.510 \halfblankline
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1738,8 +1634,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:511: Undefined control sequence.
-l.511 \halfblankline
+./main.tex:514: Undefined control sequence.
+l.514 \halfblankline
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1747,37 +1643,38 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-(./main.bbl [15] [16] [17] [18] [19] [20])
+(./main.bbl [15] [16] [17] [18] [19] [20] [21])
 
 Package natbib Warning: There were undefined citations.
 
-[21] (./main.aux)
+[22] (./main.aux
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
 
- ) 
+) ) 
 Here is how much of TeX's memory you used:
- 19044 strings out of 492616
- 328996 string characters out of 6129482
- 416049 words of memory out of 5000000
- 22437 multiletter control sequences out of 15000+600000
- 620075 words of font info for 363 fonts, out of 8000000 for 9000
+ 19108 strings out of 492616
+ 330357 string characters out of 6129482
+ 417296 words of memory out of 5000000
+ 22486 multiletter control sequences out of 15000+600000
+ 621080 words of font info for 373 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,13n,63p,1777b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/
-fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on main.pdf (21 pages, 1450626 bytes).
+ 44i,13n,63p,1777b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on main.pdf (22 pages, 1455455 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 191 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  49188 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -317,13 +317,13 @@ INPUT ./images/clutrr_dataset_proof.png
 INPUT ./images/clutrr_dataset_proof.png
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/ptmbi7t.tfm
 INPUT images/clutrr_sys_gen_234.png
 INPUT ./images/clutrr_sys_gen_234.png
 INPUT ./images/clutrr_sys_gen_234.png
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm

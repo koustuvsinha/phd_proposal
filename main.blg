@@ -3,54 +3,50 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: main.bib
-Warning--I didn't find a database entry for "collobert"
-Warning--I didn't find a database entry for "mikolov"
-Warning--I didn't find a database entry for "glove"
-Warning--I didn't find a database entry for "peters"
-Warning--I didn't find a database entry for "ULMfit"
-Warning--I didn't find a database entry for "devlin"
 Warning--empty journal in Evans2017-pu
+Warning--empty journal in jia2016
+Warning--can't use both volume and number fields in jin2020bert
 Warning--empty journal in radford2018improving
 Warning--empty journal in wolf2019
-You've used 91 entries,
+You've used 107 entries,
             2118 wiz_defined-function locations,
-            946 strings with 22850 characters,
-and the built_in function-call counts, 36519 in all, are:
-= -- 3457
-> -- 2284
-< -- 32
-+ -- 905
-- -- 802
-* -- 2661
-:= -- 6082
-add.period$ -- 295
-call.type$ -- 91
-change.case$ -- 661
+            1019 strings with 26032 characters,
+and the built_in function-call counts, 42747 in all, are:
+= -- 4071
+> -- 2608
+< -- 38
++ -- 1032
+- -- 912
+* -- 3094
+:= -- 7087
+add.period$ -- 346
+call.type$ -- 107
+change.case$ -- 763
 chr.to.int$ -- 0
-cite$ -- 94
-duplicate$ -- 1353
-empty$ -- 2438
-format.name$ -- 802
-if$ -- 7580
+cite$ -- 112
+duplicate$ -- 1598
+empty$ -- 2894
+format.name$ -- 912
+if$ -- 8898
 int.to.chr$ -- 0
-int.to.str$ -- 91
-missing$ -- 94
-newline$ -- 458
-num.names$ -- 188
-pop$ -- 766
+int.to.str$ -- 107
+missing$ -- 110
+newline$ -- 538
+num.names$ -- 222
+pop$ -- 880
 preamble$ -- 1
-purify$ -- 573
+purify$ -- 659
 quote$ -- 0
-skip$ -- 1002
+skip$ -- 1191
 stack$ -- 0
-substring$ -- 1662
-swap$ -- 385
-text.length$ -- 32
+substring$ -- 2026
+swap$ -- 459
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 358
-warning$ -- 3
-while$ -- 285
-width$ -- 93
-write$ -- 991
-(There were 9 warnings)
+type$ -- 422
+warning$ -- 5
+while$ -- 341
+width$ -- 110
+write$ -- 1166
+(There were 5 warnings)

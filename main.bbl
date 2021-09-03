@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{baddeley-etal-2009-working}
 A.~D. Baddeley, G.~J. Hitch, and R.~J. Allen.
@@ -70,6 +70,13 @@ N.~Chomsky.
 \newblock {\em The minimalist program}.
 \newblock Cambridge, Massachusetts: The MIT Press, 1995.
 
+\bibitem{collobert2008unified}
+R.~Collobert and J.~Weston.
+\newblock A unified architecture for natural language processing: Deep neural
+  networks with multitask learning.
+\newblock In {\em Proceedings of the 25th international conference on Machine
+  learning}, pages 160--167, 2008.
+
 \bibitem{condoravdi-etal-2003-entailment}
 C.~Condoravdi, D.~Crouch, V.~de~Paiva, R.~Stolle, and D.~G. Bobrow.
 \newblock Entailment, intensionality and text understanding.
@@ -127,10 +134,22 @@ W.~B. Dolan and C.~Brockett.
 \newblock In {\em Proceedings of the Third International Workshop on
   Paraphrasing (IWP2005)}, 2005.
 
+\bibitem{ettinger2020}
+A.~Ettinger.
+\newblock What {{BERT Is Not}}: {{Lessons}} from a {{New Suite}} of
+  {{Psycholinguistic Diagnostics}} for {{Language Models}}.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  8:34--48, Dec. 2020.
+
 \bibitem{Evans2017-pu}
 R.~Evans and E.~Grefenstette.
 \newblock Learning explanatory rules from noisy data.
 \newblock Nov. 2017.
+
+\bibitem{fodor1988connectionism}
+J.~A. Fodor and Z.~W. Pylyshyn.
+\newblock Connectionism and cognitive architecture: A critical analysis.
+\newblock {\em Cognition}, 28(1-2):3--71, 1988.
 
 \bibitem{fundel2007relex}
 K.~Fundel, R.~K{\"u}ffner, and R.~Zimmer.
@@ -220,6 +239,11 @@ S.~Hochreiter and J.~Schmidhuber.
 \newblock Long short-term memory.
 \newblock {\em Neural computation}, 9(8):1735--1780, 1997.
 
+\bibitem{howard2018universal}
+J.~Howard and S.~Ruder.
+\newblock Universal language model fine-tuning for text classification.
+\newblock {\em arXiv preprint arXiv:1801.06146}, 2018.
+
 \bibitem{hu-etal-2020-ocnli}
 H.~Hu, K.~Richardson, L.~Xu, L.~Li, S.~K{\"u}bler, and L.~Moss.
 \newblock {OCNLI}: {O}riginal {C}hinese {N}atural {L}anguage {I}nference.
@@ -231,6 +255,12 @@ H.~Hu, K.~Richardson, L.~Xu, L.~Li, S.~K{\"u}bler, and L.~Moss.
 D.~A. Hudson and C.~D. Manning.
 \newblock Compositional attention networks for machine reasoning.
 \newblock In {\em International Conference on Learning Representations}, 2018.
+
+\bibitem{hupkes2018visualisation}
+D.~Hupkes, S.~Veldhoen, and W.~Zuidema.
+\newblock Visualisation and `diagnostic classifiers' reveal how recurrent and
+  recursive neural networks process hierarchical structure.
+\newblock {\em Journal of Artificial Intelligence Research}, 61:907--926, 2018.
 
 \bibitem{jawahar-etal-2019-bert}
 G.~Jawahar, B.~Sagot, and D.~Seddah.
@@ -246,10 +276,29 @@ G.~Jawahar, B.~Sagot, and D.~Seddah.
   {{Association}} for {{Computational Linguistics}}}, pages 3651--3657,
   {Florence, Italy}, 2019. {Association for Computational Linguistics}.
 
+\bibitem{jia2016}
+R.~Jia and P.~Liang.
+\newblock Adversarial {{Examples}} for {{Evaluating Reading Comprehension
+  Systems}}.
+\newblock 2016.
+
 \bibitem{jie2019dependency}
 Z.~Jie and W.~Lu.
 \newblock Dependency-guided lstm-crf for named entity recognition.
 \newblock {\em arXiv preprint arXiv:1909.10148}, 2019.
+
+\bibitem{jin2020bert}
+D.~Jin, Z.~Jin, J.~T. Zhou, and P.~Szolovits.
+\newblock Is bert really robust? a strong baseline for natural language attack
+  on text classification and entailment.
+\newblock In {\em Proceedings of the AAAI conference on artificial
+  intelligence}, volume~34, pages 8018--8025, 2020.
+
+\bibitem{kaushik2018much}
+D.~Kaushik and Z.~C. Lipton.
+\newblock How much reading does reading comprehension require? a critical
+  investigation of popular benchmarks.
+\newblock {\em arXiv preprint arXiv:1808.04926}, 2018.
 
 \bibitem{lake2017generalization}
 B.~Lake and M.~Baroni.
@@ -305,6 +354,13 @@ R.~T. McCoy, E.~Pavlick, and T.~Linzen.
   in {{Natural Language Inference}}.
 \newblock {\em arXiv:1902.01007 [cs]}, June 2019.
 
+\bibitem{mikolov2013efficient}
+T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean.
+\newblock Efficient estimation of word representations in vector space.
+\newblock In Y.~Bengio and Y.~LeCun, editors, {\em 1st International Conference
+  on Learning Representations, {ICLR} 2013, Scottsdale, Arizona, USA, May 2-4,
+  2013, Workshop Track Proceedings}, 2013.
+
 \bibitem{mollica-2020-composition}
 F.~Mollica, M.~Siegelman, E.~Diachek, S.~T. Piantadosi, Z.~Mineroff,
   R.~Futrell, H.~Kean, P.~Qian, and E.~Fedorenko.
@@ -322,6 +378,13 @@ A.~Naik, A.~Ravichander, C.~Rose, and E.~Hovy.
 \newblock In {\em Proceedings of the 57th Annual Meeting of the Association for
   Computational Linguistics}, pages 3374--3380, Florence, Italy, July 2019.
   Association for Computational Linguistics.
+
+\bibitem{naik-etal-2018-stress}
+A.~Naik, A.~Ravichander, N.~Sadeh, C.~Rose, and G.~Neubig.
+\newblock Stress test evaluation for natural language inference.
+\newblock In {\em Proceedings of the 27th International Conference on
+  Computational Linguistics}, pages 2340--2353, Santa Fe, New Mexico, USA, Aug.
+  2018. Association for Computational Linguistics.
 
 \bibitem{nie-etal-2020-adversarial}
 Y.~Nie, A.~Williams, E.~Dinan, M.~Bansal, J.~Weston, and D.~Kiela.
@@ -342,6 +405,24 @@ P.~Parthasarathi, K.~Sinha, J.~Pineau, and A.~Williams.
 \newblock Sometimes {{We Want Translationese}}.
 \newblock {\em arXiv:2104.07623 [cs]}, Apr. 2021.
 
+\bibitem{pennington2014glove}
+J.~Pennington, R.~Socher, and C.~D. Manning.
+\newblock Glove: Global vectors for word representation.
+\newblock In {\em Proceedings of the 2014 conference on empirical methods in
+  natural language processing (EMNLP)}, pages 1532--1543, 2014.
+
+\bibitem{peters2018deep}
+M.~E. Peters, M.~Neumann, M.~Iyyer, M.~Gardner, C.~Clark, K.~Lee, and
+  L.~Zettlemoyer.
+\newblock Deep contextualized word representations.
+\newblock {\em arXiv preprint arXiv:1802.05365}, 2018.
+
+\bibitem{petroni2019language}
+F.~Petroni, T.~Rockt{\"a}schel, P.~Lewis, A.~Bakhtin, Y.~Wu, A.~H. Miller, and
+  S.~Riedel.
+\newblock Language models as knowledge bases?
+\newblock {\em arXiv preprint arXiv:1909.01066}, 2019.
+
 \bibitem{pham2020}
 T.~M. Pham, T.~Bui, L.~Mai, and A.~Nguyen.
 \newblock Out of {{Order}}: {{How}} important is the sequential order of words
@@ -359,6 +440,13 @@ A.~Poliak, J.~Naradowsky, A.~Haldar, R.~Rudinger, and B.~Van~Durme.
 \newblock In {\em Proceedings of the Seventh Joint Conference on Lexical and
   Computational Semantics}, pages 180--191, New Orleans, Louisiana, June 2018.
   Association for Computational Linguistics.
+
+\bibitem{qiu2020}
+X.~Qiu, T.~Sun, Y.~Xu, Y.~Shao, N.~Dai, and X.~Huang.
+\newblock Pre-trained {{Models}} for {{Natural Language Processing}}: {{A
+  Survey}}.
+\newblock {\em Science China Technological Sciences}, 63(10):1872--1897, Oct.
+  2020.
 
 \bibitem{radford2018improving}
 A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever.
@@ -462,11 +550,26 @@ E.~Strubell, P.~Verga, D.~Andor, D.~Weiss, and A.~McCallum.
   Labeling}}.
 \newblock {\em arXiv:1804.08199 [cs]}, Nov. 2018.
 
+\bibitem{tenney-etal-2019-bert}
+I.~Tenney, D.~Das, and E.~Pavlick.
+\newblock {BERT} rediscovers the classical {NLP} pipeline.
+\newblock In {\em Proceedings of the 57th Annual Meeting of the Association for
+  Computational Linguistics}, pages 4593--4601, Florence, Italy, July 2019.
+  Association for Computational Linguistics.
+
 \bibitem{toyota-2001-changes}
 H.~Toyota.
 \newblock Changes in the constraints of semantic and syntactic congruity on
   memory across three age groups.
 \newblock {\em Perceptual and Motor Skills}, 2001.
+
+\bibitem{tsuchiya-2018-performance}
+M.~Tsuchiya.
+\newblock Performance impact caused by hidden bias of training data for
+  recognizing textual entailment.
+\newblock In {\em Proceedings of the Eleventh International Conference on
+  Language Resources and Evaluation ({LREC} 2018)}, Miyazaki, Japan, May 2018.
+  European Language Resources Association (ELRA).
 
 \bibitem{vaswani2017attention}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
