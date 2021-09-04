@@ -300,6 +300,11 @@ D.~Kaushik and Z.~C. Lipton.
   investigation of popular benchmarks.
 \newblock {\em arXiv preprint arXiv:1808.04926}, 2018.
 
+\bibitem{kim2014convolutional}
+Y.~Kim.
+\newblock Convolutional neural networks for sentence classification.
+\newblock {\em EMNLP}, 2014.
+
 \bibitem{lake2017generalization}
 B.~Lake and M.~Baroni.
 \newblock Generalization without systematicity: On the compositional skills of
@@ -457,6 +462,13 @@ A.~Radford, K.~Narasimhan, T.~Salimans, and I.~Sutskever.
 A.~Radford, J.~Wu, R.~Child, D.~Luan, D.~Amodei, and I.~Sutskever.
 \newblock Language models are unsupervised multitask learners.
 \newblock {\em OpenAI blog}, 2019.
+
+\bibitem{raffel2019exploring}
+C.~Raffel, N.~Shazeer, A.~Roberts, K.~Lee, S.~Narang, M.~Matena, Y.~Zhou,
+  W.~Li, and P.~J. Liu.
+\newblock Exploring the limits of transfer learning with a unified text-to-text
+  transformer.
+\newblock {\em arXiv preprint arXiv:1910.10683}, 2019.
 
 \bibitem{qnli_rajpurkar2016squad}
 P.~Rajpurkar, J.~Zhang, K.~Lopyrev, and P.~Liang.
