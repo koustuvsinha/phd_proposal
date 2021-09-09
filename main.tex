@@ -124,7 +124,7 @@ In view of the positive and negative evidences towards Transformers acquiring ``
   \item \textit{CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text}, published at Empirical Methods of Natural Language Processing (EMNLP) 2019 (Oral presentation) \cite{sinha2019a} \footnote{\href{https://github.com/facebookresearch/clutrr}{https://github.com/facebookresearch/clutrr}}
 \end{itemize}
 
-This document briefly discusses about my other related works in this topic, such as in Natural Language Inference, \textit{Probing Linguistic Systematicity} \footnote{Work done as second author.}, published at Association for Computational Linguistics (ACL) 2020 \cite{goodwin2020}; or in proof generation, \textit{Measuring Systematic Generalization in Neural Proof Generation} \cite{gontier2020}, published at Neural Information Processing Systems (NeurIPS) 2020, but not in detail.
+This document briefly discusses about my other related works in this topic, such as in Natural Language Inference, \textit{Probing Linguistic Systematicity} \footnote{\label{footnote:second}Work done as second author.}, published at Association for Computational Linguistics (ACL) 2020 \cite{goodwin2020}; or in proof generation, \textit{Measuring Systematic Generalization in Neural Proof Generation} \cite{gontier2020} \textsuperscript{\ref{footnote:second}}, published at Neural Information Processing Systems (NeurIPS) 2020, but not in detail.
 
 Secondly, I discuss my work on understanding the limits of systematicity of NLU models by subjecting these models to scrambled word order sentences, involving the following two papers:
 
@@ -133,7 +133,7 @@ Secondly, I discuss my work on understanding the limits of systematicity of NLU 
   \item \textit{Masked Language Modeling and the Distributional Hypothesis: Order Word Matters Pre-training for Little}, published at Empirical Methods of Natural Language Processing (EMNLP) 2021 \cite{sinha2021a} \footnote{\href{https://github.com/pytorch/fairseq/tree/master/examples/shuffled_word_order}{https://github.com/pytorch/fairseq/tree/master/examples/shuffled\_word\_order}}
 \end{itemize}
 
-This document does not discuss concurrent works on analyzing faithfulness and robustness in translations \cite{parthasarathi2021a} (published at EMNLP 2021), proposed dataset on systematic reasoning on graph neural networks \cite{sinha2020c} \footnote{\href{https://github.com/facebookresearch/GraphLog}{https://github.com/facebookresearch/GraphLog}}, or an unreferenced automatic dialog evaluation framework \cite{sinha2020d} \footnote{\href{https://github.com/facebookresearch/online_dialog_eval}{https://github.com/facebookresearch/online\_dialog\_eval}} (published at ACL 2020) conducted during my doctoral studies. The links in footnote contains all open-source code and data contributions during my PhD.
+This document does not discuss concurrent works on analyzing faithfulness and robustness in translations \cite{parthasarathi2021a} \textsuperscript{\ref{footnote:second}} (published at EMNLP Findings 2021), proposed dataset on systematic reasoning on graph neural networks \cite{sinha2020c} \footnote{\href{https://github.com/facebookresearch/GraphLog}{https://github.com/facebookresearch/GraphLog}}, or an unreferenced automatic dialog evaluation framework \cite{sinha2020d} \footnote{\href{https://github.com/facebookresearch/online_dialog_eval}{https://github.com/facebookresearch/online\_dialog\_eval}} (published at ACL 2020) conducted during my doctoral studies. The links in footnote contains all open-source code and data contributions during my PhD.
 
 % TODO mostly copy/rephrase stuff from my previous papers. Start with a general introduction
 
@@ -192,6 +192,7 @@ My work during my doctoral thesis has been to uncover why these models reason un
 \subsection{Motivation}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-20pt}
 \begin{center}
   \includegraphics[width=0.48\textwidth]{images/clutrr_text.png}
 \end{center}
@@ -199,11 +200,10 @@ My work during my doctoral thesis has been to uncover why these models reason un
 \label{fig:clutrr_data}
 \end{wrapfigure}
 
-
-
 An important challenge in NLU is to develop benchmarks which can precisely test a model's capability for robust and systematic generalization. Ideally, we want language understanding systems that can not only answer questions and draw inferences from text, but that can also do so in a systematic, logical and robust way. While such reasoning capabilities are certainly required for many existing NLU tasks, most datasets combine several challenges of language understanding into one, such as co-reference/entity resolution, incorporating world knowledge, and semantic parsing - making it difficult to isolate and diagnose a model's capabilities for systematic generalization and robustness.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-20pt}
 \begin{center}
   \includegraphics[width=0.48\textwidth]{images/clutrr_dataset_proof.png}
 \end{center}
@@ -211,10 +211,7 @@ An important challenge in NLU is to develop benchmarks which can precisely test 
 \label{fig:clutrr_data_design}
 \end{wrapfigure}
 
-
-Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (\textbf{C}ompositional \textbf{L}anguage \textbf{U}nderstanding with \textbf{T}ext-based \textbf{R}elational \textbf{R}easoning) \cite{sinha2019a} - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a learning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
-
-% \footnote{Koustuv Sinha developed the dataset, ran experiments with baselines and contributed in writing the paper. Shagun Sodhani helped in developing the dataset, planning the experiments and contributed in paper writing. Jin Dong contributed in development of some baselines and verification of the code. Joelle Pineau and Will Hamilton supervised the project and contributed in paper writing.}
+Thus, inspired by the classic AI challenge of inductive logic programming, we propose a semi-synthetic benchmark designed to explicitly test an NLU model's ability for systematic and robust logical generalization. Our benchmark suite - termed CLUTRR (\textbf{C}ompositional \textbf{L}anguage \textbf{U}nderstanding with \textbf{T}ext-based \textbf{R}elational \textbf{R}easoning) \cite{sinha2019a} \footnote{Koustuv Sinha developed the dataset, ran experiments with baselines and contributed in writing the paper. Shagun Sodhani helped in developing the dataset, planning the experiments and contributed in paper writing. Jin Dong contributed in development of some baselines and verification of the code. Joelle Pineau and Will Hamilton supervised the project and contributed in paper writing.} - contains a large set of semi-synthetic stories involving hypothetical families. Given a story, the objective is to infer the relationship between two given characters in the story, whose relationship is not explicitly mentioned. To solve this task, a learning agent must extract the relationships mentioned in the text, induce the logical rules governing the kinship relationships (e.g, the transitivity of the sibling relation), and use rules to infer the relationship between a given pair of entities.
 
 \subsection{Dataset}
 
@@ -243,16 +240,6 @@ Essentially, we use first order logic (FOL) to generate $k$ number of provable f
 
 \subsection{Experiments}
 
-In this section, we use CLUTRR to construct specific instances of the dataset to test various aspects of systematicity in natural language understanding.
-We report training and testing results on stories with different clause lengths $k$.
-(For brevity, we use the phrase ``clause length'' throughout this section to refer to the number of steps of reasoning that are required to predict the target query.)
-We also ensure the AMT templates are also split into train and test, to reduce the probability of overfitting to certain artifacts of the templates.
-
-\xhdr{Human Performance} To get a sense of the data quality and difficulty involved in CLUTRR, we asked human annotators to solve the task for random examples of length $k=2,3,...,6$.
-We found that time-constrained AMT annotators performed well (i.e., ${>70\%}$) accuracy for ${k\leq 3}$ but struggled with examples involving longer stories, achieving 40-50\% accuracy for ${k > 3}$. However, trained annotators with unlimited time were able to solve 100\% of the examples (Appendix 1.7), highlighting the fact that this task requires attention and involved reasoning, even for humans.
-
-\xit{Are NLU models able to generalize systematically?}
-
 \begin{wrapfigure}{l}{0.5\textwidth}
 \begin{center}
   \includegraphics[width=0.48\textwidth]{images/clutrr_sys_gen_234.png}
@@ -260,6 +247,17 @@ We found that time-constrained AMT annotators performed well (i.e., ${>70\%}$) a
 \caption{Systematic generalization results on CLUTRR, when trained on stories of length $k=2,3,4$}
 \label{fig:clutrr_sys_gen_234}
 \end{wrapfigure}
+
+In this section, we use CLUTRR to construct specific instances of the dataset to test various aspects of systematicity in natural language understanding.
+We report training and testing results on stories with different clause lengths $k$.
+(For brevity, we use the phrase ``clause length'' throughout this section to refer to the number of steps of reasoning that are required to predict the target query.)
+We also ensure the AMT templates are also split into train and test, to reduce the probability of overfitting to certain artifacts of the templates.
+
+
+\noindent \textbf{Human Performance.} To get a sense of the data quality and difficulty involved in CLUTRR, we asked human annotators to solve the task for random examples of length $k=2,3,...,6$.
+We found that time-constrained AMT annotators performed well (i.e., ${>70\%}$) accuracy for ${k\leq 3}$ but struggled with examples involving longer stories, achieving 40-50\% accuracy for ${k > 3}$. However, trained annotators with unlimited time were able to solve 100\% of the examples (Appendix 1.7), highlighting the fact that this task requires attention and involved reasoning, even for humans.
+
+\xit{Are NLU models able to generalize systematically?}
 
 In this setup, we consider the setting where the models are trained on stories generated from clauses of length ${\leq k}$ and evaluated on stories generated from larger clauses of length ${>k}$. Thus, we explicitly test the ability for models to generalize on examples that require more steps of reasoning that any example they encountered during training.
 In other words, during training, the model sees all logical rules but does not see all {\em combinations} of these logical rules.
@@ -313,7 +311,7 @@ We hope that by using this benchmark suite, progress can be made in building mor
 
 We also conduct a couple of follow-up studies in testing systematicity of Natural Language Understanding (NLU) and Natural Language Generation (NLG) models following the intuition gained from CLUTRR.
 
-\xhdr{\textit{Probing Linguistic Systematicity}} \cite{goodwin2020} In this work, we introduce several novel probes for testing systematic generalization in Natural Language Inference (NLI). Systematicity is the property whereby words have consistent contributions to composed meaning of the sentences. In this work, we employed an artificial, controlled language where we use \textit{Jabberwocky}-type \footnote{Jabberwocky is the term coined by Lewis Caroll in his poem, which combibes nonsense words with familiar words in a way that allows speakers to recognize the expression as well formed.} sentences to inspect the generalizability of word representations learned by neural networks. We gradually and systematically expose the NLU model to new, \textit{open-class} words in context of NLI tasks, and test whether this exposure alters the systematic understanding of existing, known \textit{closed-class} words. For example, we might train an NLI models with the premise-hypothesis contradiction pair \textit{All pigs sleep; some pigs don't sleep}, and test whether the network can identify the contradiction pair \textit{All Jabberwocks flug; some Jabberwocks don't flug}. A systematic learner would reliably identify the contradiction, whereas a non-systematic learner may allow the closed-class words (\textit{all, some, don't}) to take contextually conditioned meanings that depend on novel context words.
+\xhdr{\textit{Probing Linguistic Systematicity}} \cite{goodwin2020} \footnote{Work done as a second author. Emily Goodwin designed the probe dataset and experimental protocols. Koustuv Sinha implemented and ran the experiments. Timothy J O'Donnell supervised the project and advised setting up the experiments and hypothesis. All co-authors contributed in paper writing.} In this work, we introduce several novel probes for testing systematic generalization in Natural Language Inference (NLI). Systematicity is the property whereby words have consistent contributions to composed meaning of the sentences. In this work, we employed an artificial, controlled language where we use \textit{Jabberwocky}-type \footnote{Jabberwocky is the term coined by Lewis Caroll in his poem, which combibes nonsense words with familiar words in a way that allows speakers to recognize the expression as well formed.} sentences to inspect the generalizability of word representations learned by neural networks. We gradually and systematically expose the NLU model to new, \textit{open-class} words in context of NLI tasks, and test whether this exposure alters the systematic understanding of existing, known \textit{closed-class} words. For example, we might train an NLI models with the premise-hypothesis contradiction pair \textit{All pigs sleep; some pigs don't sleep}, and test whether the network can identify the contradiction pair \textit{All Jabberwocks flug; some Jabberwocks don't flug}. A systematic learner would reliably identify the contradiction, whereas a non-systematic learner may allow the closed-class words (\textit{all, some, don't}) to take contextually conditioned meanings that depend on novel context words.
 
 \input{tables/table_probing}
 
@@ -321,14 +319,16 @@ Concretely, we construct an artificial language with six-position template which
 
 We observed all models to perform substantially worse on probing tasks, with standard deviation being significantly high among various blocks - indicating unsystematic behavior. Closed-class words do not maintain a consistent intepretation when paired with different open-class words. Variance across blocks shows that under all models the behaviour of closed-class words is highly sensitive to the novel words they appear with. Thus, our experiments highlight that fact their despite high overall performance, state-of-the-art NLU models generalize in ways that allow the meanings of individual words to vary in different contexts, even in an artificial language where a totally systematic solution is available.
 
-\xhdr{\textit{Measuring Systematic Generalization in Neural Proof Generation with Transformers}} \cite{gontier2020} In this work, we extend our systematicity analysis to language generation using Transformer Language Models (TLMs). To analyze systematicity, we re-use our CLUTRR benchmark to conduct proof generation using forward and backward chaining concepts in first-order logic (FOL). For example, a set of facts in CLUTRR could be of the form: \textit{``Nat is the granddaughter of Betty'', ``Greg is the brother of Nat'', ``Flo is the sister of Greg''}, where the relationship among \textit{Flo} and \textit{Betty} can be inferred using logical deduction (\textit{``Flo is the granddaughter of Betty''}). In this example, we further task the TLM to generate a plausible proof along with the answer : \textit{``Since Flo is the sister of Greg, and Nat is the granddaughter of Betty, and Greg is the brother of Nat, then Flo is the granddaugher to Betty''}.
+\xhdr{\textit{Measuring Systematic Generalization in Neural Proof Generation with Transformers}} \cite{gontier2020} \footnote{Work done as a second author. Nicolas Gontier designed and implemented all experiments. Koustuv Sinha contributed in paper writing and reviewing. Siva Reddy and Christopher Pal supervised the project. All co-authors also contributed to paper writing process.} In this work, we extend our systematicity analysis to language generation using Transformer Language Models (TLMs). To analyze systematicity, we re-use our CLUTRR benchmark to conduct proof generation using forward and backward chaining concepts in first-order logic (FOL). For example, a set of facts in CLUTRR could be of the form: \textit{``Nat is the granddaughter of Betty'', ``Greg is the brother of Nat'', ``Flo is the sister of Greg''}, where the relationship among \textit{Flo} and \textit{Betty} can be inferred using logical deduction (\textit{``Flo is the granddaughter of Betty''}). In this example, we further task the TLM to generate a plausible proof along with the answer : \textit{``Since Flo is the sister of Greg, and Nat is the granddaughter of Betty, and Greg is the brother of Nat, then Flo is the granddaugher to Betty''}.
 
 \begin{wrapfigure}{l}{0.5\textwidth}
+\vspace{-20pt}
 \begin{center}
   \includegraphics[width=0.48\textwidth]{images/proof_sys_gen.pdf}
 \end{center}
 \caption{Systematic generalization issues in proof generation}
 \label{fig:proof_sys_gen}
+\vspace{-10pt}
 \end{wrapfigure}
 
 In our work, we evaluate two popular proof resolution strategies used in Inductive Logic Programming \cite{Evans2017-pu} , \textit{forward} and \textit{backward} chaining resolution paths, expressed in natural language. We evaluate the validity of the proof and the answer accuracy on various settings: whether the TLM is tasked to generated forward or backward proofs, whether the TLM is provided with a gold proof, or when the TLM is neither provided nor tasked to generate a proof. We train a Transformer \cite{vaswani2017attention} model on scratch on the training set, and we observe that TLMs are only able to generalize to unseen proof steps in case of \textit{interpolation}, that is when stories of lesser difficulties than training are provided during inference. In case of \textit{extrapolation}, we observe similar generalization issues as in CLUTRR, where models fail to generalize beyond the difficulty trained. In terms of proof understanding, we observed backward chaining proofs are better understood by the model than forward chaining for the TLMs, mostly due to the fact that backward chaining proofs always begings with the target answer first, allowing the model to exploit the positional cues. Surprisingly, we found the no proof situation to have better answer accuracy than in the case of proof generation - alluding to the fact that proof generation might be actually deterioriating the model performance as it requires more involved reasoning.
@@ -347,7 +347,17 @@ In the following section, we discuss two related works \cite{sinha2021,sinha2021
 
 \subsubsection{Motivation}
 
+
+In this contribution, \cite{sinha2021} \footnote{Koustuv Sinha designed and implemented the experiments. Prasanna Parthasarathi helped in implementing some baselines. Joelle Pineau helped in reviewing and advising the project. Adina Williams supervised the project and advised setting up the experiments and hypothesis. All co-authors contributed to paper writing process.} we revisit the notion of ``knowing syntax'' under the lens of systematicity. A natural and common perspective from many formal theories of linguistics (e.g., \cite{chomsky-1995-minimalist}) is that knowing a natural language requires that you know the syntax of that language. Knowing the syntax of a sentence means being sensitive to the \textit{order of the words} in that sentence (among other things).  Humans are sensitive to word order, so clearly, ``language is not merely a bag of words'' \cite[p.156]{harris-1954-distributional}.
+Moreover, it is easier for us to identify or recall words presented in canonical orders than in disordered, ungrammatical sentences; this phenomenon is called the \textit{``sentence superiority effect''} (\cite{cattell-1886-time, scheerer1981early, toyota-2001-changes, baddeley-etal-2009-working, snell-grainger-2017-sentence, snell2019word, wen-etal-2019-parallel}, i.a.).
+In our estimation then, if one wants to claim that  a model ``knows syntax'', then they should minimally show that the model is sensitive to word order (at least for e.g. English or Mandarin Chinese).
+
+Generally, knowing the syntax of a sentence is taken to be a prerequisite for understanding what that sentence means \cite{heim-kratzer-1998-semantics}.
+Models should have to know the syntax first then, if performing any particular NLU task that genuinely requires a humanlike understanding of meaning (cf. \cite{bender-koller-2020-climbing}).
+Thus, if our models are as good at NLU as our current evaluation methods suggest, we should expect them to be sensitive to word order (see \autoref{tab:example}).  We find, based on a suite of permutation metrics, that they are not.
+
 \begin{wraptable}{r}{0.5\textwidth}
+    \vspace{-20pt}
     \centering
     \small
     \resizebox{0.5\textwidth}{!}{
@@ -363,17 +373,8 @@ In the following section, we discuss two related works \cite{sinha2021,sinha2021
     \end{tabular}}
     \caption{Examples from the MNLI Matched development set. Both the original example and the permuted one elicit the same classification label (entailment and contradiction respectively) from RoBERTa (large).}
     \label{tab:example}
-    \vspace{-10pt}
 \end{wraptable}
 
-
-In this contribution, \cite{sinha2021} we revisit the notion of ``knowing syntax'' under the lens of systematicity. A natural and common perspective from many formal theories of linguistics (e.g., \cite{chomsky-1995-minimalist}) is that knowing a natural language requires that you know the syntax of that language. Knowing the syntax of a sentence means being sensitive to the \textit{order of the words} in that sentence (among other things).  Humans are sensitive to word order, so clearly, ``language is not merely a bag of words'' \cite[p.156]{harris-1954-distributional}.
-Moreover, it is easier for us to identify or recall words presented in canonical orders than in disordered, ungrammatical sentences; this phenomenon is called the \textit{``sentence superiority effect''} (\cite{cattell-1886-time, scheerer1981early, toyota-2001-changes, baddeley-etal-2009-working, snell-grainger-2017-sentence, snell2019word, wen-etal-2019-parallel}, i.a.).
-In our estimation then, if one wants to claim that  a model ``knows syntax'', then they should minimally show that the model is sensitive to word order (at least for e.g. English or Mandarin Chinese).
-
-Generally, knowing the syntax of a sentence is taken to be a prerequisite for understanding what that sentence means \cite{heim-kratzer-1998-semantics}.
-Models should have to know the syntax first then, if performing any particular NLU task that genuinely requires a humanlike understanding of meaning (cf. \cite{bender-koller-2020-climbing}).
-Thus, if our models are as good at NLU as our current evaluation methods suggest, we should expect them to be sensitive to word order (see \autoref{tab:example}).  We find, based on a suite of permutation metrics, that they are not.
 
 \subsubsection{Experiments and Results}
 
@@ -424,7 +425,8 @@ We do find that models seem to have learned some syntactic information (we obser
 
 \subsubsection{Motivation}
 
-In our previous work, we uncovered the unsystematic language understanding mechanisms employed by large, pre-trained NLU models, as they accept permuted sentences in surprising quantity. This questions the claims recently proposed in the literature that these models ``rediscovers the classical NLP pipeline'', suggesting that BERT-based models have the necessary inductive bias to learn syntax representations from self-supervised pre-training. Thus, we investigate further that how much of language models (specifically, Masked Language Models (MLM)) success can be attributed to its knowledge of semantic and syntactic abstractions of natural language \cite{sinha2021a}. To do so, we measure the effect of removing word order during pre-training, with the assumption that any sophisticated (English) NLP pipeline presumably dpeends on the important syntactic information conveyed by the order of words. Suprisingly, we find that most of MLM's high performance can in fact be explained by the ``distributional prior'' - its ability to model word co-occurrence statistics - rather than its ability to replicate the classical NLP pipeline.
+In our previous work, we uncovered the unsystematic language understanding mechanisms employed by large, pre-trained NLU models, as they accept permuted sentences in surprising quantity. This questions the claims recently proposed in the literature that these models ``rediscovers the classical NLP pipeline'', suggesting that BERT-based models have the necessary inductive bias to learn syntax representations from self-supervised pre-training. Thus, we investigate further that how much of language models (specifically, Masked Language Models (MLM)) success can be attributed to its knowledge of semantic and syntactic abstractions of natural language \cite{sinha2021a} \footnote{Koustuv Sinha designed and implemented the experiments. Robin Jia, Dieuwke Hupkes, Joelle Pineau, Adina Williams, Douwe Kiela reviewed and advised the project, and helped in designing experiments. Douwe Kiela supervised the project. All co-authors contributed to paper writing process. }. To do so, we measure the effect of removing word order during pre-training, with the assumption that any sophisticated (English) NLP pipeline presumably dpeends on the important syntactic information conveyed by the order of words. Suprisingly, we find that most of MLM's high performance can in fact be explained by the ``distributional prior'' - its ability to model word co-occurrence statistics - rather than its ability to replicate the classical NLP pipeline.
+
 
 \subsubsection{Experiments \& Results}
 
@@ -436,6 +438,7 @@ unigram distribution, removing both distributional and word order information
 . We then evaluate these ``permuted'' models in a wide range of settings and compare with regularly-pre-trained models.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
+\vspace{-20pt}
 \begin{center}
   \includegraphics[width=0.48\textwidth]{images/masked_result.pdf}
 \end{center}
@@ -448,6 +451,14 @@ Concretely, we use the original 16GB BookWiki corpus (the Toronto Books Corpus, 
 \blankline
 
 \xit{How does word order shuffled pre-trained models behave in downstream tasks?}
+
+\begin{figure}[t]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \includegraphics{images/masked_finetune_rand.pdf}}
+    \caption{GLUE \& PAWS task dev performance when finetuned on naturally and randomly ordered text, respectively, using pre-trained RoBERTa (base) models trained on different versions of BookWiki corpus.}
+    \label{fig:word_order_glue}
+\end{figure}
 
 In order to measure the effect of word order shuffled pre-training, we compare the models in the GLUE and PAWS downstream tasks. The GLUE \cite{wang2018glue} benchmark is a collection of 9 datasets for evaluating natural language understanding systems, of which we use Corpus of Linguistic Acceptability \cite[CoLA,][]{cola_warstadt2019neural}, Stanford Sentiment Treebank \cite[SST,][]{sst2_socher2013recursive}, Microsoft Research Paragraph Corpus \cite[MRPC,][]{mrpc_dolan2005automatically}, Quora Question Pairs (QQP)\footnote{\href{http://data.quora.com/First-Quora-Dataset-Release-Question-Pairs}{http://data.quora.com/First-Quora-Dataset-Release-Question-Pairs}}, Multi-Genre NLI \cite[MNLI,][]{williams-etal-2018-broad}, Question NLI \cite[QNLI,][]{qnli_rajpurkar2016squad, qnli_2_demszky2018transforming}, Recognizing Textual Entailment \cite[RTE,][]{rte1_dagan2005pascal, rte2_haim2006second, rte3_giampiccolo2007third, rte5_bentivogli2009fifth}. The PAWS task \cite{zhang2019paws} consists of predicting whether a given pair of sentences are paraphrases. This dataset contains both paraphrase and non-paraphrase pairs with high lexical overlap, which are generated by controlled word swapping and back translation. Since even a small word swap and perturbation can drastically modify the meaning of the sentence, we hypothesize the randomized pre-trained models will struggle to attain a high performance on PAWS. We fine-tune all models according to RoBERTa best practices.
 
@@ -462,14 +473,6 @@ Overall, these results confirm our hypothesis that RoBERTa's strong performance 
 
 \xit{Where does the models learn word order, in pre-training or in fine-tuning?}
 
-\begin{figure}[t]
-    \centering
-    \resizebox{\textwidth}{!}{
-        \includegraphics{images/masked_finetune_rand.pdf}}
-    \caption{GLUE \& PAWS task dev performance when finetuned on naturally and randomly ordered text, respectively, using pre-trained RoBERTa (base) models trained on different versions of BookWiki corpus.}
-    \label{fig:word_order_glue}
-\end{figure}
-
 
 There are two possible explanations for the above results: either the tasks do not need word order information to be solved, or any necessary word order information can be acquired during fine-tuning.
 To examine this question, we permute the word order during fine-tuning as well. Concretely, for each task, we construct a unigram order-randomized version of each example in the fine-tuning training set using $\mathcal{F}_1$. We then fine-tune our pre-trained models on this shuffled data and evaluate task performance.
@@ -481,13 +484,13 @@ suggesting that these tasks are the most word order reliant. However, it is evid
 
 \xit{How does syntactical probes behave when evaluated on word order shuffled pre-trained models?}
 
-Since the majority of the works investigating syntax representation use probes, we also employ similar mechanisms to test whether these probes are capable to differentiate the pre-trained models trained on shuffled word order from natural word order. In case of parametric probes (i.e probes having a learnable component), we use the Pareto optimality probing framework \cite{pimentel2020b} to investigate syntax using Dependency Parsing as an auxilliary task. By investigating the Dependency parsing task on two datasets (Penn Tree Bank and Universal Dependencies EWT), we observe that the results \textit{follow a similar trend as our downstream fine-tuning results} (Table \ref{tab:pareto_dependency}). Surprisingly, \RC\ probing scores seem to be somewhat better than \RI\ (though with large overlap in their standard deviations), even though \RC\ cannot learn information related to either word order or co-occurrence patterns.
-
 \input{tables/table_pareto.tex}
 
-We also find similar inconsistencies when analyzed with a suite of 10 probing tasks~\cite{conneau-etal-2018-cram} available in the SentEval toolkit~\cite{conneau-kiela-2018-senteval}. This suite contains a range of semantic, syntactic and surface level tasks. We observe that the \OR\ pre-trained model scores better than the unnatural word order models for \textit{only one out of five semantic tasks and in none of the lexical tasks}, unlike the claim of syntax understanding of BERT in the literature \cite{jawahar2019a}. However, \OR\ does score higher for two out of three syntactic tasks. Even for these two syntactic tasks, the gap among \RC\ and \OR\ is much higher than \RI\ and \OR. These results show that while natural word order is useful for at least some probing tasks, the distributional prior of randomized models alone is enough to achieve a reasonably high accuracy on syntax sensitive probing.
+Since the majority of the works investigating syntax representation use probes, we also employ similar mechanisms to test whether these probes are capable to differentiate the pre-trained models trained on shuffled word order from natural word order. In case of parametric probes (i.e probes having a learnable component), we use the Pareto optimality probing framework \cite{pimentel2020b} to investigate syntax using Dependency Parsing as an auxilliary task. By investigating the Dependency parsing task on two datasets (Penn Tree Bank and Universal Dependencies EWT), we observe that the results \textit{follow a similar trend as our downstream fine-tuning results} (Table \ref{tab:pareto_dependency}). Surprisingly, \RC\ probing scores seem to be somewhat better than \RI\ (though with large overlap in their standard deviations), even though \RC\ cannot learn information related to either word order or co-occurrence patterns.
 
 \input{tables/table_non_param.tex}
+
+We also find similar inconsistencies when analyzed with a suite of 10 probing tasks~\cite{conneau-etal-2018-cram} available in the SentEval toolkit~\cite{conneau-kiela-2018-senteval}. This suite contains a range of semantic, syntactic and surface level tasks. We observe that the \OR\ pre-trained model scores better than the unnatural word order models for \textit{only one out of five semantic tasks and in none of the lexical tasks}, unlike the claim of syntax understanding of BERT in the literature \cite{jawahar2019a}. However, \OR\ does score higher for two out of three syntactic tasks. Even for these two syntactic tasks, the gap among \RC\ and \OR\ is much higher than \RI\ and \OR. These results show that while natural word order is useful for at least some probing tasks, the distributional prior of randomized models alone is enough to achieve a reasonably high accuracy on syntax sensitive probing.
 
 From our results so far, it is unclear whether parametric probing meaningfully distinguishes models trained with corrupted sentence order from those trained with normal orders. Thus, we also investigate non-parametric probes~\cite{linzen-etal-2016-assessing,marvin-linzen-2018-targeted,gulordava2018,goldberga,wolf2019}. Since these probes do not contain any learnable parameters, they are called ``non-parametric''. We observe for some datasets \cite{linzen-etal-2016-assessing,marvin-linzen-2018-targeted} the gap between the \OR\ and randomization models is relatively large (Table \ref{tab:non_param_comb}).
 While some randomization models (e.g., \RII, \RIII, and \RIV) performed quite similarly to \OR\ according to the parametric probes, they all are markedly worse than \OR\ according to the non-parametric ones. This suggests that non-parametric probes identify certain syntax-related modeling failures
@@ -496,7 +499,7 @@ that parametric ones do not.
 \subsubsection{Discussion \& Conclusion}
 
 The assumption that word order information is crucial for any classical NLP pipeline (especially for English) is deeply ingrained in our understanding of syntax itself \citep{chomsky1957syntactic}: without order, many linguistic constructs are undefined. % (e.g.\ dependency or constituency parses would no longer be syntactic trees, what would sentences be but mere lists of words).
-Our fine-tuning results in \autoref{subsec:glue_results} and parametric probing results in \autoref{subsec:param_probing}, however, suggests that MLMs do not need to rely much on word order to achieve high accuracy, bringing into question previous claims that they learn a ``classical NLP pipeline''. These results should hopefully encourage the development of better, more challenging tasks that require sophisticated reasoning, and harder probes to narrow down what exact linguistic information is present in the representations learned by our models.
+Our fine-tuning results and parametric probing results, however, suggests that MLMs do not need to rely much on word order to achieve high accuracy, bringing into question previous claims that they learn a ``classical NLP pipeline''. These results should hopefully encourage the development of better, more challenging tasks that require sophisticated reasoning, and harder probes to narrow down what exact linguistic information is present in the representations learned by our models.
 
 
 

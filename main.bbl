@@ -509,24 +509,26 @@ E.~Scheerer.
 K.~Sinha, R.~Jia, D.~Hupkes, J.~Pineau, A.~Williams, and D.~Kiela.
 \newblock Masked {{Language Modeling}} and the {{Distributional Hypothesis}}:
   {{Order Word Matters Pre}}-training for {{Little}}.
-\newblock {\em arXiv:2104.06644 [cs]}, Apr. 2021.
+\newblock {\em Empirical Methods of Natural Language Processing (EMNLP)}, Apr.
+  2021.
 
 \bibitem{sinha2021}
 K.~Sinha, P.~Parthasarathi, J.~Pineau, and A.~Williams.
 \newblock {{UnNatural Language Inference}}.
-\newblock {\em arXiv:2101.00010 [cs]}, June 2021.
+\newblock {\em Association of Computational Linguistics (ACL)}, June 2021.
 
 \bibitem{sinha2020d}
 K.~Sinha, P.~Parthasarathi, J.~Wang, R.~Lowe, W.~L. Hamilton, and J.~Pineau.
 \newblock Learning an {{Unreferenced Metric}} for {{Online Dialogue
   Evaluation}}.
-\newblock {\em arXiv:2005.00583 [cs]}, May 2020.
+\newblock {\em Association of Computational Linguistics (ACL)}, May 2020.
 
 \bibitem{sinha2019a}
 K.~Sinha, S.~Sodhani, J.~Dong, J.~Pineau, and W.~L. Hamilton.
 \newblock {{CLUTRR}}: {{A Diagnostic Benchmark}} for {{Inductive Reasoning}}
   from {{Text}}.
-\newblock {\em arXiv:1908.06177 [cs, stat]}, Sept. 2019.
+\newblock {\em Empricial Methods of Natural Language Processing (EMNLP)}, Sept.
+  2019.
 
 \bibitem{sinha2020c}
 K.~Sinha, S.~Sodhani, J.~Pineau, and W.~L. Hamilton.
