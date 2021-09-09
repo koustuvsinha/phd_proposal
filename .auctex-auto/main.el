@@ -32,6 +32,7 @@
     "algorithm2e"
     "natbib"
     "amsfonts"
+    "hyperref"
     "yhmath"
     "colortbl")
    (TeX-add-symbols

@@ -156,6 +156,11 @@ K.~Fundel, R.~K{\"u}ffner, and R.~Zimmer.
 \newblock Relex—relation extraction using dependency parse trees.
 \newblock {\em Bioinformatics}, 23(3):365--371, 2007.
 
+\bibitem{gentner1986systematicity}
+D.~Gentner and C.~Toupin.
+\newblock Systematicity and surface similarity in the development of analogy.
+\newblock {\em Cognitive science}, 10(3):277--300, 1986.
+
 \bibitem{rte3_giampiccolo2007third}
 D.~Giampiccolo, B.~Magnini, I.~Dagan, and W.~B. Dolan.
 \newblock The third {PASCAL} recognizing textual entailment challenge.
